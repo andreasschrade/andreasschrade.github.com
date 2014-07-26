@@ -8,7 +8,7 @@ permalink:        pretty
 # Setup
 title:            Andreas Schrade
 tagline:          ein Blog über Java- und Android-Entwicklung
-url:              http://getpoole.com
+url:              http://andreasschrade.github.io
 paginate:         1
 baseurl:          /
 author:
