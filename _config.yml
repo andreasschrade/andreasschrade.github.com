@@ -7,7 +7,7 @@ permalink:        pretty
 
 # Setup
 title:            Andreas Schrade
-tagline:          The Jekyll Butler
+tagline:          ein Blog über Java- und Android-Entwicklung
 url:              http://getpoole.com
 paginate:         1
 baseurl:          /
@@ -20,3 +20,8 @@ author:
 version:          1.0.0
 github:
   repo:           https://github.com/andreasschrade/andreasschrade.github.com
+
+pages_list:       
+  About: '/about'
+  Archive: '/archive'
+  Feed: '/atom.xml'
