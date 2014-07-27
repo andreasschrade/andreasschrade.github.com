@@ -29,6 +29,7 @@ public class ReturnVsFinally{
 {% endhighlight %}
 
 <strong>Auflösung:</strong>
+
 Nach der reinen Java-Lehre stehen sich hier zwei Aussagen gegenüber:
 * Das “return”-Keyword bricht normalerweise die Ausführung der jeweiligen Methode abrupt ab. Etwaig folgender Code wird dabei innerhalb der Methode ignoriert
 * Der finally-Codeblock wird immer, egal ob ein Fehler im Try-Block aufgetreten ist, vor verlassen der Methode aufgerufen
@@ -39,6 +40,7 @@ return statement.
 </blockquote>
 
 <strong>Nächste Hürde: System.exit()</strong>
+
 Erweitern lässt sich dieses Experiment nun um eine weitere Ausstiegsmöglichkeit aus dem Code: System.exit();
 
 {% highlight java %}

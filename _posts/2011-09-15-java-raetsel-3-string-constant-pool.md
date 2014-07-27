@@ -27,6 +27,7 @@ public class StringConstantPool {
 {% endhighlight %}
 
 <strong>Auflösung:</strong>
+
 Ganz generell ist bekannt, dass nur primitive Datentypen in Java mit dem Gleichheits-Operator (“==”) verglichen werden dürfen bzw. nur hier auch wirklich der eigentliche Wert und nicht die Referenz verglichen wird.
 Bei komplexen Datentypen wird unter Verwendung des Gleichheit-Operator lediglich die Referenz verglichen, weshalb ein derartiger Vergleich nicht das gewünschte Ergebnis liefert.
 Der Vergleich komplexer Objekte ist, sofern die equals-Methode in der jeweiligen Klassen entsprechend überschrieben und implementiert ist, unter Verwendung der Methode equals möglich.
@@ -39,6 +40,7 @@ false
 {% endhighlight %}
 
 <strong>Hintergrund:</strong>
+
 Zuerst werden zwei Strings (“a”, “b”) mit der direkten (kurzen) Zuweisung erzeugt.
 Anschließend werden weitere String Objekte (“b”, “d”) über den new-Operator erzeugt.
 Alle 4 String-Objekte beinhalten die Zeichenkette “Beispiel” und sind somit zumindest auf rein logischer Ebene identisch.
@@ -56,5 +58,6 @@ Bei der Erzeugung des zweiten Objektes erkennt die JVM, dass bereits das “iden
 Werden String-Objekte wie gewöhnliche andere Objekte über den new-Operator erzeugt, wird der Constant Pool umgangen und das Objekt wie gewohnt gehandhabt. Es wird ohne Prüfung des String Constant Pool erzeugt und erhält damit eine völlig neue Referenz.
 
 <strong>Fazit:</strong>
+
 Es gibt vermutlich kein wirkliches Anwendungsgebiet, indem die Erzeugung von String Objekten über den new-Operator unabdingbar ist.
 Im Prinzip sollte immer die direkte Zuweisung von Strings verwendet werden um das Memory-Management hinsichtlich des Constant Pool Mechanismus ideal auszunutzen.

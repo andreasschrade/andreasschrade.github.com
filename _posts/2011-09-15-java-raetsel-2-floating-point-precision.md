@@ -27,12 +27,14 @@ public class FloatingPrecisionPuzzle {
 {% endhighlight %}
 
 <strong>Auflösung:</strong>
+
 Vorrausgesetzt die Mathematik Fähigkeiten aus der 1. Klasse sind noch präsent, würde man höchstwahrscheinlich eine Ausgabe des Wertes “5.4” erwarten.
 Das Rätsel wäre aber nunmal kein Rätsel, wenn genau dass der Fall wäre. :-)
 Tatsächlich wird die scheinbar skurille Zahl <strong>5.3999999999999995</strong> auf der Konsole ausgegeben.
 Aber worin liegt die Ursache?
 
 <strong>Hintergrund:</strong>
+
 Gleich vorweg, es handelt sich hierbei um kein Java spezifisches Problem.
 Vielmehr ist das “Problem” auf die binäre Darstellung von Fließkommazahlen im Allgemeinen zurückzuführen.
 
@@ -67,4 +69,5 @@ Vielmehr sollte die Methode valueOf verwendet werden, die als einziges Argument 
 Die Ausgabe des Wertes als String empfiehlt sich über die Method toPlainString vorzunehmen, da die toString-Methode ggf. mathematische, nicht aber rein dezimale Ergebnisse liefert.
 
 <strong>Ausblick</strong>
+
 Ich hoffe, ich konnte einen brauchbaren Überblick über die interne Handhabung von Fließkommazahlen in Java vermitteln und die Problematik, wieso die Primitives double/float nur annähernd korrekte Werte repräsentieren, aufzeigen.

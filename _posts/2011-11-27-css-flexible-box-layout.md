@@ -20,11 +20,6 @@ Diese neue CSS3-Funktion entpuppt sich zu wahren Werkzeug zur flexiblen Layout-E
 * Floatende Elemente, die gerade zur horizontalen, dynamischen Ausrichtung von Elementen verwendet werden “mussten”, gehören nun der Vergangenheit an. Mit diesem Modell lässt sich dieses Anwendungsgebiet vollständig übernehmen.
 * infachere dynamischere Webseiten. Das Web wurde schließlich für fluide und nicht etwa für statische Webseiten mit einer festen Breite ausgelegt. Das FlexibleBox-Modell hilft dem Entwickler bei der Erstellung solcher Layouts und ist, was die Dynamisierung betrifft, ein würdiger Nachfolger der dafür meist verwendeter Eigenschaft “display-property :table”.
 
-{% highlight java %}
-true
-false
-{% endhighlight %}
-
 <strong>Im Detail:</strong>
 Mit dem Einzug des neuen Layout-Modells erhält die display-Eigenschaft folgende neue Attribute:
 
@@ -62,6 +57,7 @@ Wobei der Standardwert “0″, für nicht flexible steht. Ein Wert von “2″ 
 
 
 <strong>Beispiel:</strong>
+
 Angenommen es gilt drei Div-Elemente horizontal nebeneinander auszurichten, wobei deren Höhe immer die gleiche sein soll.
 Standardmäßig könnte man mit CSS 2.1-Mitteln, die DIV-Elemente floaten und das Elternelment dabei auf “overflow:hidden” setzen.
 
@@ -112,5 +108,6 @@ Angenommen das erste Div soll immer die doppelte Breite besitzen wie die restlic
 Das erste Div Element erhält hierbei den doppelten Faktor wie bei den restlichen Elementen. Auf diese weise lässt sich sehr einfach, dynamische und mehrspaltige Layouts erstellen.
 
 <strong>Browser Unterstützung:</strong>
+
 Keine wirkliche Neuigkeit und auch nicht der Rede wert ist die fehlende Unterstützung des FlexBox-Models im Internet Explorer.
 WebKit Browser sowie der Firefox unterstützen diese Eigenschaft indirekt über die browserspezifischen Eigenschaften.

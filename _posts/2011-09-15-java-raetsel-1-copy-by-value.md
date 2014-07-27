@@ -11,6 +11,7 @@ Meine neue Serie “Java Rätsel” beschäftigt sich mit allerlei unterschiedli
 Hiermit komme ich auch gleich zum ersten Rätsel, welches grundlegendes Verständnis zur Übergabe von Variablen an Methoden voraussetzt.
 
 <strong>Frage: Was wird auf der Konsole ausgegeben?</strong>
+
 {% highlight java %}
 public class CopyByValueExample {
     public static void main(String[] args) {
@@ -34,6 +35,7 @@ public class CopyByValueExample {
 {% endhighlight %}
 
 <strong>Auflösung:</strong>
+
 Die Konsole gibt bei Ausführung des gelisteten Programmes folgende Werte aus:
 
 {% highlight java %}
