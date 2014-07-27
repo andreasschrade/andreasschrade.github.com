@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android: Ressourcen-Externalisierung
+title: "Android: Ressourcen-Externalisierung"
 ---
 
 

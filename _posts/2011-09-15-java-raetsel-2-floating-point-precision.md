@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java Rätsel #2: Wie "genau" sind Fließkommazahlen in Java?
+title: "Java Rätsel #2: Wie genau sind Fließkommazahlen in Java?"
 ---
 
 

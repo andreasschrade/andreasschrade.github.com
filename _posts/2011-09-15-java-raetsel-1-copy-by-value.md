@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java Rätsel #1: Copy by Value
+title: "Java Rätsel #1: Copy by Value"
 ---
 
 

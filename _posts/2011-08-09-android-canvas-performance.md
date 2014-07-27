@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Canvas 2D: Effizientes rendern großflächiger Texturen
+title: "Canvas 2D: Effizientes rendern großflächiger Texturen"
 ---
 
 

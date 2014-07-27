@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android: Individuelle Notifications erstellen
+title: "Android: Individuelle Notifications erstellen"
 ---
 
 

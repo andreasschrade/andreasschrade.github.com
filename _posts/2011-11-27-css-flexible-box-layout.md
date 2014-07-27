@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CSS3 – Das Flexible Box Layout im Detail
+title: "CSS3 – Das Flexible Box Layout im Detail"
 ---
 
 

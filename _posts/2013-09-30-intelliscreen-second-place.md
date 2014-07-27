@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IntelliScreen gewinnt 2. Platz bei Jugend Innovativ
+title: "IntelliScreen gewinnt 2. Platz bei Jugend Innovativ"
 ---
 
 

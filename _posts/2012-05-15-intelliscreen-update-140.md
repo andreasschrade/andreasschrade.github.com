@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IntelliScreen – smart timeout v.1.4.0 veröffentlicht
+title: "IntelliScreen – smart timeout v.1.4.0 veröffentlicht"
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java Rätsel #4: finally vs. return
+title: "Java Rätsel #4: finally vs. return"
 ---
 
 

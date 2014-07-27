@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java Rätsel #3: String Constant Pool
+title: "Java Rätsel #3: String Constant Pool"
 ---
 
 
