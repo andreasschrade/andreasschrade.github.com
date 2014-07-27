@@ -2,6 +2,10 @@
 layout: post
 title: Canvas 2D: Effizientes rendern großflächiger Texturen
 ---
+
+
+
+
 Mein Strategiespiel für die Android-Plattform benutzt als Landschaftstextur eine sehr große Hintergrundgrafik.
 
 Da somit die Spielfläche nicht in Tiles unterteilt ist, hat die Hintergrundgrafik nicht selten eine Ausmaße der Breite respektive der Höhe von mehr als 1500 Pixeln. Davon wird allerdings je nach Display-Auflösung und Scroll-Position nur ein Bruchteil der Grafik dem Benutzer angezeigt.  Es liegt daher nahe, anstelle die gesamte Grafik zu rendern, lediglich den für den Benutzer sichtbaren Bereich zu berücksichtigen. Dies spart in diesem Fall aufgrund des Einsatzes von Canvas 2D kostbare Rechenzeit des Prozessors.

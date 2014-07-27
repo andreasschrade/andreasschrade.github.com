@@ -4,6 +4,7 @@ title: In eigener Sache: Neuer Artikel in der Mobile Developer Zeitschrift
 ---
 
 
+
 Nachdem mein letzter Artikel (“Einstieg in die 3D Spieleentwicklung") im mobile Developer Magazin sich vollends dem Thema der Spieleentwicklung widmete, bezieht sich mein neuer Artikel auf allerlei Wissenswertes rund um Performance-Optimierung im Android-Umfeld.
 Dies ist ein durchaus essentieller Aspekt, da gerade im mobilen Umfeld – aufgrund der leider noch wenig zufriedenstellenden Akkulaufzeit – sich ein ungesunder Mix aus Leistung und Energiebedarf maßgeblich auf den Erfolg einer Anwendung auswirkt.
 
