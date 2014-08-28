@@ -7,8 +7,8 @@ title: "Android: Unterschied zwischen gravity und layout_gravity"
 
 ## Hintergrund
 
-Mit den Attributen gravity und layout_gravity lässt sich die Ausrichtung von View-Komponenten innerhalb (größerer) View-Komponenten vornehmen.
-Beispielsweise lässt sich unter Angabe von "CENTER_HORIZONTAL" das Objekt horizontal mittig innerhalb dessen Container ausrichten.
+Mit den Attributen gravity und layout\_gravity lässt sich die Ausrichtung von View-Komponenten innerhalb (größerer) View-Komponenten vornehmen.
+Beispielsweise lässt sich unter Angabe von "CENTER\_HORIZONTAL" das Objekt horizontal mittig innerhalb dessen Container ausrichten.
 Weitere Optionene wären etwa "CENTER", "BOTTOM", "TOP".
 
 ### Die Unterscheidung
@@ -24,6 +24,7 @@ Zu unterscheiden gibt es folgende Attribute:
 Das gravity-Attribut ist Bestandteil einer View Group und gibt an, wie sich der Inhalt - also die Childs - der View Group horizontal und vertikal ausrichten.
 
 <strong>2. android:layout_gravity Attribut</strong>
+
 Das layout_gravity Attribut gibt die Ausrichtung eines Objektes im Verhältnis zu anderen Objekten an, die sich im gleichen Container befinden.
 Beispielsweise lässt sich damit ausdrücken, dass innerhalb eines Containers ein Element links von einem weiteren Element ausrichten lässt.
 
@@ -82,6 +83,7 @@ Dadurch, dass es sich um LinearLayout mit horizontaler Ausrichtung handelt, werd
 Unter Angabe von layout_gravity lässt sich nun die verbleibende Achse (Y-Achse) eines jeden Elements definieren.
 
 Aus diesem Grund bietet sich für ein horizontales Layout folgende Eigenschaften für deren Childs an:
+
 - top
 - center
 - bottom 
@@ -92,6 +94,7 @@ Im folgenden Screenshot wurde das LinearLayout zu einer vertikalen Ausrichtung g
 <img style="display:block; " src="{{ site.url }}/assets/2014-02-28-example-vertical-gravity-center.png">
 
 Auch in diesem Fall verhält es sich analog dem ersten Beispiel: Die Elemente werden vertikal mittig zentriert ausgerichtet und die verbleibende Achse (X-Achse) lässt sich mit folgenden sinnhaften Attributen definieren:
+
 - left
 - center
 - right
