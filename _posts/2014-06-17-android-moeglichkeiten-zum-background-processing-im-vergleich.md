@@ -57,8 +57,10 @@ Die folgende Tabelle vergleicht die Konstrukte Service, Thread, IntentService so
   <td>- eine Instanz kann nur einmal aufgerufen werden</td>
 </tr>
 
+</table>
 
-<strong> Fazit </strong>
+<strong> Fazit: </strong>
+
 Grundsätzlich hat jede Implementierung seine Daseinsberechtigung. Dennoch sticht der IntentService bei jeglicher sequentiellen Hintergrundverarbeitung die keine UI-Interaktion beinhaltet hervor.
 Ebenso bietet der Async-Task eine leistungsfähige Möglichkeit um zeitintensive Prozesse die unmittelbar mit der Benutzeroberfläche verwoben sind abzubilden.
 Eine eigene Thread-Implementierung eignet sich dann, wenn es wirklich um "einfache" plain-old-java Hintergrundverarbeitung geht, die keinerlei "Android-Abhängigkeiten" (z.B. Lebenszyklus) aufweist.
