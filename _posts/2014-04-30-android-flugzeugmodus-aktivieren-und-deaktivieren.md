@@ -23,7 +23,7 @@ Da der Flugzeugmoduszustand lediglich "getoggled" werden kann, gilt es vorher de
 boolean isAirplainModeEnabled = Settings.System.getInt(this.getContentResolver(), Settings.System.AIRPLANE_MODE_ON, 0); 
 {% endhighlight %}
 
-Durch den Aufruf von <em>getInt()</em> auf <em>Settings.System.AIRPLANE_MODE_ON</em> lässt sich mit Angabe des ContentResolver der aktuelle Zustand als Boolean abfragen.
+Durch den Aufruf von <em>getInt()</em> auf <em>Settings.System.AIRPLANE\_MODE\_ON</em> lässt sich mit Angabe des ContentResolver der aktuelle Zustand als Boolean abfragen.
 
 <strong>Zustand verändern</strong>
 
@@ -37,7 +37,7 @@ Settings.System.putInt(getContentResolver(),Settings.System.AIRPLANE_MODE_ON,1);
 Settings.System.putInt(getContentResolver(),Settings.System.AIRPLANE_MODE_ON,0);
 {% endhighlight %}
 
-Bei jeder Änderung des Flugzeugmodus gilt es den zugehörigen Broadcast (<em>ACTION_AIRPLANE_MODE_CHANGED</em>) auszulösen, um die Änderung anzuwenden:
+Bei jeder Änderung des Flugzeugmodus gilt es den zugehörigen Broadcast (<em>ACTION\_AIRPLANE\_MODE\_CHANGED</em>) auszulösen, um die Änderung anzuwenden:
 
 {% highlight java %}
 Intent intent = new Intent(Intent.ACTION_AIRPLANE_MODE_CHANGED);	

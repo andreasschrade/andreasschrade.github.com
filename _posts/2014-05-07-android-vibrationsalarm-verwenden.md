@@ -21,6 +21,7 @@ In beiden Fällen jedoch wird die Berechtigung zur Vibration benötigt:
 {% endhighlight %}
 
 <strong>Einmalige Vibration</strong>
+
 Die einmalige Vibration eignet sich um ein haptisches Feedback abzubilden.
 Dazu genügt es die zu vibrierende Zeitspanne in Millisekunden anzugeben:
 
@@ -30,6 +31,7 @@ v.vibrate(300);  // Vibration für 300 Millisekunden
 {% endhighlight %}
 
 <strong>Vibrationsmuster</strong>
+
 Zu Benachrichtigungszwecken eignet sich besonderns, ein Vibrationsmuster anzuwenden, welches den Benutzer auf ein Ereignis hinweist.
 
 Hierbei lässt sich das Muster der Vibration in einem long-Array ausdrücken:
@@ -42,6 +44,7 @@ Der erste long (0) definiert die Zeitspanne in Millisekunden bis zur Aktivierung
 Alle folgenden Variablen definieren abwechselnd die Zeitspanne in Millisekunden der aktiven Vibration bzw. der dazwischenliegenden Pause.
 
 Das abgebildete Pattern beschreibt dabei konkret folgendes Muster:
+
  - 0: Es findet keine Verzögerung der Vibration statt. 
  - 200: Die Vibration ist für 200 ms aktiv
  - 400: Die Vibration pausiert für 400 ms
@@ -49,9 +52,10 @@ Das abgebildete Pattern beschreibt dabei konkret folgendes Muster:
  - 800: Die Vibration pausiert für 800 ms
  
 Über ein weiteres Argument lässt sich nun definieren, ob dieses Muster wiederholt werden soll bzw. falls ja, welche Position der Startpunkt der Wiederholung darstellt.
-Wird -1 angegeben, bedeutet dies, dass keine Wiederholung stattfinden soll.
-Wird 0 angegeben, bedeutet dies, dass die Wiederholung ab der ersten Position erfolgen soll.
-Wird 2 angegeben, bedeutet dies, dass die Wiederholung ab der dritten Position erfolgen soll.
+
+ - wird -1 angegeben, bedeutet dies, dass keine Wiederholung stattfinden soll.
+ - wird 0 angegeben, bedeutet dies, dass die Wiederholung ab der ersten Position erfolgen soll.
+ - wird 2 angegeben, bedeutet dies, dass die Wiederholung ab der dritten Position erfolgen soll.
 
 {% highlight java %} 
 vibrator.vibrate(pattern, modus); // modus == -1: Keine Wiederholung; modus == 0: Wiederholung ab Position 1 ... 
@@ -66,7 +70,7 @@ vibrator.vibrate(pattern, 0);
 {% endhighlight %}
 
 Erfolgt eine Wiederholung des Vibrationsmusters, muss entsprechend der Abbruch der Vibration herbeigeführt werden.
-Dies könnte klassischerweise das Annehmen eines Telefonats sein:
+Dies könnte klassischerweise das Annehmen eines Telefonats sein und erfolgt mit Aufruf von <em>cancel()</em>:
 
 {% highlight java %} 
 vibrator.cancel();

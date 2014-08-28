@@ -16,6 +16,7 @@ Grundsätzlich gibt es zwei unterschiedliche Ansätze, wie eine SMS versendet we
  2. Direkter Versand mittels SmsManager
  
 <strong> 1. Versand über SMS-App</strong>
+
 Beim Versand der SMS über die eingestellte SMS-App erhält der Benutzer nochmal die Möglichkeit zur Kontrolle.
 Der Benutzer muss somit aktiv die vorausgefüllte SMS versenden:
 
@@ -28,6 +29,7 @@ startActivity(intent);
 Vorteil bei dieser Variante ist, dass der Versand für den Benutzer transparent ist und die SMS im Gesprächsverlauf der SMS-Anwendung sichtbar ist.
 
 <strong> 2. Direkter Versand mittels SmsManager</strong>
+
 Im Gegensatz zur zuvor vorgestellten Methode ist hierbei keine Bestätigung des Benutzers zum Versand notwendig. Der Versand erfolgt somit für den Benutzer "unsichtbar".
 
 {% highlight java %}
