@@ -25,6 +25,7 @@ Basis-Layout:
 {% endhighlight %}
 
 LayoutFragment-Layout:
+{% highlight xml %}
 <FrameLayout>
    <TextView android:id="@+id/txtView" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
 </FrameLayout>
