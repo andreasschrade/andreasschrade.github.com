@@ -46,14 +46,14 @@ private String formatInvoiceInfoBox(Order order) {
 } 
 {% endhighlight %}
 
-Als erstes Argument der Methode format, wird die eigentlichene Zeichenkette erwartet. Diese kann mit Steuerzeichen bereichert werden, die anschließend mit Ausführung der Methode aufgelöst bzw. ersetzt werden. Das gängstige Steuerzeichen ist „%s“, welches lediglich einen Platzhalter für ein String-Objekt darstellt. Dieser Platzhalter wird anschließend durch ein Objekt ersetzt, welches ausgehend vom zweiten Methodenparameter der Methode format übergeben wird. Wird dieses Steuerzeichen mehrmals eingesetzt, so erfolgt die Ersetzung des Steuerzeichen entsprechend der Reihenfolge, wie die Objekte der Methode übergeben werden:
+Als erstes Argument der Methode format, wird die eigentlichene Zeichenkette erwartet. Diese kann mit Steuerzeichen bereichert werden, die anschließend mit Ausführung der Methode aufgelöst bzw. ersetzt werden. Das gängstige Steuerzeichen ist "%s", welches lediglich einen Platzhalter für ein String-Objekt darstellt. Dieser Platzhalter wird anschließend durch ein Objekt ersetzt, welches ausgehend vom zweiten Methodenparameter der Methode format übergeben wird. Wird dieses Steuerzeichen mehrmals eingesetzt, so erfolgt die Ersetzung des Steuerzeichen entsprechend der Reihenfolge, wie die Objekte der Methode übergeben werden:
 
 {% highlight java %}
-String f = String.format("eins, %s, drei, %s", “zwei”, “vier”);
+String f = String.format("eins, %s, drei, %s", "zwei”, "vier”);
 System.out.println(f); // eins, zwei, drei, vier
 {% endhighlight %}
 
-Neben den Steuerzeichen „%s“ zur Repräsentierung eines Strings, ermöglicht das Steuerzeichen „%n“ einen Zeilenumbruch. Der Ausschnitt „%3$te.%3$tm.%3$tY”  im vorhergehenden Beispiel setzt sich dabei aus drei Bestandteilen zusammen.
+Neben den Steuerzeichen "%s" zur Repräsentierung eines Strings, ermöglicht das Steuerzeichen "%n" einen Zeilenumbruch. Der Ausschnitt "%3$te.%3$tm.%3$tY”  im vorhergehenden Beispiel setzt sich dabei aus drei Bestandteilen zusammen.
 Der erste Teil (%3$te) weist die Methode an, sich auf das dritte übergebene Argument zu beziehen (%3) und ausschließlich den Tag ($te) des Datums auszugeben. Ähnlich verhält es sich für das Monat  (.%3$tm), sowie für das Jahr (.%3$tY). Damit die Steuerzeichen zur Ausgabe des Datums funktionieren, muss entsprechend ein Objekt vom Typ Date an der besagten Position übergeben werden.
 
 Zur variablen Übergabe der Argumente macht sich dabei die Methode <em>format</em> das in Java 1.5 hinzugekommene Sprachmittel der variablen Argumentenliste (varArg) zunutze.
@@ -73,14 +73,14 @@ public static int sum(int initial, int... varArg) {
   {
     Initial += a;
   }
-  System.out.println(„Summe: „ + initial);
+  System.out.println("Summe: " + initial);
 }
 {% endhighlight %}
 
 Neben der Methode <em>format</em> der Klasse <em>String</em> gibt es in der Klasse <em>PrintStream</em> eine weitere, in der Funktionsweise identische Methode. Beide stützen sich dabei auf die Klasse Formatter, welches die eigentliche Formatierung anhand von Steuerzeichen vornimmt. Eine Instanz der Klasse PrintStream verwendet als öffentliche Klassenvariable out, auch die Klasse System. Dies ermöglicht formatierte Konsolenausgaben:
 
 {% highlight java %}
-System.out.printf(„Error: %s, Message: %s”, error, message);
+System.out.printf("Error: %s, Message: %s”, error, message);
 {% endhighlight %}
 
 Mit der Klasse Formatter befindet sich somit ein mächtiges Werkzeug zur Formatierung von Zeichenketten im Java-Reportoire. Von Grund aus wird eine Vielzahl unterschiedlicher Formatierungsmöglichkeiten unterstützt, die von einfachen Textverknüpfungen bis hin zu komplexen Datumsformattierungen reicht.

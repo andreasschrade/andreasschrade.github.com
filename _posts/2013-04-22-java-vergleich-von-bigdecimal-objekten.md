@@ -11,8 +11,8 @@ Als komplexer Datentyp scheidet der Wertevergleich bei Objekten vom Typ BigDecim
 Intuitiv würde stattdessen die Wahl auf die sonst übliche Vergleichsmethode <em>equals</em> fallen:
 
 {% highlight java %}
-BigDecimal a = new BigDecimal(„42.12“);
-BigDecimal b = new BigDecimal(„42.12“);
+BigDecimal a = new BigDecimal("42.12");
+BigDecimal b = new BigDecimal("42.12");
 System.out.println(a.equals(b)); // true
 {% endhighlight %}
 
@@ -21,8 +21,8 @@ Das klappt, dennoch ist bei dem Wertevergleich aus dem Beispiel Vorsicht geboten
 Durch diesen Nebeneffekt können sich Situationen ergeben, indem der Vergleich mittels <em>equals</em> nicht das gewünschte Ergebnis liefert. Zwar sind nach unserem mathematischen Verständnis beide Zahlen im folgenden Listing gleicher Wertigkeit, intern gibt es jedoch Unterschiede bei der Abbildung beider Werte.
 
 {% highlight java %}
-BigDecimal a = new BigDecimal(„1“);
-BigDecimal b = new BigDecimal(„1.0“);
+BigDecimal a = new BigDecimal("1");
+BigDecimal b = new BigDecimal("1.0");
 System.out.println(a.equals(b)); // false
 {% endhighlight %}
 
@@ -31,8 +31,8 @@ Mit dieser Besonderheit fällt die Klasse BigDecimal aus dem üblichen Schema, w
 Zur Vermeidung des Fehlerpotentials in der Implementierung von <em>equals</em>, empfiehlt es sich, bei mathematischen Wertevergleichen die Methode <em>compareTo</em> anstelle von <em>equals</em> heranzuziehen:
 
 {% highlight java %}	
-BigDecimal a = new BigDecimal(„1“);
-BigDecimal b = new BigDecimal(„1.0“);
+BigDecimal a = new BigDecimal("1");
+BigDecimal b = new BigDecimal("1.0");
 System.out.println(a.compareTo(b) == 0); // true
 {% endhighlight %}
 
