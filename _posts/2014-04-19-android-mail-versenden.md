@@ -16,10 +16,11 @@ Der einfachste Weg eine Mail zu versenden führt uns letztlich zur Nutzung eines
 Um mittels dem installierten Client eine Mail zu versenden, genügt es bereits, das Intent <em>ACTION_SEND</em> zu verwenden sowie als Intent-Type <em>message/rfc822</em> anzugeben.
 
 Weiterhin wird mit
- - EXTRA_EMAIL der/die Empfänger der Mail als String-Array angeben
- - EXTRA_SUBJECT der Betreff der Mail bestimmt
- - EXTRA_TEXT der Inhalt der Mail angegeben
- - EXTRA_STREAM eine URI zu einer Datei angegeben, die als Attachement der Mail beigefügt werden soll
+
+ - EXTRA\_EMAIL der/die Empfänger der Mail als String-Array angeben
+ - EXTRA\_SUBJECT der Betreff der Mail bestimmt
+ - EXTRA\_TEXT der Inhalt der Mail angegeben
+ - EXTRA\_STREAM eine URI zu einer Datei angegeben, die als Attachement der Mail beigefügt werden soll
 
 Nach Angabe der erforderlichen Parameter kann bereits der Versand erfolgen:
 
