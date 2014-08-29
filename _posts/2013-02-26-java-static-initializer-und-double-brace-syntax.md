@@ -46,7 +46,7 @@ class Price {
 		currencies.add("Yen");
 	}
 	
-	Price(BigDecimal netPrice, int productCode) {
+	Price(BigDecimal netPrice, int productCode) 
 	...
 }
 {% endhighlight %}
@@ -97,12 +97,12 @@ Als „Ersatz“ findet deshalb des Öfteren die Befüllung von Collections mith
 
 {% highlight java %}
 class Price {
-  private static List<String> currencies = new ArrayList<String>(4){{
+  private static List<String> currencies = new ArrayList<String>(4){ {
   add("Euro");
   add("Dollar");
   add("Pfund");
   add("Yen");
- }};
+ } };
 {% endhighlight %}
 
 Der Double-Brace Syntax ist dabei kein spezielles Sprachmittel zur Befüllung von Collections, vielmehr wird der Ansatz einer anonymen inneren Klassen hierbei „zweckentfremdet“. Ein „Syntax“, der daher nur auf dem ersten Blick befremdlich wirkt.
@@ -136,12 +136,12 @@ myCar.setColor(Color.WHITE);
 myCar.setMaxSpeed(184);
 
 // Double Brace
-Car myCar = new Car(“Taxi”){{
+Car myCar = new Car(“Taxi”){ {
   setWidth(1.82f);
   setHeight(1.622f);
   setColor(Color.WHITE);
   setMaxSpeed(184);
-}};
+} };
 {% endhighlight %}
 
 Ist Double-Brace somit das ideale Mittel zur unkomplizierten Objekterzeugung?
@@ -187,9 +187,9 @@ public class CarEqualsTest {
     car1.setWidth(1.82);
 		
     // DoubleBrace Initialisierung
-    Car car2= new Car("Taxi"){{ 
+    Car car2= new Car("Taxi"){ { 
 	setWidth(1.82);
-    }};
+    } };
     
     System.out.print(car1.getClass()); // com.vehicles.Car
 
