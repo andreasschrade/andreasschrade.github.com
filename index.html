@@ -4,34 +4,35 @@ title: Home
 ---
 
 <div class="posts">
-  {% for post in paginator.posts %}
   <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content }}
+    <h2 class="post-title">Android-Tutorials</h2>
+    <h3 class="post-title">Threading unter Android</h3>
+    [Datenaustausch zwischen Main-Thread und Worker-Threads]({% post_url 2012-02-24-android-datenaustausch-zwischen-main-thread-und-worker-threads %})
+    [Möglichkeiten zum Background-Processing in der Übersicht]({% post_url 2014-06-17-android-moeglichkeiten-zum-background-processing-im-vergleich %})
+    [Der IntentService im Detail]({% post_url 2014-06-17-android-verwendung-von-IntentService %})
+    <h3 class="post-title">Layouts, Benutzeroberfläche</h3>
+    [Wiederverwendbare Layouts mithilfe von merge und include]({% post_url 2014-05-28-android-wiederverwendbare-layouts-mithilfe-von-merge-und-include %})
+    [Transparente Activity erzeugen]({% post_url 2014-03-10-android-transparente-activity %})
+    [Verlinkung von TextViews]({% post_url 2014-04-05-android-verlinkte-textviews-erzeugen %})
+    [Unterschied zwischen layout_gravity und layout]({% post_url 2014-02-28-android-unterschied-zwischen-layout-gravity-und-gravity %})
+    [Unterschied zwischen px, dp, sp]({% post_url 2013-12-20-android-unterschied-px-dp-sp %})
+    [Einsatz von Ressourcen]({% post_url 2011-09-10-android-ressources %})
+    <h3 class="post-title">Datenaustausch</h3>
+    [Datenaustausch mithilfe von Parcelable realisieren]({% post_url 2014-05-23-android-daten-zwischen-activities-mithilfe-von-parcelable-uebergeben %})
+    [SMS versenden]({% post_url 2014-04-21-android-sms-versenden %})
+    [Mail versenden]({% post_url 2014-04-19-android-mail-versenden %})
+    <h3 class="post-title">SQLite</h3>
+    [SQLite Integration mithilfe von SQLiteOpenHelper]({% post_url 2014-06-14-android-SQLite-integration-mithilfe-von-SQLiteOpenHelper %})
+    [Überblick zur SQLite-Command-Line Shell]({% post_url 2014-05-18-android-SQLite-command-line-shell-im-detail %})   
+    <h3 class="post-title">Diverses</h3>
+    [Service-Start bei Boot-Prozess realisieren]({% post_url 2014-02-01-android-service-start-bei-boot %})
+    [Prüfung auf Internetverbindung]({% post_url 2014-03-19-android-pruefung-ob-internetverbindung-besteht %})
+    [Notifications]({% post_url 2011-09-10-android-notifications %})                                                                                                                    
+    [Flugzeugmodus aktivieren/deaktivieren]({% post_url 2014-04-30-android-flugzeugmodus-aktivieren-und-deaktivieren %})   
+    [Vibrationsalarm unter Android]({% post_url 2014-05-07-android-vibrationsalarm-verwenden %})
+    [Batterieinformationen ermitteln]({% post_url 2014-05-15-android-batterieinformationen-abfragen %})
+    <h2 class="post-title">Java-Tutorials</h2>
   </div>
-  {% endfor %}
+
 </div>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
