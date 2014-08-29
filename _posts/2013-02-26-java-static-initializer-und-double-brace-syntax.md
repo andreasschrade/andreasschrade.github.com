@@ -6,7 +6,7 @@ title: "Java: Statische Initialisierung und Double-Brace Syntax"
 
 
 ## Statische Initialisierung
-Ein static initializer setzt sich lediglich aus dem Keyword static, sowie zwei geschweiften Klammern zusammen. Innerhalb des Klammernblocks können ein oder mehrere Anweisungen erfolgen. In der Regel erfolgt in statischen Initialisierungsblöcken – wie der Name bereits verrät - die Initialisierung von Klassenvariablen. Sobald der Classloader die Klasse lädtm werden sämtliche statische Initialisierungsblöcke einmalig ausgeführt.
+Ein static initializer setzt sich lediglich aus dem Keyword static, sowie zwei geschweiften Klammern zusammen. Innerhalb des Klammernblocks können ein oder mehrere Anweisungen erfolgen. In der Regel erfolgt in statischen Initialisierungsblöcken – wie der Name bereits verrät - die Initialisierung von Klassenvariablen. Sobald der Classloader die Klasse lädt werden sämtliche statische Initialisierungsblöcke einmalig ausgeführt.
 
 Existieren mehrere solcher static initializer innerhalb einer Klasse, so erfolgt die Bearbeitungsreihenfolge strikt von oben nach unten, gemäß der Reihenfolge wie diese im Quellcode platziert sind.
 Würden folgend abgebildete Klasse mit

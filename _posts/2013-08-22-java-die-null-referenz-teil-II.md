@@ -35,7 +35,7 @@ Wie würden Sie diese notwendige Überprüfung überflüssig machen?
 
 {% highlight java %}
 private BigDecimal getOrderStatistic (Date date) {
-BigDecimal totalCosts = BigDecimal.ZERO;
+ BigDecimal totalCosts = BigDecimal.ZERO;
  List <Order> orderList = getOrdersByDate(date);
  if( orderList != null){
   for(Order order: orderList){
@@ -58,7 +58,7 @@ Der Rückgabewert der Methode getOrdersByDate ist eine parametrisierte Liste vom
 
 {% highlight java %}
 private BigDecimal getTotalUmsatzByCustomer (Date date) {
-BigDecimal totalCosts = BigDecimal.ZERO;
+  BigDecimal totalCosts = BigDecimal.ZERO;
   for(Order order: getOrdersByDate(date)){
    totalCosts = totalCosts.add(order.getTotal());
   }
@@ -66,7 +66,7 @@ return totalCosts;
 }
 
 private List<Customer> getOrdersByDate(Date date) {
-List<Customer> orderList = Collections.<Customer>emptyList();
+ List<Customer> orderList = Collections.<Customer>emptyList();
  if(date != null){
   orderList = getFilteredOrderList(„orderDate“, date);
  }
@@ -77,8 +77,8 @@ List<Customer> orderList = Collections.<Customer>emptyList();
 Immer wenn eine Methode eine Collection oder ein Array als Rückgabewert liefert, sollte sichergestellt sein, dass anstelle von null eine leere Collection bzw. ein leeres Array-Objekt zurückgegeben wird.
 Das erspart auf Dauer unnötige Abfragen auf das Literal und reduziert dementsprechend die Fehleranfälligkeit.
 
-Zur Vermeidung einer Objekt-Erzeugung, wenn immer eine leere Liste benötigt wird, sollte die statische Methode emptyList der Klasse Collections verwendet werden. Neben der Methode kann ebenso der Zugriff auf das leere Listen-Objekt mittels dem öffentlichen Attribut EMPTY_LIST der Klasse Collections erfolgen. 
-Neben dem Attribut EMPTY_LIST gibt es auch die entsprechenden Pendants für ein Set-Objekt (Collections.EMPTY_SET)sowie einer Map (Collections.EMPTY_MAP).
+Zur Vermeidung einer Objekt-Erzeugung, wenn immer eine leere Liste benötigt wird, sollte die statische Methode emptyList der Klasse Collections verwendet werden. Neben der Methode kann ebenso der Zugriff auf das leere Listen-Objekt mittels dem öffentlichen Attribut EMPTY\_LIST der Klasse Collections erfolgen. 
+Neben dem Attribut EMPTY\_LIST gibt es auch die entsprechenden Pendants für ein Set-Objekt (Collections.EMPTY\_SET)sowie einer Map (Collections.EMPTY\_MAP).
 Es spielt dabei keine Rolle, ob die Ermittlung des „leeren“ Objekt über das öffentliche Attribut oder der Methode erfolgt. Die jeweiligen Methoden liefern lediglich die Referenz des öffentlichen Attribut.
 
 Für Array-Objekte verhält es sich identisch. Auch hierfür sollte anstelle von null ein leerer Array verwendet werden. Dies geschieht am einfachsten, indem für jeden Typ ein leerer Array zur Verfügung gestellt wird:
@@ -196,9 +196,7 @@ Die im folgenden Listing dargestellte Methode liefert als Rückgabewert true, we
 
 {% highlight java %}
 private boolean isOrderPaid(Order order){
- if (order.getOrderState().equals(„PAID“)){
- return true;
-  }
+ return order.getOrderState().equals(„PAID“);
 }
 {% endhighlight %}
 
@@ -206,9 +204,7 @@ Allein durch Umstellung der Bedingung, wird die Methode vollkommen null-sicher:
 
 {% highlight java %}
 private boolean isOrderPaid(Order order){
-  if („PAID“.equals(order.getOrderState())){
-   return true;
-  }
+ return („PAID“.equals(order.getOrderState())){
 }
 {% endhighlight %}
 

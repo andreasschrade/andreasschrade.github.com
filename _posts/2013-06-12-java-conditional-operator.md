@@ -28,6 +28,7 @@ Der Conditional-Operator liefert somit immer ein Resultat. Entweder über die Ex
 Die nicht weniger gebräuchliche Begrifflichkeit Ternary-Operator verdeutlicht dies, da diese Art an Operator, drei Operanden voraussetzt (ternary -> dreifach).
 
 <strong>Beispiel</strong>
+
 Die Klasse Order liefert dem Aufrufer mit der Methode getDeliveryAddress() die zu einem Kundenauftrag zugehörige Lieferadresse. Diese kann, unter Umständen, von der Rechnungsadresse abweichen und wird in der Applikation zum Ausdruck der Versandetiketten benötigt.
 Konkret liefert die Methode ein Objekt vom Typ Address, welches alle relevanten Daten wie Name, Vorname, Straße und Ort kapselt.
 Wurde vom Kunden keine abweichende Addresse angegeben, an der das Paket versendet werden soll, so wird automatisch das gespeicherte Address-Objekt der Rechnungsadresse verwendet. Auf das Datenmodel wirkt sich die fehlende Auswahl einer expliziten Lieferadresse durch eine null-Referenz der Variable deliveryAdress aus.

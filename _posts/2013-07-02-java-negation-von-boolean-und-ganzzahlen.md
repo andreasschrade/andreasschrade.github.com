@@ -64,6 +64,7 @@ a = ~a + 1;
 Der bitweise Operator invertiert dabei grundsätzlich die gesetzten Bits seines Operanden:
 
 Vorher:  00000000000000000000000000001010 =  42
+
 Nachher: 11111111111111111111111111010101 = -43
 
 Durch die zusätzliche Addition um 1 wird die Wertigkeit von 0 ausgeglichen und das Ergebnis von -43 auf -42 korrigiert. Dieses Vorgehen funktioniert allerdings nur für ganzzahlige Primitives und ist lediglich als ein Blick über den Tellerrand, zur Funktionsweise bitweiser Operatoren zu verstehen, und nicht als ein Best-Practice zur Umkehr von Zahlen. Zur Kehrwertermittlung gibt es schließlich, wie beschrieben, den unären Minusoperator.

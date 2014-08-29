@@ -86,6 +86,7 @@ Weniger anzustreben ist der absichtliche Einsatz von null als <strong>legitimer<
 Warum die null-Referenz als legitimer Rückgabewert einer Methode grundsätzlich nicht gut zu heißen ist und warum dieses spezielle Literal, wenn möglich, zu meiden ist, dass erfahren Sie im folgendem Abschnitt.
 
 <strong>Warum null gefährlich ist</strong>
+
 Tony Hoare, der „Erfinder“, der 1965 die null-Referenz erstmalig in der Programmiersprache Algol W implementiert hat, betitelt seine Erfindung als den größten Fehler seines Lebens.
 Seiner Schätzung nach haben Softwarefehler (Null-Pointer-Exceptions) die anhand eines fehlerhaften Umgang mit null verursacht worden sind, bislang einen Schaden in Höhe von 1 Milliarden Dollar angerichtet.
 Die einfache Implementierung des Literals, sowie den dadurch gewonnen Spielraum für den Entwickler klangen ursprünglich verlockend. Der Entwickler behält stets die Option selbst zu entscheiden, ob und wann eine Variable initialisiert werden soll.
@@ -149,14 +150,13 @@ Das Null-Object-Pattern greift diesen Ansatz als Grundlage auf. Anstelle von <em
 
 {% highlight java %}
 public interface Customer { 
-String getName();
+  String getName();
 	void setName(String name);
 	 
 	List<Account> getAccounts();
 }
 	 
-public class NullCustomer implements Customer {
-	     
+public class NullCustomer implements Customer {     
     public String getName() {
         return "";
     }
@@ -169,10 +169,7 @@ public class NullCustomer implements Customer {
 }
 {% endhighlight %}
 
-Näheres zum Null-Objekt-Pattern findet sich in diesem Artikel.
-
 Abseits des Null-Objekt-Pattern gibt es aber weitere kleine "Kniffe", die die Komfortabilität mit <em>null</em> erleichtern:
-
 Betrachten Sie hierzu bitte folgenden klassischen null-Check:
 
 {% highlight java %}
@@ -247,7 +244,10 @@ public BigDecimal getTotalOrderCosts(Customer customer) {
 
 Mit Durchführung der zusammengefassten null-Prüfungen wird frühzeitig auf die Ausführungsmöglichkeit der eigentlichen Logik geprüft. Die eigentliche Geschäftslogik geht durch den aufgeräumten Code ersichtlicher hervor.
 
+
 <strong>Hätten Sie gewusst,</strong>
 …dass sich beide Short-Circuit-Operatoren auf Maschinensprachen-Ebene wie verschachtelte If-Bedingungen verhalten?
 Somit verhalten sich beide Operatoren wie "Kontrollfluss"-Elemente, wodurch es keinen Unterschied in Bezug auf die Performance gegenüber mehrfach verschachtelten If-Anweisungen gibt.
 
+
+[Weiter zum zweiten Teil der Serie]({% post_url 2013-08-22-java-die-null-referenz-teil-II %})

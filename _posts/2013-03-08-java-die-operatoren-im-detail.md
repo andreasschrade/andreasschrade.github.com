@@ -36,6 +36,7 @@ Da es im Gegensatz zur Mathematik nicht nur arithmetische Operatoren in Java gib
 ### Operator Precedence (Bearbeitungsreihenfolge)
 
 Hierbei gilt:
+
  - Arithmetische Operatoren (+, -) haben Vorrang vor Vergleichsoperatoren (>=, ==). 
  - Vergleichsoperatoren stehen vor logischen Verknüpfungsoperatoren (&&, &) in der Bearbeitungsreihenfolge.
  - Zuweisungsoperatoren besitzen die geringste Priorität und stehen somit an letzter Stelle der Bearbeitungsreihenfolge. 
