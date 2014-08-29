@@ -13,6 +13,7 @@ Würden folgend abgebildete Klasse mit
 
 {% highlight java %}
 Price price = new Price();
+{% endhighlight %}
 
 Aufgerufen werden, so würde auf der Konsole die Zahlenfolge 132 ausgegeben werden.
 
@@ -113,12 +114,14 @@ Das direkt folgende zweite Klammerpaar definiert lediglich einen instance initia
 
 In einem Initializierungsblock existieren dabei keinerlei Einschränkungen welches Anweisungen in Bezug auf Instanzvariablen und Methoden durchgeführt werden können. Auf das Beispiel bezogen bedeutet dies, dass eine anonyme innere Klasse, die von ArrayList ableitet erzeugt wird, welches in einem initializierungs-block die add-Methoden der Superklasse ArrayList aufruft.
 
+{% highlight java %}
 new ArrayList<String>(4) { // Anonyme innere Klasse
   { // Instanzbezogener Initialisierungblock
     add("Euro"); // Aufruf Instanzmethode
     
   }
 }
+{% endhighlight %}
 
 Der Syntax lässt sich somit nicht nur für Collections anwenden. Der Double-Brace-Syntax eignet sich für jegliche Objekt-Erzeugung unter der Voraussetzung, dass die zu instanziierende Klasse nicht als final deklariert ist.
 Ist eine Klasse als final deklariert kann keine Unterklasse erzeugt werden und die Double-Brace Initialisierung schlägt fehl.
