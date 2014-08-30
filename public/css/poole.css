@@ -108,7 +108,7 @@ h4, h5, h6 {
 }
 
 homepage_ h2, homepage_ h3, homepage_ h4{
- font-weight: bold;
+ font-weight: bold !important;
 
 }
 
