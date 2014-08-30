@@ -107,7 +107,7 @@ h4, h5, h6 {
   font-weight: normal;
 }
 
-homepage_ h2, homepage_ h3, homepage_ h4{
+#homepage_.post h2, #homepage_.post h3, #homepage_.post h4{
  font-weight: bold !important;
 
 }
