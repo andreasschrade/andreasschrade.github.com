@@ -10,15 +10,16 @@ Bei der täglichen Layout-Erstellung von Webseiten ist in der Regel eine häufig
 Für diesen Zweck bietet CSS3 nun (endlich!) einen Mechanismus, der sich diese Aufgabe in gewisser Weise speziell annimmt.
 
 Flexbox:
+
 Das sogennante “Flexible Box Layout” ist ein “neuartiges” Box-Model welches es erlaubt, Child-Elemente innerhalb einer “FlexBox” entweder horizontal oder vertikal auszurichten.
 Ein freier bzw. nicht verwendeter Platz kann einem Child-Element zugeordnet werden, welches sich entsprechenden flexibel erweitert, bis die gesamte Fläche eingenommen ist.
 Flexboxen lassen sich dabei problemlos verschachteln (Vertikale Flexbox innerhalb einer horizontalen Flexbox).
-Diese neue CSS3-Funktion entpuppt sich zu wahren Werkzeug zur flexiblen Layout-Erstellung. Besonders in Zeiten von Responsive Design schont ein derartiges Mittel eine andernfalls exzessive Verschachtelungen von Div-Elementen.
+Diese neue CSS3-Funktion entpuppt sich somit zum wahren Wunderwerkzeug zur flexiblen Layout-Erstellung. Besonders in Zeiten von Responsive Design schont ein derartiges Mittel eine andernfalls exzessive Verschachtelungen von Div-Elementen.
 
 <strong>Wesentliche Vorteile:</strong>
 
 * Floatende Elemente, die gerade zur horizontalen, dynamischen Ausrichtung von Elementen verwendet werden “mussten”, gehören nun der Vergangenheit an. Mit diesem Modell lässt sich dieses Anwendungsgebiet vollständig übernehmen.
-* infachere dynamischere Webseiten. Das Web wurde schließlich für fluide und nicht etwa für statische Webseiten mit einer festen Breite ausgelegt. Das FlexibleBox-Modell hilft dem Entwickler bei der Erstellung solcher Layouts und ist, was die Dynamisierung betrifft, ein würdiger Nachfolger der dafür meist verwendeter Eigenschaft “display-property :table”.
+* einfachere dynamischere Webseiten. Das Web wurde schließlich für fluide und nicht etwa für statische Webseiten mit einer festen Breite ausgelegt. Das FlexibleBox-Modell hilft dem Entwickler bei der Erstellung solcher Layouts und ist, was die Dynamisierung betrifft, ein würdiger Nachfolger der dafür meist verwendeter Eigenschaft “display-property :table”.
 
 <strong>Im Detail:</strong>
 Mit dem Einzug des neuen Layout-Modells erhält die display-Eigenschaft folgende neue Attribute:
@@ -88,6 +89,7 @@ Kleiner Schönheitsfehler ist hierbei leider noch die mangelnde direkte Unterst�
 Aktuell ist hierzu sowohl für Firefox als auch für Chrome die individuelle browserspezifische Eigenschaft notwendig.
 
 <strong>Flexibilität:   </strong>
+
 Den Namen wird das Box-Model durch das setzen des optionalen Flex-Parameters gerecht.
 Dieser ermöglicht die anteilige Zuweisung des insgesamt verfügbaren Platzes an einem Child-Element.
 Angenommen das erste Div soll immer die doppelte Breite besitzen wie die restlichen Child-Elementen.
