@@ -3,9 +3,11 @@ layout: page
 title: About
 ---
 
-Mein Name ist Andreas Schrade, ich arbeite für Conrad Electronic als Java-Softwareentwickler im Bereich eCommerce.
-Zudem beschäfte ich mich sehr intensiv mit der Android-Entwicklung seit über 5 Jahren.
+Mein Name ist Andreas Schrade, ich arbeite für Conrad Electronic als Java-Web-Softwareentwickler im Bereich eCommerce.
+Zudem beschäfte ich mich sehr intensiv seit bereits über 5 Jahren mit der Entwicklung von Android-Anwendungen.
 
-Dieser Blog handelt über Java, Android, diverses zur Web-Entwicklung, allgemeines zur Programmierung sowie über Produktivität.
+In diesem Zuge bin ich bestens mit den Technologien bzw. Libraries Android, JPA/Hibernate, Spring MVC, Apache CXF JAX-RS, Oracle DB 11 und Maven vertraut.
 
-Jederzeit erreichbar bin ich via eMail: <strong>blog //at// andreas-schrade.de</strong>
+Dieser Blog handelt über Java, Android, CXF JAX-RS, diverses zur Web-Entwicklung, sowie allgemeines zur Programmierung.
+
+Jederzeit erreichbar bin ich via folgender eMail: <strong>blog //at// andreas-schrade.de</strong>
