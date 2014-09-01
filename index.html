@@ -17,19 +17,34 @@ color: #555;
  margin-top:16px;
 
 }
+
+.posts {
+  position: relative;
+}
+
+.stickit {
+    margin-left: 660px;
+    position: fixed;
+    top: 0;
+}
+
+.stickit-end {
+    bottom: 40px;
+    position: absolute;
+    right: 0;
+}
 </style>
 <script src="jquery.js"></script>
 	<script src="jquery.stickem.js"></script>
 	<script>
 		$(document).ready(function() {
-			$('#homepage_').stickem();
+			$('.posts').stickem();
 		});
 	</script>
 <div class="posts">
+
   <div id="homepage_" class="post">
-    <div class="aside stickem">
-         Navigation
-    </div>
+    
     <h3 class="post-title">Java-Tutorials</h3>
     <h4 class="post-title">Java Basics</h4>
     <a href="{% post_url 2013-03-08-java-die-operatoren-im-detail %}">Die Java-Operatoren</a><br>
@@ -97,6 +112,8 @@ color: #555;
     
     
   </div>
-
+       <div class="aside stickem">
+         Navigation
+    </div>
 </div>
 
