@@ -43,31 +43,31 @@ Hierbei gilt:
 
 Zur Erleichterung finden Sie folgend eine Aufstellung der Operatoren mit deren zugehörigen Priorität:
 
-Priorität 1:
+Priorität 1:<br>
  ++, --, + (Vorzeichen), - (Vorzeichen), ~ (bitweise Nicht), ! (logisches Nicht), () Type-Cast, new (Keyword)
 
-Priorität 2:
+Priorität 2:<br>
  *, /, %
 
-Priorität 3:
+Priorität 3:<br>
  + (Addition), - (Subtraktion), + (String-Verkettung)
 
-Priorität 4:
+Priorität 4:<br>
  <<, >>, >>>
 
-Priorität 5:
+Priorität 5:<br>
  <, <=, >, >=, instanceof
 
-Priorität 6:
+Priorität 6:<br>
  ==, !=
 
-Priorität 7 bis 11:
+Priorität 7 bis 11:<br>
 &, ^, |, &&, ||
 
-Priorität 12:
+Priorität 12:<br>
  ? : (Conditional-Operator)
 
-Priorität 13 (Zuweisungen):
+Priorität 13 (Zuweisungen):<br>
 =, *=, /=, +=, -=, %=, <<=, >>=, >>>=, &=, ^=, |=
 
 ### Operator-Arten
@@ -75,13 +75,16 @@ Priorität 13 (Zuweisungen):
 Grundsätzlich können die aufgeführten Operatoren anhand unterschiedlicher Merkmale kategorisiert werden. Die einfachste Unterscheidung ist die Zuordnung nach der Anzahl der beteiligten Operanden. Bei Java gibt es hierbei drei zu unterscheidende Typen:
 
 <strong>1. unäre Operatoren:  </strong>
+
 Unäre Operatoren beziehen sich auf nur einen Operanden.
 In Java fallen darunter 8 Operatoren: 
 ++, –,+,-,~,!,(),?
 
 <strong>2. binäre Operatoren:         </strong>
+
 Binären Operatoren beziehen sich dagegen auf zwei beteiligte Operanden.
 z. B. +, -, /, *
 
 <strong>3. ternäre Operatoren:                 </strong>
+
 Der Bedingungsoperator ist in Java der einzige Operator, welches sich dabei auf drei Operanden bezieht.
