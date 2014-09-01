@@ -18,8 +18,18 @@ color: #555;
 
 }
 </style>
+<script src="jquery.js"></script>
+	<script src="jquery.stickem.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#homepage_').stickem();
+		});
+	</script>
 <div class="posts">
   <div id="homepage_" class="post">
+    <div class="aside stickem">
+         Navigation
+    </div>
     <h3 class="post-title">Java-Tutorials</h3>
     <h4 class="post-title">Java Basics</h4>
     <a href="{% post_url 2013-03-08-java-die-operatoren-im-detail %}">Die Java-Operatoren</a><br>
