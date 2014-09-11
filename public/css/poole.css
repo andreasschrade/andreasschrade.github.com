@@ -320,7 +320,7 @@ tbody tr:nth-child(odd) th {
  */
 
 .masthead {
-  padding-top:    1rem;
+  padding-top:    4.5rem;
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -462,4 +462,42 @@ a.pagination-item:hover {
 
 .footer {
   clear:both;
+}
+
+#bordertop {
+height: 17px;
+position: fixed;
+z-index: 700;
+left: 0px;
+right: 0px;
+top: 0px;
+background: #f1f1f1;
+}
+#borderbottom {
+height: 17px;
+position: fixed;
+z-index: 700;
+left: 0px;
+right: 0px;
+bottom: 0px;
+background: #f1f1f1;
+}
+
+#borderleft {
+width: 17px;
+position: fixed;
+z-index: 700;
+left: 0px;
+top: 0px;
+bottom: 0px;
+background: #f1f1f1;
+}
+#borderright {
+width: 17px;
+position: fixed;
+z-index: 700;
+right: 0px;
+top: 0px;
+bottom: 0px;
+background: #f1f1f1;
 }
