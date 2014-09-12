@@ -310,6 +310,7 @@ tbody tr:nth-child(odd) th {
   padding-right: 1rem;
   margin-left:  auto;
   margin-right: auto;
+  box-shadow: 12px 0 23px -15px rgba(0, 0, 0, 0.8), -12px 0 23px -15px rgba(0, 0, 0, 0.8) ;
 }
 
 
