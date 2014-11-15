@@ -9,8 +9,6 @@ title: "Android: Tipps zur besseren App"
 
 Der Artikel richtet sich an Android-Entwickler, die bereits erste Erfahrungen in der Entwicklung für die Android-Plattform gesammelt haben und nun weitergehende "Best-Practices" erfahren möchten, die ihnen helfen, zukünftig etwas smartere Apps zu entwickeln.
 
-Eingeteilt ist dieser Artikel in Ressourcen, Manifest, 
-
 
 ### Umgang mit Ressourcen
 
@@ -32,8 +30,8 @@ Folgend ein paar Beispiele:
           
 In Umgang mit Zeichenketten existieren zudem zwei weitere, weniger bekannte Funktionen:
 
-<b>Plural-Resourcen:</b>
-Plural-Resourcen bestehen in den unterschiedlichen Ausprägungen: zero, one, many, other
+<b>Plural-Resourcen:</b><br>
+Plural-Resourcen bestehen in den folgenden Ausprägungen: "zero", "one", "many", "other". Mit deren Hilfe erleichtert sich die Handhabung unterschiedlicher Sprachbausteine im Zusammenhang mit der Bildung von Einzahl/Mehrzahl.
 
 {% highlight xml %}
 <plurals name="itemCount">
@@ -50,7 +48,7 @@ getResources.getQuantityString(R.plurals.itemCount, itemCount, itemCount);
 
 Es wird zweimal der Wert "itemCount" übergeben, da dies einmal zur Evaluierung der jeweiligen Ausprägung verwendet wird und einmal der Plathalter in der "other"-Ausprägung gespeist wird.
           
-<b>Platzhalter-Formatierung:</b>
+<b>Platzhalter-Formatierung:</b> <br>
 String-Ressourcen können zudem reguläre Platzhalter beinhalten, sowie HTML-Tags zur Design-Formattierung. Bei beidem in Kombination müssen letztere maskiert werden:
 
 {% highlight xml %}
@@ -61,19 +59,20 @@ String-Ressourcen können zudem reguläre Platzhalter beinhalten, sowie HTML-Tag
 
 Im Manifest erfolgt die Registrierung aller Komponenten der App.
 Dabei empfiehlt es sich vor allem für Activities:
+
 - die label-Angabe als String-Resource auszulagern
 - auf einen individuellen Activity-bezogenen Theme zu verweisen
 - zu prüfen, ob die launchMode-Angabe ideal ist
 - zu prüfen, ob parentActivityName gepflegt werden sollte
 
-<b>Individueller Theme</b>
+<b>Individueller Theme</b><br>
 Die Angabe eines Themes mittels "android:theme" ermöglicht eine Referenz auf eine Style-Resource zu hinterlegen.
 Erfolgt keine Activity-bezogene Angabe, wird der gesetzte Application-Theme verwendt. Ist auch dieser nicht gesetzt, wird der System-Theme angewendet.
 
 Es empfiehlt sich, die Activity-Styles durch den Einsatz von Vererbung möglichst klein zu halten, sodass möglichst alle Style-Angaben, die wiederverwendet werden, auf einer Abstraktionsebene liegen.
 Näheres zum Aufbau von Styles findet sich im Bereich "Layout & Styles".
 
-<b>Die launchMode-Angabe</b>
+<b>Die launchMode-Angabe</b><br>
 Das Verständnis über die launchMode-Angabe hilft in manchen Fällen dem Benutzer eine deutlich bessere Activity-Navigation zu bieten.
 Insgesamt existieren vier Ausprägungen: "standard", "singleTop", "singleTask", "singleInstance"
 
@@ -92,15 +91,15 @@ Würde die Angabe von "singleTop" nicht erfolgen und stattdessen die "standard"-
 Mit "singleTask" verhält es sich analog "singleTop", aber mit dem Unterschied, dass unabhängig der Position im Task-Stack, immer nur eine Instanz existiert.
 Prominentestes Beispiel einer derartigen Activity ist die Browser-App. Unabhängig davon, aus welcher App Webseiten aufgerufen werden, so soll immer nur eine Activity/Instanz existieren.
 
-Neben der Deklaration im Manifest lässt sich dieses Verhalten übrigens auch mittels der Intent-Flags FLAG_ACTIVITY_NEW_TASK, FLAG_ACTIVITY_CLEAR_TOP und FLAG_ACTIVITY_SINGLE_TOP steuern.
+Neben der Deklaration im Manifest lässt sich dieses Verhalten übrigens auch mittels der Intent-Flags "FLAG_ACTIVITY_NEW_TASK", "FLAG_ACTIVITY_CLEAR_TOP" und "FLAG_ACTIVITY_SINGLE_TOP" steuern.
 
-<b>Die parentActivityName-Angabe</b>
+<b>Die parentActivityName-Angabe</b> <br>
 Ähnlich wie "launchMode" untersützt auch diese Angabe eine bessere Navigation. Konkret regelt es, welche Activity bei Drücken des Up-Buttons in der Actionbar gestartet werden soll.
 Beispielsweise verwendet die GMAIL-App diesen "Up-Button", um aus einer geöffneten E-Mail-Konversation zurück in die Inbox zu gelangen.
 
 Die Angabe der ParentActivity muss dabei einen voll qualifizierten Klassennamen enthalten.
 
-<b>Hardwarebeschleunigung auf älteren Geräten</b>
+<b>Hardwarebeschleunigung auf älteren Geräten</b><br>
 Wenn nicht mindestens minSdk und targetSdk auf 14 oder höher stehen, empfiehlt es sich, die Hardwarebeschleunigung zum rendern der GUI heranzuziehen:
 {% highlight xml %}
 android:hardwareAccelerated="true"
@@ -110,7 +109,7 @@ android:hardwareAccelerated="true"
 Kaum eine Plattform ist von einer derartigen Gerätevielfalt geprägt wie die Android-Plattform.
 Aufgrund der unterschiedlichen Geräte, mit unterschiedlichen Displaygrößen und Pixeldichten ist es eine Herausforderung, die Kompatiblität der Benutzeroberfläche einer App für alle Geräte zu ermöglichen.
 
-<b>Grundsatz</b>
+<b>Grundsatz</b><br>
 Grundsätzlich gilt bei der Angabe von Dimensionen immer auf die Einheit dp bzw. bei Schriftgrößen auf sp zurückzugreifen.
 Eine kurze Erklärung hierzu:
 <table>
@@ -139,7 +138,7 @@ Weiterhin ist es meist ratsam, ein separates Layout für Smartphone-, als auch f
 Fragmets werden ab API-Version 11 (3.0) unterstützt und besitzen einen eigenen Lifecycle. Die Verwendung eines Fragments ist in mehreren Activities möglich. Eine Einführung zu Fragments zu geben würde den Rahmen dieses Artikels deutlich sprengen.
 Für interessierte empfehle ich den <a href="http://developer.android.com/guide/components/fragments.html">offiziellen Artikel auf developer.android.com</a>.
 
-<b>Wiederverwendung von Styles</b>
+<b>Wiederverwendung von Styles</b><br>
 Grundsätzlich repräsentiert ein "Style" eine beliebige Anzahl design- und erscheinungsrelevanter Attribute, die unter einer Bezeichnung zusammengefasst und verwendet werden können.
 
 Die Style-Definition werden dabei in der styles.xml (/res/values) gesammelt aufgeführt:
@@ -159,7 +158,7 @@ Erreichen lässt sich die Wiederverwendbarkeit im wesentlichen auf zwei Arten:
 1. Vererbung von Style-Deklarationen
 2. Exzessive Nutzung von Style-Verweisen
 
-<b>Vererbung von Style-Deklrationen</b>
+<b>Vererbung von Style-Deklarationen</b> <br>
 Mittels der "parent"-Angabe in einer Style-Deklaration besteht die Möglichkeit, sämtliche Attribute einer bestehenden Style-Deklaration zu übernehmen. Für gewöhnlich verwendet man einen Basis-Style für eine Activity:
 {% highlight xml %}
 <style name="Theme.MyApp.Base" parent="@style/Theme.AppCompat.Light">
@@ -176,7 +175,7 @@ Jeder weitere, individuelle Style einer Activity verweist nun auf diesen Basis-T
 </style>
 {% endhighlight %} 
 
-<b>Nutzung von Style-Verweisen</b>
+<b>Nutzung von Style-Verweisen</b> <br>
 Gerade im Umgang mit dem Style ein App existieren viele magische Konstanten. Beispielsweise die Farbcodes, die zum Corporate Design gehören.
 Diese Angaben gehören sich zweifelsfrei nicht in derartige Style-Deklarationen, sondern sollten stattdessen immer lediglich verwiesen werden:
 
@@ -205,7 +204,7 @@ Weiterhin ist es möglich, eigene Style-Attribute zu pflegen, die sowohl innerha
 
 Die Referenzierung geschieht auf diese Weise deutlich smarter, erleichtert die Lesbarkeit und im Falle einer Änderung, gilt es lediglich einen Wert anzupassen.
 
-<b>Wiederverwendung von Layouts</b>
+<b>Wiederverwendung von Layouts</b> <br>
 Mit Verwendung der Tags &lt;merge&gt; und &lt;include&gt; lässt sich die Wiederverwendbarkeit von Layout-Ressourcen deutlich erhöhen.
 Kurz angeschnitten ermöglichen diese, Layout-"Fragmente" zu erstellen, die als Bestandteil in Layout-Ressourcen eingebunden werden können.
 Somit besteht beispielsweise die Möglichkeit, ein RelativeLayout als ein solches Layout-"Fragment" mit Verwendung von &lt;merge&gt; einmalig zu definieren und bereitzustellen, um anschließend via &lt;include&gt; in beliebig vielen Layout-Resourcen wiederverwendet werden zu können.

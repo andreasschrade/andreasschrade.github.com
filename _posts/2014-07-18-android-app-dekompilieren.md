@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Android: aSchnelle Einführung in die App-Dekompilierung"
+title: "Android: Schnelle Einführung in die App-Dekompilierung"
 ---
 
 
@@ -35,5 +35,5 @@ C:\test\dex2jar> dex2jar.bat classes.dex
 
 <strong>3. SourceCode betrachten        </strong>
 
-Zum SChluss gilt es nun noch die dekodierte .jar-Datei mit einem beliebigen Java-Decompiler zu öffnen.Dies kann beispielsweise JAD, oder JD-GUI sein
+Zum Schluss gilt es nun noch die dekodierte .jar-Datei mit einem beliebigen Java-Decompiler zu öffnen. Dies kann beispielsweise JAD, oder JD-GUI sein
 

@@ -11,15 +11,15 @@ Google hat kürzlich eine neue Library namens Android Volley vorgestellt, die zu
 
 
 ### Setup
-                                                             https://android.googlesource.com/platform/frameworks/volley
-Das Setup ist recht einfach. Es muss lediglich das Volley Projekt geklont werden um anschließend in ein Projekt zu kopieren.
+                                                             
+Das Setup ist recht einfach. Es muss lediglich das <a href="https://android.googlesource.com/platform/frameworks/volley">Volley Projekt geklont</a> werden um anschließend in ein Projekt kopiert zu werden.
 
 ### Schlüsselklassen
 
 Folgend eine Auflistung der essentiellen Klassen von Android Volley mit deren Bedeutung:
 
 - RequestQueue: Eine Queue, die alle zu tätigenden HTTP-Requests aufnimmt
-- Request: Basisklasse, die netzwerkrelevante informationen wie HTTP-Methoden aufnimmt
+- Request: Basisklasse, die netzwerkrelevante Informationen wie HTTP-Methoden aufnimmt
 - StringRequest: HTTP Request, bei dem der Response als String geparsed wird
 - JsonObjectRequest: HTTP Request, bei dem der Response ein JSONObject ist.
 
@@ -36,6 +36,7 @@ RequestQueue queue = Volley.newRequestQueue(myContext);
 <strong>GET-Requests</strong>
 
 GET-Requests lassen sich mit Volley sehr einfach durchführen. Das folgige Beispiel verwendet ein JsonObjectRequest, welches folgende vier Parameter erwartet:
+
 - Http-Methode
 - Url
 - Json

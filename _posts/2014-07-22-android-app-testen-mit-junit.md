@@ -14,7 +14,7 @@ Es gibt vielzählige Tools und Möglichkeiten, Apps unter Android zu testen. Ein
 Als Beispiel wird eine einfache, zu testende Activity namens MainActivity angelegt, die lediglich einen Button bereitstellt und bei Click den Text einer TextView ändert:
 
 {% highlight java %} 
-package com.app.jnuit;
+package com.app.example;
  
 import android.app.Activity;
 import android.os.Bundle;
@@ -24,22 +24,22 @@ import android.widget.TextView;
  
 public class MainActivity extends Activity {
  
-    private Button m_btnSubmit;
-    private TextView m_tvSample;
+    private Button btnSubmit;
+    private TextView tvSample;
      
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
          
-        m_btnSubmit = (Button)findViewById(R.id.btnSubmit);
-        m_tvSample = (TextView)findViewById(R.id.txtView1);
+        btnSubmit = (Button)findViewById(R.id.btnSubmit);
+        tvSample = (TextView)findViewById(R.id.txtView1);
          
-        m_btnSubmit.setOnClickListener(new View.OnClickListener() {
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
              
             @Override
             public void onClick(View v) {
-                m_tvSample.setText("Button geklickt");
+                tvSample.setText("Button geklickt");
                 finish();
             }
         });
@@ -52,7 +52,7 @@ Mit Rechtsklick auf das existierende Android Projekt, Auswahl von Tools -> New T
 Mit JUnit-Mitteln gilt es nun, den Klick auf den Button zu erkennen und anschließend den Text der TextView auf korrekte Veränderung zu prüfen:
 
 {% highlight java %} 
-package com.app.jnuit.test;
+package com.app.example.test;
  
 import android.content.Intent;
 import android.test.suitebuilder.annotation.MediumTest;
@@ -85,8 +85,8 @@ public class MyTestCase extends android.test.ActivityUnitTestCase<MainActivity> 
     public void testButtonClick() {
  
         startActivity(mStartIntent, null, null);
-        TextView mTestMessage = (TextView)getActivity().findViewById(com.app.jnuit.R.id.txtView1);
-        Button mTestButton = (Button) getActivity().findViewById(com.app.jnuit.R.id.btnSubmit);
+        TextView mTestMessage = (TextView)getActivity().findViewById(com.app.example.R.id.txtView1);
+        Button mTestButton = (Button) getActivity().findViewById(com.app.example.R.id.btnSubmit);
          
         assertNotNull(getActivity());
         assertNotNull(mTestButton);
