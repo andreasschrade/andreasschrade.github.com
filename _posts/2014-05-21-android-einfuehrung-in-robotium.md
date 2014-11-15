@@ -15,7 +15,8 @@ Mit Robotium ist es möglich, Testfälle für Funktionstest, Systemtest, Akzepta
 Alle notwendigen Informationen die zum Start erforderlich sind, sind in folgenden Abschnitten erklärt.
 
 Mehrwert von Robotium in Kürze:
-- Testentwicklung erfordert nur weniges technisches Wissen der zu testenden Anwendung
+
+- Testentwicklung erfordert nur wenig technisches Wissen der zu testenden Anwendung
 - Das Framework handelt mehrere Activities automatisch
 - Mit geringem Zeitaufwand lassen sich bereits solide Testfälle erstellen
 - Lesbarkeit von Testfällen ist überdurchschnittlich gut
@@ -25,15 +26,14 @@ Mehrwert von Robotium in Kürze:
 
 ### Erstes Beispiel
 
-
 Um stabile und verlässliche Tests zu entwickeln bietet Robotium viele Methoden, die sich auf grafische Elemente einer App beziehen:
 
-clickOnText(“Login”);
-clickOnButton(“Save”);
-searchText(“Logout”);
-goBack();
-getButton();
-isRadioButtonChecked();
+- clickOnText(“Login”);
+- clickOnButton(“Save”);
+- searchText(“Logout”);
+- goBack();
+- getButton();
+- isRadioButtonChecked();
 …
 
 Mit diesen einfachen Methoden können bereits in Verbindung mit JUnit sehr schnell robuste Testfälle erstellt werden.
