@@ -10,7 +10,7 @@ log4j ist ein Logging-Framework in Java. Es gilt aktuell als der De-facto Standa
 
 Grundsätzlich besteht die Absicht hinter log4j eine Konfigurationsmöglichkeit zu schaffen, nach der die Log-Verarbeitung zugeschnitten auf die individuellen Bedürfnisse realisiert werden kann.
 
-Entgegen mancher Meinung ist dabei die Log-Verarbeitung sehr effizient; eine typische Log-Ausgabe beansprucht auf modernen Systemen nur wenige Nanosekunden (> 10 ns)
+Entgegen mancher Meinung ist dabei die Log-Verarbeitung sehr effizient; eine typische Log-Ausgabe beansprucht auf modernen Systemen nur wenige Nanosekunden (< 10 ns)
 
 ## Log-Level
 
