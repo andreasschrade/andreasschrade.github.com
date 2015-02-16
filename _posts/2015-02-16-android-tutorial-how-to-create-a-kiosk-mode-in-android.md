@@ -35,7 +35,7 @@ IMAGE!
 
 ### Preparation
 
-First of all we need to make sure your app starts automatically after booting your device:
+First of all we need to make sure your app starts automatically after booting your device.
 
 Add the following permission as a child of the *manifest* element to your Android manifest:
 
@@ -94,14 +94,14 @@ For that reason, create a class called *OnScreenOffReceiver* that extends *Broad
 
 {% highlight java %}
 public class OnScreenOffReceiver extends BroadcastReceiver {
-  private static final String PREF_KIOSK_MODE = "pref_kiosk_mode"; // use your preference util class instead
+  private static final String PREF_KIOSK_MODE = "pref_kiosk_mode";
     
   @Override
   public void onReceive(Context context, Intent intent) {
     if(Intent.ACTION_SCREEN_OFF.equals(intent.getAction())){
       AppContext ctx = (AppContext) context.getApplicationContext();
       // is Kiosk Mode active?
-     	if(isKioskModeActive(ctx)) {
+      if(isKioskModeActive(ctx)) {
         wakeUpDevice(ctx);
       }
     }
@@ -139,7 +139,8 @@ public class AppContext extends Application {
     registerKioskModeScreenOffReceiver();
   }
 
-  private void registerKioskModeScreenOffReceiver() { // register screen of receiver
+  private void registerKioskModeScreenOffReceiver() {
+    // register screen off receiver
     final IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
     onScreenOffReceiver = new OnScreenOffReceiver();
     registerReceiver(onScreenOffReceiver, filter);
@@ -147,7 +148,7 @@ public class AppContext extends Application {
 
   public PowerManager.WakeLock getWakeLock() {
     if(wakeLock == null) {
-      // first call, create wakeLock.
+      // lazy loading: first call, create wakeLock via PowerManager.
       PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
       wakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "wakeup");
     }
@@ -163,7 +164,7 @@ Add the permission *WAKE_LOCK* to your manifest:
 <uses-permission android:name="android.permission.WAKE_LOCK" />
 {% endhighlight %}
 
-Register your subclass of *Application* in your manifest:
+Register your subclass of *Application* in your manifest (android:name=".AppContext"):
 
 {% highlight xml %}
 <application
@@ -172,9 +173,9 @@ Register your subclass of *Application* in your manifest:
         android:label="@string/app_name">
 {% endhighlight %}
 
-To make the wake up a bit smarter, add the following line in your activity (before *setContentView* is called!). The line deactivates the lock screen:
+To make the wake up a bit smarter, add the following line in your activity (before *setContentView* is called!). This line deactivates the lock screen:
 
-{% highlight xml %}
+{% highlight java %}
 getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
 {% endhighlight %}
 
@@ -233,7 +234,7 @@ public boolean dispatchKeyEvent(KeyEvent event) {
 
 Since Android 4 there is no effective method to deactivate the home button. That is the reason why we need another little hack.
 
-In general the idea is to detect when a new application is in foreground and restart your activity immediately.
+In general the idea is to detect when a new application is in foreground and restart your activity immediately.  
 
 At first create a class called *KioskService* that extends *Service* and add the following snippet:
 
@@ -281,7 +282,7 @@ public class KioskService extends Service {
   }
 
   private void handleKioskMode() {
-    // is Kiosk Mode active       ? 
+    // is Kiosk Mode active? 
 	  if(isKioskModeActive()) {
 	    // is App in background?
       if(isInBackground()) {
@@ -328,7 +329,7 @@ private void startKioskService() {
 }
 {% endhighlight %}
 
-Every 2 seconds the service checks, if your application is still in foreground. If not, it will immediately recreate your activity.
+Basically, the thread checks every two seconds if your application is running in foreground. If not, the thread will immediately recreate your activity.
 
 
 ### Prevent screen dimming
@@ -355,4 +356,4 @@ For example:
 
 ## Conclusion
 
-Developing a kiosk based application is not the easiest part in Android development, but it is definitely possible to create a "robust" Kiosk Mode. The only disadvantage is the list of (very) dirty hacks.
+Developing a kiosk based application is not the easiest part in Android development, but it is definitely possible to create a "robust" Kiosk Mode. The only disadvantage is the long list of (very) dirty hacks.
