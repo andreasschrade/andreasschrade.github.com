@@ -43,7 +43,7 @@ Add the following permission as a child of the *manifest* element to your Androi
 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> 
 {% endhighlight %}
 
-Now, your app has the permission to receive the *"RECEIVE_BOOT_COMPLETED"* broadcast. This message means that the phone was booted.
+Now, your app has the permission to receive the *RECEIVE\_BOOT\_COMPLETED* broadcast. This message means that the phone was booted.
 
 At next, add an intent filter to the manifest:
 
