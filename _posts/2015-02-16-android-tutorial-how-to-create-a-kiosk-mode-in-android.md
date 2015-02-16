@@ -15,11 +15,14 @@ This article describes a list of powerful methods to implement a Kiosk Mode in A
 - Talk to your users: Be careful, if you want to distribute your app through the Play Store. Tell your users how they can leave your app before they enter the Kiosk Mode.
 - Nothing is completely secure: There are techies like you out there who can bypass your restrictions if the device is not physically secured.
 
+
+
 ## Implementation
 
 ### Overview
 
-A Kiosk Mode is implemented by disabling various Android features that can be used to leave your app. The following features are affected:
+A Kiosk Mode is implemented by disabling various Android features that can be used to leave your app.
+The following features are affected:
 
 - The back button
 - The home button
@@ -34,13 +37,13 @@ IMAGE!
 
 First of all we need to make sure your app starts automatically after booting your device:
 
-Add the following permission as a child of the <manifest> element to your Android manifest:
+Add the following permission as a child of the *manifest* element to your Android manifest:
 
 {% highlight xml %}
 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> 
 {% endhighlight %}
 
-Now, your app has the permission to receive the „RECEIVE_BOOT_COMPLETED“ broadcast. This message means that the phone was booted.
+Now, your app has the permission to receive the *"RECEIVE_BOOT_COMPLETED"* broadcast. This message means that the phone was booted.
 
 At next, add an intent filter to the manifest:
 
@@ -59,7 +62,7 @@ public class BootReceiver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		Intent myIntent = new Intent(context, MyKioskModeActivity.class);
+    Intent myIntent = new Intent(context, MyKioskModeActivity.class);
     myIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(myIntent);
 	}
@@ -91,7 +94,7 @@ For that reason, create a class called *OnScreenOffReceiver* that extends *Broad
 
 {% highlight java %}
 public class OnScreenOffReceiver extends BroadcastReceiver {
-  private static final String PREF_KIOSK_MODE = "pref_kiosk_mode"; // extract this to your preference util class
+  private static final String PREF_KIOSK_MODE = "pref_kiosk_mode"; // use your preference util class instead
     
   @Override
   public void onReceive(Context context, Intent intent) {
@@ -153,6 +156,7 @@ public class AppContext extends Application {
 }
 {% endhighlight %}
 
+
 Add the permission *WAKE_LOCK* to your manifest:
 
 {% highlight xml %}
@@ -170,7 +174,9 @@ Register your subclass of *Application* in your manifest:
 
 To make the wake up a bit smarter, add the following line in your activity (before *setContentView* is called!). The line deactivates the lock screen:
 
+{% highlight xml %}
 getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
+{% endhighlight %}
 
 For example:
 {% highlight java %}
@@ -179,7 +185,7 @@ protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
   setContentView(R.layout.my_activity);
-	// … further layout init
+  // … further layout init
 }
 {% endhighlight %}
 
@@ -349,4 +355,4 @@ For example:
 
 ## Conclusion
 
-Developing a kiosk based application is not the easiest part in Android development, but it is possible to create a "robust" Kiosk Mode by using a bunch of (very) dirty hacks.
+Developing a kiosk based application is not the easiest part in Android development, but it is definitely possible to create a "robust" Kiosk Mode. The only disadvantage is the list of (very) dirty hacks.
