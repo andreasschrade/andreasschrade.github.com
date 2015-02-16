@@ -87,9 +87,9 @@ Sadly, disabeling the power button is not possible without custom modification t
 
 **short power button press:**
 
-You can detect a short button press by handling the *ACTION_SCREEN_OFF* intent and kick the screen back to life with acquiring a wake lock. What a hack!
+You can detect a short button press by handling the *ACTION\_SCREEN\_OFF* intent and kick the screen back to life with acquiring a wake lock. What a hack!
 
-Please note that you can't declare *ACTION_SCREEN_OFF* in the AndroidManifest.xml. You are only allowed to catch them while your application is running. 
+Please note that you can't declare *ACTION\_SCREEN\_OFF* in the AndroidManifest.xml. You are only allowed to catch them while your application is running. 
 For that reason, create a class called *OnScreenOffReceiver* that extends *BroadcastReceiver* and add the following code:
 
 {% highlight java %}
@@ -208,7 +208,7 @@ public void onWindowFocusChanged(boolean hasFocus) {
 }
 {% endhighlight %}
 
-The idea is simple: in case any system dialog pops up, we kill it instantly by firing an *ACTION_CLOSE_SYSTEM_DIALOG* broadcast.
+The idea is simple: in case any system dialog pops up, we kill it instantly by firing an *ACTION\_CLOSE\_SYSTEM\_DIALOG* broadcast.
 
 
 ### Disable the volume button
