@@ -83,7 +83,7 @@ public void onBackPressed() {
 
 ### Disable the power button
 
-Sadly, disabeling the power button is not possible without custom modification to the core of the Android operating system. Nevertheless it is possible to detect the result of the button press and react on it.
+Sadly, disabling the power button is not possible without custom modification to the core of the Android operating system. Nevertheless, it is possible to detect the result of the button press and react on it.
 
 **short power button press:**
 
@@ -193,7 +193,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 **long power button press:**
 
-Now we come to my favority hack: It is very simple but incredible powerful.
+Now we come to my favorite hack: It is very simple but powerful.
 
 Add the following snippet to your activity. It will surely prevent long press button.
 
@@ -230,7 +230,7 @@ public boolean dispatchKeyEvent(KeyEvent event) {
 {% endhighlight %}
 
 
-### Disable the home button and detect when new appliations are opened
+### Disable the home button and detect when new applications are opened
 
 Since Android 4 there is no effective method to deactivate the home button. That is the reason why we need another little hack.
 
@@ -261,7 +261,7 @@ public class KioskService extends Service {
     running = true;
     ctx = this;
     
-    // start a thread that periodically checks if your app is in foreground
+    // start a thread that periodically checks if your app is in the foreground
     t = new Thread(new Runnable() {
       @Override
       public void run() {
@@ -334,7 +334,7 @@ Basically, the thread checks every two seconds if your application is running in
 
 ### Prevent screen dimming
 
-It is also very easy to keep the screen bright as long as your app is visible (also forever). You only have to add the following flag in your root layout:
+It is also very easy to keep the screen bright as long as your app is visible (also forever). You only have to add the following flag to your root layout:
 
 {% highlight xml %}
 android:keepScreenOn="true"
@@ -357,4 +357,4 @@ That's it!
 
 ## Conclusion
 
-Developing a kiosk based application is not the easiest part in Android development, but it is definitely possible to create a "robust" Kiosk Mode. The only disadvantage is the long list of (very) dirty hacks.
+Developing a kiosk-based application is not the easiest part in Android development, but it is definitely possible to create a "robust" Kiosk Mode. The only disadvantage is the long list of (very) dirty hacks.
