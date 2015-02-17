@@ -30,7 +30,7 @@ The following features are affected:
 - The power button
 - The volume buttons
 
-<img style="display:block; width:100%; max-width:600px;"  src="{{ site.url }}/assets/2015-02-17-android-kiosk-mode.png">
+<a href="https://moodvise.com"><img style="display:block; width:100%; max-width:1000px; border:0px"  src="{{ site.url }}/assets/2015-02-17-android-kiosk-mode.png"></a>
 
 
 ### Preparation
