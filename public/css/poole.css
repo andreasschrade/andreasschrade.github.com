@@ -507,3 +507,7 @@ background: #f1f1f1;
 .author_ {
 font-style:italic;
 }
+
+div.related h2 ul li h3 a {
+  font-size: smaller;
+}
