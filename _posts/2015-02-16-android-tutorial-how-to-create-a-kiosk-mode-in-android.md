@@ -11,11 +11,11 @@ This article describes a list of powerful methods to implement a Kiosk Mode in A
 
 **A few things to consider**
 
-- Exit mechanism: Don't forget to implement and test an exit mechanism in your app.
+- Exit mechanism: Don't forget to implement *and* test an exit mechanism in your app.
 - Talk to your users: Be careful, if you want to distribute your app through the Play Store. Tell your users how they can leave your app before they enter the Kiosk Mode.
 - Nothing is completely secure: There are techies like you out there who can bypass your restrictions if the device is not physically secured.
 
-
+<br>
 
 ## Implementation
 
@@ -30,7 +30,7 @@ The following features are affected:
 - The power button
 - The volume buttons
 
-IMAGE!
+<img style="display:block; width:100%; max-width:600px;"  src="{{ site.url }}/assets/2015-02-17-android-kiosk-mode.png">
 
 
 ### Preparation
@@ -60,18 +60,18 @@ Create a class called *BootReceiver* that extends *BroadcastReceiver* and add yo
 {% highlight java %}
 public class BootReceiver extends BroadcastReceiver {
 
-	@Override
-	public void onReceive(Context context, Intent intent) {
+  @Override
+  public void onReceive(Context context, Intent intent) {
     Intent myIntent = new Intent(context, MyKioskModeActivity.class);
     myIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(myIntent);
-	}
+  }
 }
 {% endhighlight %}
 
 ### Disable the back button
 
-This is a simple task. Just override *onBackPressed* in your Activity class. Please note that you can not override *onBackPressed* inside fragments! 
+This is a simple task: Just override *onBackPressed* in your Activity class. Please note that you can not override *onBackPressed* inside fragments! 
 
 {% highlight java %}
 @Override
@@ -89,7 +89,7 @@ Sadly, disabeling the power button is not possible without custom modification t
 
 You can detect a short button press by handling the *ACTION\_SCREEN\_OFF* intent and kick the screen back to life with acquiring a wake lock. What a hack!
 
-Please note that you can't declare *ACTION\_SCREEN\_OFF* in the AndroidManifest.xml. You are only allowed to catch them while your application is running. 
+Please note that you can't declare *ACTION\_SCREEN\_OFF* in the AndroidManifest.xml! You are only allowed to catch them while your application is running. 
 For that reason, create a class called *OnScreenOffReceiver* that extends *BroadcastReceiver* and add the following code:
 
 {% highlight java %}
@@ -324,7 +324,7 @@ public void onCreate() {
   startKioskService();  // add this
 }
 
-private void startKioskService() {
+private void startKioskService() { // ... and this method
   startService(new Intent(this, KioskService.class));
 }
 {% endhighlight %}
@@ -353,6 +353,7 @@ For example:
 </RelativeLayout>
 {% endhighlight %}
 
+That's it!
 
 ## Conclusion
 
