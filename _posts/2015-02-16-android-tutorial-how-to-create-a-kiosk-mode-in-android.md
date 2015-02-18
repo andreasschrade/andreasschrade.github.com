@@ -357,3 +357,12 @@ That's it!
 ## Conclusion
 
 Developing a kiosk-based application is not the easiest part in Android development, but it is definitely possible to create a "robust" Kiosk Mode. The only disadvantage is the long list of (very) dirty hacks.
+
+<br>
+<a class="twitter-follow-button"
+  href="https://twitter.com/andreasschrade"
+  data-show-count="false"
+  data-lang="en">
+Follow @andreasschrade
+</a>
+<script>window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));</script>
