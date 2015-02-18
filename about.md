@@ -12,20 +12,7 @@ Contact:  <strong>blog //at// andreas-schrade.de</strong>
 
 <h2>DE</h2>
 
-Mein Name ist Andreas Schrade, ich arbeite für Conrad Electronic als Java-Web-Softwareentwickler im Bereich E-Commerce.
-Zudem beschäftige ich mich sehr intensiv seit bereits über 5 Jahren mit der Entwicklung von Android-Anwendungen.
-
-Grundsätzlich biete ich:
-
-- Softwareentwicklung mit Java, JEE
-- Konzeption und Entwicklung professioneller Android- und Java-Web-Applikationen
-
-In der Zusammenarbeit mit mir entsteht Ihnen folgender Nutzen:
-
-- Ihre Java-Web/Android Applikation liegt eine überlegte und erweiterbare Architektur zugrunde
-- Entscheidungen sind gut vorbereitet, der Programmcode verständlich dokumentiert
-- Ihre Applikation genießt eine hohe Qualität dank konsequent erstellter Software-Tests
-
+Backend- und Mobile Entwickler mit über 10 Jahren Erfahrung und einer Passion für performante, robuste und flexible Enterprise-Anwendungen.
 
 Fachkompetenz:
 
