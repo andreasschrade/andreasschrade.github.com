@@ -10,7 +10,8 @@ Former backend developer at one of Europe's largest electronic retailers and dev
 Contact:  <strong>blog //at// andreas-schrade.de</strong> 
 
 
-<h2>DE/h2>
+<h2>DE</h2>
+
 Mein Name ist Andreas Schrade, ich arbeite für Conrad Electronic als Java-Web-Softwareentwickler im Bereich E-Commerce.
 Zudem beschäftige ich mich sehr intensiv seit bereits über 5 Jahren mit der Entwicklung von Android-Anwendungen.
 
