@@ -85,7 +85,7 @@ public void onBackPressed() {
 
 Sadly, disabling the power button is not possible without custom modification to the core of the Android operating system. Nevertheless, it is possible to detect the result of the button press and react on it.
 
-**short power button press:**
+**Short power button press:**
 
 You can detect a short button press by handling the *ACTION\_SCREEN\_OFF* intent and kick the screen back to life with acquiring a wake lock. What a hack!
 
@@ -191,7 +191,7 @@ protected void onCreate(Bundle savedInstanceState) {
 {% endhighlight %}
 
 
-**long power button press:**
+**Long power button press:**
 
 Now we come to my favorite hack: It is very simple but powerful.
 
@@ -232,9 +232,7 @@ public boolean dispatchKeyEvent(KeyEvent event) {
 
 ### Disable the home button and detect when new applications are opened
 
-Since Android 4 there is no effective method to deactivate the home button. That is the reason why we need another little hack.
-
-In general the idea is to detect when a new application is in foreground and restart your activity immediately.  
+Since Android 4 there is no effective method to deactivate the home button. That is the reason why we need another little hack. In general the idea is to detect when a new application is in foreground and restart your activity immediately.  
 
 At first create a class called *KioskService* that extends *Service* and add the following snippet:
 
