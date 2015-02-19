@@ -133,6 +133,11 @@ Create a subclass of *Application* and add the following code:
 {% highlight java %}
 public class AppContext extends Application {
 
+  private AppContext instance;
+  private PowerManager.WakeLock wakeLock;
+  private OnScreenOffReceiver onScreenOffReceiver;
+
+
   @Override
   public void onCreate() {
     super.onCreate();
@@ -242,6 +247,7 @@ public class KioskService extends Service {
 
   private static final long INTERVAL = TimeUnit.SECONDS.toMillis(2); // periodic interval to check in seconds -> 2 seconds
   private static final String TAG = KioskService.class.getSimpleName();
+  private static final String PREF_KIOSK_MODE = "pref_kiosk_mode";
 
   private Thread t = null;
   private Context ctx = null;
@@ -304,6 +310,11 @@ public class KioskService extends Service {
     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     ctx.startActivity(i);
   }
+  
+  public boolean isKioskModeActive(final Context context) {
+    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+    return sp.getBoolean(PREF_KIOSK_MODE, false);
+  }
 
   @Override
   public IBinder onBind(Intent intent) {
@@ -326,6 +337,14 @@ public void onCreate() {
 private void startKioskService() { // ... and this method
   startService(new Intent(this, KioskService.class));
 }
+{% endhighlight %}
+
+Last, add the service declaration and the permission for retrieving the foreground process to the manifest:
+
+{% highlight xml %}
+<service android:name=".KioskService" android:exported="false"/>
+
+<uses-permission android:name="android.permission.GET_TASKS"/>
 {% endhighlight %}
 
 Basically, the thread checks every two seconds if your application is running in foreground. If not, the thread will immediately recreate your activity.
@@ -359,6 +378,7 @@ That's it!
 Developing a kiosk-based application is not the easiest part in Android development, but it is definitely possible to create a "robust" Kiosk Mode. The only disadvantage is the long list of (very) dirty hacks.
 
 <br>
+<a href="https://github.com/andreasschrade/android-kiosk-mode" target="_blank">Download example project</a>                    <br>
 <a class="twitter-follow-button"
   href="https://twitter.com/andreasschrade"
   data-show-count="false"
