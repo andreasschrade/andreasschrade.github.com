@@ -531,3 +531,9 @@ float:left;
 .clear {
   clear:both;
 }
+
+@media (max-width:800px){
+  .right {
+    float:left !important;
+  }
+}
