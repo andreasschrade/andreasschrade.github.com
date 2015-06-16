@@ -537,6 +537,10 @@ float:left;
 
 @media (max-width:800px){
   .right {
-    float:left !important;
+    float:none !important;
+    clear: both;
+  }
+  .main-b {
+    width: 100% !important;
   }
 }
