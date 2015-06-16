@@ -511,3 +511,23 @@ font-style:italic;
 div.related h2 ul li h3 a {
   font-size: smaller;
 }
+
+.main-b {
+  width: 48%;
+  border: 1px solid rgba(170,170,170,0.2);
+  border-radius: 6px;
+  padding: 8px;
+  float: right;
+}
+
+.left {
+float:left;
+}
+
+.right {
+  float:right;
+}
+
+.clear {
+  clear:both;
+}
