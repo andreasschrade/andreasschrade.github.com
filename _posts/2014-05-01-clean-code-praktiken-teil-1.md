@@ -26,6 +26,7 @@ An dieser Stelle möge man vielleicht einwenden, dass es kein großer Unterschie
 
 
 <strong>Keine Implementierungsdetails in Bezeichnungen aufnehmen</strong>
+
 Gelegentlich fallen mir Variablen-Bezeichnungen auf, die Details zum zugrundeliegenden Datentypen offen legen oder zumindest zu Annahmen verleiten.
 
 Ein Beispiel:
