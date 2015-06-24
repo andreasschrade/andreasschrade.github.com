@@ -381,4 +381,4 @@ Developing a kiosk-based application is not the easiest part in Android developm
 <a href="https://github.com/andreasschrade/android-kiosk-mode" target="_blank">Download example project</a>                    <br>
 <br>
 
-<b>Do you want an Android Kiosk App? Just contact me: blog //at// andreas-schrade.de . I am happy to hear from you.</b>
+<b>Do you want an Android Kiosk App? Just contact me: blog //at// andreas-schrade.de - I am happy to hear from you.</b>
