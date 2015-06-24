@@ -371,7 +371,9 @@ For example:
 </RelativeLayout>
 {% endhighlight %}
 
-That's it!
+That's it!<br>
+
+<b>Do you want an Android Kiosk App? Just contact me: blog //at// andreas-schrade.de . I am happy to hear from you.</b>
 
 ## Conclusion
 
