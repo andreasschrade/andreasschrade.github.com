@@ -8,7 +8,7 @@ comments: true
 
 ## Introduction
 
-This article describes a list of powerful methods to implement a Kiosk Mode in Android. A Kiosk Mode is useful if you develop an app and want prevent any other applications to run. For example, at [our startup](https://moodvise.com/) we needed a Kiosk Mode for an Android app that tracks the employee mood in companies. The tablets are placed at their exit doors and every employee has the opportunity to share his mood anonymously. 
+This article describes a list of powerful methods to implement a Kiosk Mode in Android. A Kiosk Mode is useful if you develop an app and want prevent any other applications to run in the foreground. 
 
 **A few things to consider**
 
@@ -30,9 +30,6 @@ The following features are affected:
 - The recent apps button
 - The power button
 - The volume buttons
-
-<a href="https://moodvise.com"><img style="display:block; width:100%; max-width:1000px; border:0px"  src="{{ site.url }}/assets/2015-02-17-android-kiosk-mode.png"></a>
-
 
 ### Preparation
 
