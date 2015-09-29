@@ -8,13 +8,13 @@ permalink:        pretty
 # Setup
 title:            Andreas Schrade
 tagline:          ein Blog über Java- und Android-Entwicklung
-url:              http://andreasschrade.de
+url:              http://andreas-schrade.de
 paginate:         1
 baseurl:          /
 author:
   name:           Andreas Schrade
-  url:            http://andreasschrade.de
-  email:          blog@andreasschrade.de
+  url:            http://andreas.schrade.de
+  email:          blog@andreas-schrade.de
 
 # Custom vars
 version:          1.0.0
