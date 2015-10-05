@@ -4,8 +4,8 @@ title: About
 ---
 
 <h2>EN</h2>
-I am a backend and Android developer with ten years of experience, passion for performant, robust and flexible enterprise applications.
-Former backend developer at one of Europe's largest electronic retailers and developer of an award-winning App. I like to share my knowledge by writing blog posts and articles for magazines.
+I am a backend and Android developer with over ten years of software development experience. I have a passion for performant, robust and flexible applications.
+Former backend developer at one of Europe's largest electronic retailers and developer of an award-winning App. I like to share my knowledge by writing blog posts and articles for journals.
 
 Contact:  <strong>blog //at// andreas-schrade.de</strong> 
 
@@ -21,7 +21,7 @@ Technologies:
 
 <h2>DE</h2>
 
-Backend- und Android Entwickler mit über 10 Jahren Erfahrung und einer Passion für performante, robuste und flexible Enterprise-Anwendungen.
+Backend- und Android Entwickler mit über 10 Jahren Erfahrung in der Softwareentwicklung und einer Passion für performante, robuste und flexible Anwendungen.
 
 Fachkompetenz:
 
@@ -45,4 +45,4 @@ Technologische Schwerpunkte:
 - Webserver/Webcontainer: Apache Tomcat, Apache HTTP Server (httpd)
 - Continuous Integration Tool (CI): Jenkins
 
-Jederzeit erreichbar bin ich via folgender E-Mail: <strong>blog //at// andreas-schrade.de</strong>
+Erreichbar bin ich via folgender E-Mail: <strong>blog //at// andreas-schrade.de</strong>
