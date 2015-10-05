@@ -7,7 +7,9 @@ title: About
 I am a backend and Android developer with over ten years of software development experience. I have a passion for performant, robust and flexible applications.
 Former backend developer at one of Europe's largest electronic retailers and developer of an award-winning App. I like to share my knowledge by writing blog posts and articles for journals.
 
-Contact:  <strong>blog //at// andreas-schrade.de</strong> 
+I am looking for the next challenge. Any idea to discuss?
+
+<strong>blog //at// andreas-schrade.de</strong> 
 
 Technologies: 
 
