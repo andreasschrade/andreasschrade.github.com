@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Hibernate – Sortierung mit Hibernate (order by)"
+category: "java"
 ---
 
 

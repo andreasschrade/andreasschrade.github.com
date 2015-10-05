@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: log4j auf einem Blick"
+category: "java"
 ---
 
 

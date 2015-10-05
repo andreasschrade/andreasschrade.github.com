@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Die null-Referenz (Teil I)"
+category: "java"
 ---
 
 

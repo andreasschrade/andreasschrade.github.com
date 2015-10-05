@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Statische Initialisierung und Double-Brace Syntax"
+category: "java"
 ---
 
 

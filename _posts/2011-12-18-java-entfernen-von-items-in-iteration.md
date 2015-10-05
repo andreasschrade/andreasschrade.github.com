@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Entfernen von Items einer Collection während einer Iteration (best practice)"
+category: "java"
 ---
 
 

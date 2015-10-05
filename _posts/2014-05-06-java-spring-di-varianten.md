@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Dependency Injection mit Spring – Möglichkeiten und Wege"
+category: "java"
 ---
 
 

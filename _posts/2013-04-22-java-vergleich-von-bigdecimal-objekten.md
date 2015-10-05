@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Vergleich von BigDecimal-Objekten"
+category: "java"
 ---
 
 

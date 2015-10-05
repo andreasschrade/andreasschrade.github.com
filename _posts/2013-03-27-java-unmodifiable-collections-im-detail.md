@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Unmodifiable Collections im Detail"
+category: "java"
 ---
 
 

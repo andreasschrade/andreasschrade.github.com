@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Einfaches formatieren von Zeichenketten mittels der Klasse Formatter"
+category: "java"
 ---
 
 

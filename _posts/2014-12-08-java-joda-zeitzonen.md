@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Joda API – DateTime mit Zeitzoneninformation erstellen"
+category: "java"
 ---
 
 

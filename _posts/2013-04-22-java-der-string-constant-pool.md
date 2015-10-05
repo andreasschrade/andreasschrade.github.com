@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Der String-Constant-Pool"
+category: "java"
 ---
 
 

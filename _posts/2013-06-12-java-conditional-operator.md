@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Der Conditional-Operator im Detail"
+category: "java"
 ---
 
 

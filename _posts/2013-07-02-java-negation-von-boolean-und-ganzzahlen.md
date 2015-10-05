@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Negation von Booleans und Ganzzahlen"
+category: "java"
 ---
 
 

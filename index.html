@@ -38,7 +38,10 @@ color: #555;
               <div class="block-postMeta">{{ post.date | date_to_string }}  {% if post.language %} - EN{% endif %}</div>
               
               {% if post.category == "android" %}
-               <div class="block-postMeta" style="right:0px"><img src="{{site.baseurl}}assets/android.png"/></div>
+               <div class="block-postMeta" style="right:0px"><img src="{{site.baseurl}}assets/android.png" style="margin:0"/></div>
+              {% endif %}
+                {% if post.category == "java" %}
+               <div class="block-postMeta" style="right:0px"><img src="{{site.baseurl}}assets/java.png" style="margin:0"/></div>
               {% endif %}
             </div>
           </li>

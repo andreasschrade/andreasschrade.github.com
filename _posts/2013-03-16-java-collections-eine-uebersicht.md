@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Die Collection-Implementierungen im Detail"
+category: "java"
 ---
 
 

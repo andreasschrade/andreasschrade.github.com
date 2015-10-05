@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Apache CXF - JAX-RS Exception-Handling"
-category: "android"
+category: "java"
 ---
 
 

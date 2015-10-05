@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Die Java-Operatoren im Detail (Operator-Precedence, Arten, ...)"
+category: "java"
 ---
 
 

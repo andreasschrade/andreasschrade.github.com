@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Wissenswertes zum BigDecimal-Cache"
+category: "java"
 ---
 
 

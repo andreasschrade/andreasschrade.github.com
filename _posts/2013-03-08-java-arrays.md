@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Einführung zu Arrays"
+category: "java"
 ---
 
 

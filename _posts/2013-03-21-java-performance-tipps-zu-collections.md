@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java: Hintergrund zur Performancesteigerungen im Umgang mit ArrayList"
+category: "java"
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Spring MVC – Asynchrone Verarbeitung mittels @Async-Annotation"
+category: "java"
 ---
 
 
