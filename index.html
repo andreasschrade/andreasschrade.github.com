@@ -35,7 +35,7 @@ color: #555;
 
                 <a class="postArticle-title" href="{{ post.url }}">{{ post.title }}</a>
               </article>
-              <div class="block-postMeta">{{ post.date | date_to_string }}</div>
+              <div class="block-postMeta">{{ post.date | date_to_string }}  {% if post.language %} - EN{% endif %}</div>
             </div>
           </li>
         {% endfor %}
