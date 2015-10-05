@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Möglichkeiten zur Systemzeit- und Uptime-Ermittlung"
+category: "android"
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: 9-Patch Grafiken kurz vorgestellt"
+category: "android"
 ---
 
 

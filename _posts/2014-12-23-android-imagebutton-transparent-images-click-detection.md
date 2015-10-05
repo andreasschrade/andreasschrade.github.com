@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Klickbare Bereich bei ImageButton und transparenten Grafiken"
+category: "android"
 ---
 
 

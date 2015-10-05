@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Testentwicklung mit JUnit"
+category: "android"
 ---
 
 

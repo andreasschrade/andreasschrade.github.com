@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Apache CXF - Erstellung eines REST-Services"
+category: "android"
 ---
 
 

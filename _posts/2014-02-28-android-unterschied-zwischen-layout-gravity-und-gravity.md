@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Unterschied zwischen gravity und layout_gravity"
+category: "android"
 ---
 
 

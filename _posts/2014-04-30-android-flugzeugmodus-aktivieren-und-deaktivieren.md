@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Flugzeugmodus aktivieren/deaktivieren"
+category: "android"
 ---
 
 

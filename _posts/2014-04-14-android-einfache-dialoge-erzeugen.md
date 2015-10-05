@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Einfache Dialoge mithilfe von AlertDialog.Builder erzeugen"
+category: "android"
 ---
 
 

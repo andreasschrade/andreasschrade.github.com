@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Vibrationsalarm verwenden"
+category: "android"
 ---
 
 

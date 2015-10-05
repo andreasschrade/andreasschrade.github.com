@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Akkustatus abfragen"
+category: "android"
 ---
 
 

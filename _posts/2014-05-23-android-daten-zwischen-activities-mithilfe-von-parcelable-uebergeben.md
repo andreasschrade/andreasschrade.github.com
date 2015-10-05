@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Komplexe Objekte mithilfe von Parcelable transferieren"
+category: "android"
 ---
 
 

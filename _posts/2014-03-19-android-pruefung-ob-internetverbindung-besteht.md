@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Prüfung ob Internetverbindung besteht"
+category: "android"
 ---
 
 

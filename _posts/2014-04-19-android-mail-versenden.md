@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Mails aus App versenden"
+category: "android"
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Versionsname und Versioncode der App ermitteln"
+category: "android"
 ---
 
 

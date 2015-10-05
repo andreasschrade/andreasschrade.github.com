@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: TextViews verlinken"
+category: "android"
 ---
 
 

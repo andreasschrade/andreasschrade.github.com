@@ -36,6 +36,10 @@ color: #555;
                 <a class="postArticle-title" href="{{ post.url }}">{{ post.title }}</a>
               </article>
               <div class="block-postMeta">{{ post.date | date_to_string }}  {% if post.language %} - EN{% endif %}</div>
+              
+              {% if post.category == "android" %}
+               <div class="block-postMeta" style="right:0px"><img src="{{site.baseurl}}assets/android.png"/></div>
+              
             </div>
           </li>
         {% endfor %}

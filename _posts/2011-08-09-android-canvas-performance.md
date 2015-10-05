@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Canvas 2D: Effizientes rendern großflächiger Texturen"
+category: "android"
 ---
 
 

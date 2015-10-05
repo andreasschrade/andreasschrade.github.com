@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Individuelle Notifications erstellen"
+category: "android"
 ---
 
 

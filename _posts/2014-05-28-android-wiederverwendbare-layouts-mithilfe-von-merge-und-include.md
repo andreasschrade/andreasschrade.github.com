@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Layouts mithilfe von &lt;merge&gt; und &lt;include&gt; wiederverwenden"
+category: "android"
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: SMS versenden"
+category: "android"
 ---
 
 

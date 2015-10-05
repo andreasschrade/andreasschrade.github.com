@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Remote-Zugriff auf die SQLite Datenbank"
+category: "android"
 ---
 
 

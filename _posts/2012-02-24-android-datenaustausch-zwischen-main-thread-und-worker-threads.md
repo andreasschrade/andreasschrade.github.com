@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Datenaustausch zwischen Main-Thread und Worker-Threads"
+category: "android"
 ---
 
 

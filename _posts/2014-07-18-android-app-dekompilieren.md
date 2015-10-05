@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Schnelle Einführung in die App-Dekompilierung"
+category: "android"
 ---
 
 

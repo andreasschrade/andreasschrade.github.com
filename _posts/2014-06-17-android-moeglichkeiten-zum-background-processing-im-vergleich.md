@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Möglichkeiten zum Background-Processing im Vergleich"
+category: "android"
 ---
 
 

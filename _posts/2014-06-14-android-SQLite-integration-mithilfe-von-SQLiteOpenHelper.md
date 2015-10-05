@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: SQLite-Integration Mithilfe von SQLiteOpenHelper realisieren"
+category: "android"
 ---
 
 

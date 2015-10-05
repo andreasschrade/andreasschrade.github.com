@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Der IntentService im Detail"
+category: "android"
 ---
 
 

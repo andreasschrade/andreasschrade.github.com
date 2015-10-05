@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Ressourcen-Externalisierung"
+category: "android"
 ---
 
 

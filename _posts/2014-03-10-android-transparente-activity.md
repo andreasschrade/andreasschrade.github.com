@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Transparente Activity erzeugen"
+category: "android"
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Automatisiertes Testing mit Robotium"
+category: "android"
 ---
 
 

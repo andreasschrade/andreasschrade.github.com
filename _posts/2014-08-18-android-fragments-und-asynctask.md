@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: AsyncTask in Fragments"
+category: "android"
 ---
 
 

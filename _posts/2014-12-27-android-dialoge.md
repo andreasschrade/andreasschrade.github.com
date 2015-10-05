@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Dialoge unter Android"
+category: "android"
 ---
 
 

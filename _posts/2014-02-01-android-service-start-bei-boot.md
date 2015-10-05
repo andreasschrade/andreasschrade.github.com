@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android: Service beim Bootvorgang starten"
+category: "android"
 ---
 
 
