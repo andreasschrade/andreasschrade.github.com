@@ -40,17 +40,13 @@ I have done a few things, from writing articles for journals, writing blog posts
             <div class="postArticle-wrapper">
               <article class="postArticle postArticle--short">
 
-              {% if post.title == "How-To Create a Working Kiosk Mode in Android"  %}
-                         <a class="postArticle-title" href="http://www.andreas-schrade.de/2015/02/16/android-tutorial-how-to-create-a-kiosk-mode-in-android/">{{ post.title }}</a>
-               {% else %}
                      <a class="postArticle-title" href="{{ post.url }}">{{ post.title }}</a>
-              {% endif %}
-              
+             
                
               </article>
               <div class="block-postMeta">{{ post.date | date_to_string }}  {% if post.language %} - EN{% endif %}</div>
               
-              {% if post.category == "android" %}
+              {% if post.category == "android" ||  post.language %}
                <div class="block-postMeta" style="right:0px"><img src="{{site.baseurl}}assets/android.png" style="margin:0"/></div>
               {% endif %}
                 {% if post.category == "java" %}
