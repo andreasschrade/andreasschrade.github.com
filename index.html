@@ -33,11 +33,6 @@ color: #555;
             <div class="postArticle-wrapper">
               <article class="postArticle postArticle--short">
 
-                <a href="{{ post.url }}">
-                  <div class="postArticle-image" style="background-image:url('{{site.baseurl}}assets/logo-black.svg')">
-                  </div>
-                </a>
-
                 <a class="postArticle-title" href="{{ post.url }}">{{ post.title }}</a>
               </article>
               <div class="block-postMeta">{{ post.date | date_to_string }}</div>
