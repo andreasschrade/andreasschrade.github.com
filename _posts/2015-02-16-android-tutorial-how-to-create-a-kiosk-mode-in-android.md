@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "How-To Create a Working Kiosk Mode in Android"
-language: "EN"
-category: "android"
 comments: true
+
+
 ---
 
 
