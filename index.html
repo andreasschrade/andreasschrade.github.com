@@ -40,7 +40,14 @@ I have done a few things, from writing articles for journals, writing blog posts
             <div class="postArticle-wrapper">
               <article class="postArticle postArticle--short">
 
-                <a class="postArticle-title" href="{{ post.url }}">{{ post.title }}</a>
+
+              {% if post.url == "http://www.andreas-schrade.de/android/2015/02/16/android-tutorial-how-to-create-a-kiosk-mode-in-android/"  %}
+                         <a class="postArticle-title" href="http://www.andreas-schrade.de/2015/02/16/android-tutorial-how-to-create-a-kiosk-mode-in-android/">{{ post.title }}</a>
+               {% else %}
+                     <a class="postArticle-title" href="{{ post.url }}">{{ post.title }}</a>
+              {% endif %}
+              
+               
               </article>
               <div class="block-postMeta">{{ post.date | date_to_string }}  {% if post.language %} - EN{% endif %}</div>
               
