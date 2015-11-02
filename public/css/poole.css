@@ -716,3 +716,17 @@ float:left;
   -webkit-filter: none;
           filter: none;
 }
+
+
+.hireme{
+
+position: fixed;
+    bottom: 17px;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    background: #f1f1f1;
+    padding: 5px 10px 0px;
+    text-align:center;
+    font-weight: bold;
+}
