@@ -10,7 +10,7 @@ Greenrobot's <a href="https://github.com/greenrobot/EventBus">EventBus</a> is a 
 
 That makes the data exchange between components like Activity, Fragment, Services and any kind of backgrounds threads pretty easy.
 
-<img style="display:block; " src="{{ site.url }}/assets/eventbus-greenrobot.jpg">
+<img style="display:block; margin: 0 auto" src="{{ site.url }}/assets/eventbus-greenrobot.jpg">
 
 ## Why should I care about Event Bus?
 
@@ -85,7 +85,6 @@ Ok, you have a bus, an event and already a sender. What's missing? Right, someon
 You only have to call
 {% highlight java %}
 EventBus.getDefault().register(this); // this == your class instance
-}
 {% endhighlight %}
 to listen and subscribe to events.
 
@@ -93,6 +92,7 @@ If you want to use an *Activity* or *Fragment* as a subscriber, just call the st
 
 
 **Unregistration:**
+
 You should also unregister the subscriber. Just call *unregister(this)* if you do not longer need the Event Bus:
 
 {% highlight java %}
@@ -189,7 +189,7 @@ public void onPause() {
 }
 
 public void onEvent(BatteryLevelEvent event) {
-    myTextView.setText(event.getBatteryLevel() + " %);
+    myTextView.setText(event.getBatteryLevel() + " %");
 }
 {% endhighlight %}
 
@@ -224,7 +224,7 @@ I hope you have learned how to use the EventBus library. Although the library is
 
 Make sure you have a clear concept of your App. Other developers could otherwise be pretty confused about the magic.
 
-Also, avoid nested events (Sender A sends Event X to Subscriber *B*. *Subscriber/Sender *B* sends Event Y to Subscriber C). Nested events increase the complexity dramatically and make debugging very hard.
+Also, avoid nested events (Sender *A* sends Event X to Subscriber **B**. Subscriber/Sender **B** sends Event Y to Subscriber *C*). Nested events increase the complexity dramatically and make debugging very hard.
 
 Every design pattern has its pitfalls. You only have to respect them.
 
