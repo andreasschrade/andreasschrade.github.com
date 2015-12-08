@@ -11,8 +11,12 @@ url: "http://www.andreas-schrade.de/2015/02/16/android-tutorial-how-to-create-a-
 
 ## Introduction
 
-This article describes a list of powerful methods to implement a Kiosk Mode in Android. A Kiosk Mode is useful if you develop an app and want prevent any other applications to run in the foreground. 
-
+This article describes a list of powerful methods to implement a Kiosk Mode in Android. A strong>Kiosk Mode</strong> is useful if you develop an app and want prevent any other applications to run in the foreground. 
+<p style="
+    border: 2px solid #eec077;
+    padding: 8px;
+          "><b>Note:</b><br> You are looking for a solution to restrict the user access to defined webpage(s)?<br>I just published an App for that purpose. You can find it <b><a href="https://play.google.com/store/apps/details?id=de.appgantic.megakioskweb" target="_blank">here</a></b>. </p>
+          
 **A few things to consider**
 
 - Exit mechanism: Don't forget to implement *and* test an exit mechanism in your app.
@@ -36,7 +40,7 @@ The following features are affected:
 
 ### Preparation
 
-First of all we need to make sure your app starts automatically after booting your device.
+First of all we need to make sure your Kiosk app starts automatically after booting your device.
 
 Add the following permission as a child of the *manifest* element to your Android manifest:
 
@@ -347,7 +351,7 @@ Last, add the service declaration and the permission for retrieving the foregrou
 <uses-permission android:name="android.permission.GET_TASKS"/>
 {% endhighlight %}
 
-Basically, the thread checks every two seconds if your application is running in foreground. If not, the thread will immediately recreate your activity.
+Basically, the thread checks every two seconds if your application is running in foreground. If not, the thread will immediately recreate your activity and your Android Kiosk is visible again.
 
 
 ### Prevent screen dimming
