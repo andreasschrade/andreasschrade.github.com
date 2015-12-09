@@ -17,7 +17,7 @@ This article describes a list of powerful methods to implement a Kiosk Mode in A
     padding: 8px;
           ">
           <img style="float:right;margin-left: 16px;" src="{{ site.url }}/assets/android-kiosk.png">
-          <b>Note:</b><br> You are looking for a solution to <b>restrict the user access to defined webpage(s)</b>?<br>I just published an App for that purpose. You can find it <b><a href="https://play.google.com/store/apps/details?id=de.appgantic.megakioskweb" target="_blank">here</a></b>. </p>
+          <b>Note:</b><br> You are looking for a solution to <b>restrict the user access to your website(s)</b>?<br>I just published an App for that purpose. You can find it <b><a href="https://play.google.com/store/apps/details?id=de.appgantic.megakioskweb" target="_blank">here</a></b>. </p>
           
 **A few things to consider**
 
