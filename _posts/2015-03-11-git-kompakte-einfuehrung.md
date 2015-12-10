@@ -99,3 +99,96 @@ Löschen lässt sich der Branch dagegen mit Aufruf von:
 
 >git branch -d feature_123
 
+Arbeitet man bsps. auf einem Feature-Branch und es gilt nun eine Änderung am Master-Branch vorzunehmen, lässt sich ein Wechsel problemlos mit folgendem Aufruf durchführen.
+
+>git checkout master
+
+Man sollte beim Wechsel von Branches jedoch darauf achten, dass die Staging-Area clean ist um etwaige Konflikte zu vermeiden.
+Dies lässt sich realisieren, indem man entweder noch ausstehende Änderungen committet, oder aber Änderungen kurzzeitig "stashed".
+
+<strong>Stashing in Git</strong>
+
+Unter Stashing versteht man hierbei das in der Regel kurzzeitige Speichern von Änderungen des Working-Directory auf einem Stack.
+
+>git stash
+
+Mit Aufruf von "git stash" ist anschließend das Working Directory clean. Ein Wechsel zu einem anderen Branch kann somit bedenkenlos vorgenommen werden.
+
+Um einen Einblick zu erhalten, welche Changes sich auf dem Stash befinden, genügt ein Aufruf von
+
+>git stash list
+
+Möchte man die zuletzt hinzugefügten Änderungen wieder auf das aktuelle Working Directory anwenden, so lässt sich dies mit folgendem Aufruf erzielen
+
+>git stash apply
+
+Befinden sich mehrere Änderungen am Stash, lässt sich die ID der Änderung angeben, die verwendet werden soll.  Folgender Befehl wendet die drittletze (zero-based) Änderung an:
+
+>git stash apply stash@{2}
+
+<strong>Merging in Git</strong>
+
+Sobald man unterschiedliche Branches nutzt, gilt es früher oder später diese Branches zusammenzuführen.
+In der Regel werden hierbei Feature-Branches (oder andere Branches abgeleitet vom Master-Branch) zurück in den Master-Branch gemerged.
+
+In Git lässt sich ein Merge mit der Anweisung
+
+>git merge <branch>
+
+realisieren. git merge steht dabei in starkem Zusammenhang mit git checkout.
+Mit git checkout wird zuerst auf den Branch gewechselt, in dem der Merge resultieren soll.
+
+Folgendes Beispiel demonstriert das Vorgehen, wenn es einen Feature-Branch in den Master-Branch zu mergen gilt
+
+>git checkout master
+>git merge feature123
+
+Nicht immer klappt das Mergen problemlos. Wurden Änderungen an gleicher Position vorgenommen, ist es für Git nicht möglich, automatisch einen Merge durchzuführen.
+
+Folgendes Beispiel behandelt einen derartigen Konflikt. Es wird hierbei versucht einen Feature-Branch zu mergen:
+
+>git merge feature42
+
+Anstelle aber, dass Git automatisch einen Merge-Commit vornimmt, wird der Merge-Prozess unterbrochen und Git meldet sich mit einem Fehler zu Wort: \n
+<i>"Automatic merge failed; fix conflicts and then commit the result."</i>
+
+Um einen Einblick zu erhalten, woran es nun im Detail scheitert, hilft ein Blick auf die Ausgabe von "git status";
+
+Unter dem Bereich "unmerged paths" findet sich eine Auflistung aller Dateien die in einem Merge-Konflikt stehen.
+Diese Dateien gilt es nun manuell zu mergen. Ist der Merge abgeschlossen können jene gemergte Dateien wie gewohnt mittels "git add" in den Staging-Bereich aufgenommen werden.
+
+Eine gute Möglichkeit um vor einem Merge bereits einen Überblick zu erhalten, wie groß die "Konfliktgefahr" ist, lässt sich mit Aufruf von
+
+>git diff <source_branch> <target_branch>
+
+realisieren. Hierbei wird eine Preview von Git erstellt.
+
+
+<strong>Tagging in Git</strong>
+
+Es ist für gewöhnlich eine gute Praxis, Software-Releases mit einem Tag zu versehen. Dieses Konzept ist gerade in SVN besonders populär.
+
+>git tag 1.0.0 222efff321
+
+Nach der Tag-Bezeichnung (1.0.0) steht hierbei die Commit-ID.
+Diese ID erhält man am einfachsten mittels Aufruf von
+
+>git log
+
+Befinden sich viele Commits im Repo und man möchte sich lediglich einen groben Überblick verschaffen, so ermöglicht ein Aufruf von
+
+>git log --pretty=oneline
+
+den Abruf einer kompakten Commit-Historie.
+
+
+
+
+
+
+
+
+
+
+
+
