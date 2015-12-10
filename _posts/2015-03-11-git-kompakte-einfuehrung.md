@@ -133,7 +133,7 @@ In der Regel werden hierbei Feature-Branches (oder andere Branches abgeleitet vo
 
 In Git lässt sich ein Merge mit der Anweisung
 
->git merge <branch>
+>git merge my_branch
 
 realisieren. git merge steht dabei in starkem Zusammenhang mit git checkout.
 Mit git checkout wird zuerst auf den Branch gewechselt, in dem der Merge resultieren soll.
@@ -141,6 +141,7 @@ Mit git checkout wird zuerst auf den Branch gewechselt, in dem der Merge resulti
 Folgendes Beispiel demonstriert das Vorgehen, wenn es einen Feature-Branch in den Master-Branch zu mergen gilt
 
 >git checkout master
+
 >git merge feature123
 
 Nicht immer klappt das Mergen problemlos. Wurden Änderungen an gleicher Position vorgenommen, ist es für Git nicht möglich, automatisch einen Merge durchzuführen.
@@ -149,7 +150,7 @@ Folgendes Beispiel behandelt einen derartigen Konflikt. Es wird hierbei versucht
 
 >git merge feature42
 
-Anstelle aber, dass Git automatisch einen Merge-Commit vornimmt, wird der Merge-Prozess unterbrochen und Git meldet sich mit einem Fehler zu Wort: \n
+Anstelle aber, dass Git automatisch einen Merge-Commit vornimmt, wird der Merge-Prozess unterbrochen und Git meldet sich mit einem Fehler zu Wort:
 <i>"Automatic merge failed; fix conflicts and then commit the result."</i>
 
 Um einen Einblick zu erhalten, woran es nun im Detail scheitert, hilft ein Blick auf die Ausgabe von "git status";
@@ -159,7 +160,7 @@ Diese Dateien gilt es nun manuell zu mergen. Ist der Merge abgeschlossen können
 
 Eine gute Möglichkeit um vor einem Merge bereits einen Überblick zu erhalten, wie groß die "Konfliktgefahr" ist, lässt sich mit Aufruf von
 
->git diff <source_branch> <target_branch>
+>git diff source_branch target_branch
 
 realisieren. Hierbei wird eine Preview von Git erstellt.
 
