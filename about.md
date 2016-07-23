@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-<h2>EN</h2>
+
 I am a <strong>freelance Software Developer</strong> with over ten years of software development experience and an interest and strong background in Android and Java backend development. I am also interested in A.I., Deep Learning and smart technology.
 I have a passion for performant, robust and flexible applications.
 Former backend developer at one of Europe's largest electronic retailers and developer of an award-winning App. I like to share my knowledge by writing blog posts and articles for journals.
