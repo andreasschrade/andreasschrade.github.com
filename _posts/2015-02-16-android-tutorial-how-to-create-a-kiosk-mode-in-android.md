@@ -11,18 +11,18 @@ url: "http://www.andreas-schrade.de/2015/02/16/android-tutorial-how-to-create-a-
 
 ## Introduction
 
-This article describes a list of powerful methods to implement a Kiosk Mode in Android. A strong>Kiosk Mode</strong> is useful if you develop an app and want prevent any other applications to run in the foreground. 
+This article describes a list of powerful methods to implement a Kiosk Mode in Android. A strong>Kiosk Mode</strong> is useful if you develop an Android app and want prevent any other applications to run in the foreground. 
 <p style="
-    border: 2px solid #eec077;
+    border: 2px solid #f12e2e;
     padding: 8px;
           ">
-          <a href="https://play.google.com/store/apps/details?id=de.appgantic.megakioskweb" target="_blank"><img style="float:right;margin-left: 16px;" src="{{ site.url }}/assets/android-kiosk.png"> </a>
-          <b>Note:</b><br> You are looking for a solution to <b>restrict the user access to your website(s) on Android</b>?<br>I just published an App for that purpose. You can find it <b><a href="https://play.google.com/store/apps/details?id=de.appgantic.megakioskweb" target="_blank">here</a></b>. </p>
+          <a href="https://www.42gears.com/products/surelock/surelock-android/" onclick="trackOutboundLink('https://www.42gears.com/products/surelock/surelock-android/'); return false;" target="_blank"><img style="float:right;margin-left: 16px;" src="{{ site.url }}/assets/android_kiosk_surelock.png"> </a>
+          <b>Note:</b><br>Not a software developer? Turn any Android tablet or phone into a Kiosk. Use <b><a href="https://www.42gears.com/products/surelock/surelock-android/" onclick="trackOutboundLink('https://www.42gears.com/products/surelock/surelock-android/'); return false;" target="_blank">SureLock</a> to lock them down to only one or a few specific apps.</p>
           
 **A few things to consider**
 
-- Exit mechanism: Don't forget to implement *and* test an exit mechanism in your app.
-- Talk to your users: Be careful, if you want to distribute your app through the Play Store. Tell your users how they can leave your app before they enter the Kiosk Mode.
+- Exit mechanism: Don't forget to implement *and* test an exit mechanism in your Android Kiosk app.
+- Talk to your users: Be careful, if you want to distribute your Kiosk app through the Play Store. Tell your users how they can leave your app before they enter the Kiosk Mode.
 - Nothing is completely secure: There are techies like you out there who can bypass your restrictions if the device is not physically secured.
 
 <br>
@@ -42,7 +42,7 @@ The following features are affected:
 
 ### Preparation
 
-First of all we need to make sure your Kiosk app starts automatically after booting your device.
+First of all we need to make sure your Android Kiosk app starts automatically after booting your device.
 
 Add the following permission as a child of the *manifest* element to your Android manifest:
 
@@ -382,9 +382,19 @@ That's it!<br>
 ## Conclusion
 
 Developing a kiosk-based application is not the easiest part in Android development, but it is definitely possible to create a "robust" Kiosk Mode. The only disadvantage is the long list of (very) dirty hacks.
+If you do not have very specific requirements, it is a good choice to use an already existing Kiosk app. 
 
 <br>
 <a href="https://github.com/andreasschrade/android-kiosk-mode" target="_blank">Download example project</a>                    <br>
 <br>
 
 <b>Do you want an Android Kiosk App?<br>Just contact me: blog //at// andreas-schrade.de - I am happy to hear from you.</b>
+
+<script>
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
