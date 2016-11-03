@@ -14,10 +14,10 @@ url: "http://www.andreas-schrade.de/2015/02/16/android-tutorial-how-to-create-a-
 This article describes a list of powerful methods to implement a Kiosk Mode in Android. A strong>Kiosk Mode</strong> is useful if you develop an Android app and want prevent any other applications to run in the foreground. 
 <p style="
     border: 2px solid #f12e2e;
-    padding: 8px;
+    padding: 12px;
           ">
-          <a href="https://www.42gears.com/products/surelock/surelock-android/" onclick="trackOutboundLink('https://www.42gears.com/products/surelock/surelock-android/'); return false;" target="_blank"><img style="float:right;margin-left: 16px;" src="{{ site.url }}/assets/android_kiosk_surelock.png"> </a>
-          <b>Note:</b><br>Not a software developer? Turn any Android tablet or phone into a Kiosk.<br>Use <b><a href="https://www.42gears.com/products/surelock/surelock-android/" onclick="trackOutboundLink('https://www.42gears.com/products/surelock/surelock-android/'); return false;" target="_blank">SureLock</a> to lock them down to only one or a few specific apps.</p>
+          <a href="https://www.42gears.com/products/surelock/surelock-android/" onclick="trackOutboundLink('https://www.42gears.com/products/surelock/surelock-android/'); return false;" target="_blank"><img style="float:right;margin-left: 16px; margin-right:8px" src="{{ site.url }}/assets/android_kiosk_surelock.png"> </a>
+          <b>Note:</b><br>Not a software developer? <b>Turn any Android tablet or phone into a Kiosk.</b><br>Use <a href="https://www.42gears.com/products/surelock/surelock-android/" onclick="trackOutboundLink('https://www.42gears.com/products/surelock/surelock-android/'); return false;" target="_blank">SureLock</a> to lock them down to only one or a few specific apps.</p>
           
 **A few things to consider**
 
