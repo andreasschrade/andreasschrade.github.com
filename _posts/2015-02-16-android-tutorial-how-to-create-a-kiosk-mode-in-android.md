@@ -17,7 +17,7 @@ This article describes a list of powerful methods to implement a Kiosk Mode in A
     padding: 8px;
           ">
           <a href="https://www.42gears.com/products/surelock/surelock-android/" onclick="trackOutboundLink('https://www.42gears.com/products/surelock/surelock-android/'); return false;" target="_blank"><img style="float:right;margin-left: 16px;" src="{{ site.url }}/assets/android_kiosk_surelock.png"> </a>
-          <b>Note:</b><br>Not a software developer? Turn any Android tablet or phone into a Kiosk. Use <b><a href="https://www.42gears.com/products/surelock/surelock-android/" onclick="trackOutboundLink('https://www.42gears.com/products/surelock/surelock-android/'); return false;" target="_blank">SureLock</a> to lock them down to only one or a few specific apps.</p>
+          <b>Note:</b><br>Not a software developer? Turn any Android tablet or phone into a Kiosk.<br>Use <b><a href="https://www.42gears.com/products/surelock/surelock-android/" onclick="trackOutboundLink('https://www.42gears.com/products/surelock/surelock-android/'); return false;" target="_blank">SureLock</a> to lock them down to only one or a few specific apps.</p>
           
 **A few things to consider**
 
