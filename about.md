@@ -21,8 +21,3 @@ Technologies:
 - DB: Oracle RDBMS, MySQL
 - Build-Tools: Gradle, Maven, Ant
 
-Personality:
-
-- Sympathic. Team-player. Communicative. Accurate. Stress-resistant. 100% Committed
-- I’m fascinated with the usable psychology of self-improvement, business and philosophy.
-- <a href="http://typelogic.com/intj.html" target="_blank">INTJ</a>, minimalist and musician.
