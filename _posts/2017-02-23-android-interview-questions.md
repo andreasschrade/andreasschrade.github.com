@@ -330,7 +330,7 @@ A Fragment is closely tied to the Activity it is in. When the Activity is paused
 
 ### What are two ways to add a Fragment to an Activity?
 
-1. A Fragment can be declared inside the Activity's layout file.
+A Fragment can be declared inside the Activity's layout file.
 
 {% highlight xml %}
 @Override
@@ -349,7 +349,8 @@ A Fragment is closely tied to the Activity it is in. When the Activity is paused
 
 The Android system inserts the View object returned by the Fragment's onCreateView method directly in place of the &lt;fragment&gt; element.
 
-2. A fragment can programmatically added at runtime.
+
+Otherwise, a fragment can programmatically added at runtime.
 You can add, remove or replace a Fragment during runtime by using the APIs from FragmentTransaction.
 
 {% highlight java %}
