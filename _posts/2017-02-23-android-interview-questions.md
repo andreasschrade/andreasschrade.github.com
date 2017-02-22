@@ -29,11 +29,9 @@ ART (Android Runtime) is the new runtime environment for Android apps. ART impro
 
 An Android app runs in its own process and can use multiple threads. The thread that the app will be executed upon, most of the time, is called the "main thread" or the "UI thread".
 
-
 ### What is Instant Run?
 
 Instant Run has the intention to increase the development speed of Android apps. Instead of rebuilding the whole app, Android is trying to patch the existing app on the Android device to reflect your changes. 
-
 
 ### What is an Android manifest file?
 
@@ -66,23 +64,24 @@ The system is looking for an appropriate component to start:
 
 Example: 
 If an app wants to trigger a phone call, it has only to specify the corresponding action (ACTION_DIAL):
-<code>
+
+{% highlight java %}
 Uri number = Uri.parse("tel:4213371337");
 Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
 if (callIntent.resolveActivity(getPackageManager()) != null) {
 	// the system can resolve the Intent
 }
-</code>
-
+{% endhighlight %}
 
 ### What is an Explicit Intent?
 
 An explicit Intent specifies the component to start by the fully-qualified class name. This is the common case to start a component in the own app.
 
 Example:
-<code>
+
+{% highlight java %}
 Intent startIntent = new Intent(myContext, AnotherActivity.class);
-</code>
+{% endhighlight %}
 
 ### What is a Sticky Intent?
 
@@ -99,7 +98,6 @@ Note: Sticky broadcasts are deprecated in Android 5+.
 
 A PendingIntent wraps a regular Intent that specifies an action to take in the future.
 At the same time it acts as a token for foreign app components (e.g. AlarmManager, NotificationManager, AppWidgetManager). This token gives the foreign application the permission to execute the app internal Intent when a condition is met (e.g. AlarmManager triggers a PendingIntent at a specific time) 
-
 
 ### What are common use cases for using an Intent?
 
@@ -158,6 +156,7 @@ Background:
 In the most cases, you'll use a Handler in a background thread to perform some kind of action in the main thread. The Handler objects registers itself in the thread in which it is created and provides a communication channel to this thread.
 
 Example:
+{% highlight java %}
 public class MyActivity extends Activity {
 	private ProgressBar progress;
 
@@ -183,6 +182,7 @@ public class MyActivity extends Activity {
 		new Thread(runnable).start(); // starts the thread
 	}
 }
+{% endhighlight %}
 
 ### What is a ContentProvider?
 A Content Provider is part of an Android application that manages access to a repository of data.
@@ -265,7 +265,7 @@ The system calls the onSaveInstance() method and stores the instance state in a 
 Important: You always have to call the superclass implementation of onSaveInstanceState(). The default implementation saves the state of the view hierarchy. This requires that each view has an unique ID (android:id).
 
 Example:
-<code>
+{% highlight java %}
 @Override
 public void onSaveInstanceState(Bundle savedInstanceState) {
     savedInstanceState.putInt(MY_VAR_KEY, myVarValue);
@@ -273,13 +273,13 @@ public void onSaveInstanceState(Bundle savedInstanceState) {
     // Always call the superclass method
     super.onSaveInstanceState(savedInstanceState);
 }
-</code>
+{% endhighlight %}
 
 ### How can an Activity recover its previous state?
 Either by using the <i>Bundle</i> instance that the system passes to onCreate(Bundle) or by implementing the onRestoreInstanceState(Bundle) method.
 
 Example:
-<code>
+{% highlight java %}
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -292,10 +292,10 @@ protected void onCreate(Bundle savedInstanceState) {
         // First initialization - Nothing to restore!
     }
 }
-</code>
+{% endhighlight %}
 
 Otherwise use onRestoreInstanceState(Bundle):
-<code>
+{% highlight java %}
 @Override
 public void onRestoreInstanceState(Bundle savedInstanceState) {
     // Always call the superclass method
@@ -304,7 +304,7 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
     // Restore values from instance state
     myVarValue = savedInstanceState.getInt(MY_VAR_KEY);
 }
-</code>
+{% endhighlight %}
 
 ### What is a Fragment?
 A fragment is a modular section of an Activity, which has its own lifecycle. It can be added or removed while an Activity is running and can also be reused in different activities.
@@ -321,7 +321,8 @@ A Fragment can also exist without its own UI as an invisible worker for the Acti
 
 ### What are two ways to add a Fragment to an Activity?
 1. A Fragment can be declared inside the Activity's layout file.
-<code>
+
+{% highlight xml %}
 @Override
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -332,13 +333,14 @@ A Fragment can also exist without its own UI as an invisible worker for the Acti
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 </FrameLayout>
-</code>
+{% endhighlight %}
 
 Background: The Android system inserts the View object returned by the Fragment's onCreateView method directly in place of the &lt;fragment&gt; element.
 
 2. A fragment can programmatically added at runtime.
 You can add, remove or replace a Fragment during runtime by using the APIs from FragmentTransaction.
-<code>
+
+{% highlight java %}
 FragmentManager fragmentManager = getFragmentManager();
 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -347,7 +349,7 @@ fragmentTransaction.replace(R.id.my_fragment_container, newFragment);
 fragmentTransaction.addToBackStack(null);
 
 fragmentTransaction.commit();
-</code>
+{% endhighlight %}
 
 
 "my_fragment_container" specifies a ViewGroup resource in which to place the Fragment.
@@ -355,17 +357,18 @@ fragmentTransaction.commit();
 ### You are replacing a Fragment with another. How can you ensure that the user can return to the previous fragment by pressing the <i>Back</i> button?
 1. You have to add the call addToBackStack() inside the FragmentTransaction.
 
-<code>
+{% highlight java %}
 FragmentManager fragmentManager = getFragmentManager();
 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
 ExampleFragment fragment = new ExampleFragment();
 fragmentTransaction.replace(R.id.my_fragment_container, fragment);
 fragmentTransaction.commit();
-</code>
+{% endhighlight %}
 
 2. You have to override onPackPressed() in the main Activity class:
-<code>
+
+{% highlight java %}
 @Override
 public void onBackPressed() {
     if (getFragmentManager().getBackStackEntryCount() > 0) {
@@ -374,7 +377,7 @@ public void onBackPressed() {
         super.onBackPressed(); // returns to the previous Activity
     }
 }
-</code>
+{% endhighlight %}
 
 Important: If you do not call addToBackStack() inside the FragmentTransaction that removes a Fragment, then that Fragment is destroyed when the transaction is committed and the user cannot navigate back to it.
 
@@ -523,8 +526,6 @@ An Adapter is a bridge between the model data and that data’s visual represent
 
 Background: Use the BaseAdapter class as the foundation to build your own Adapter implementation. 
 
-
-
 ### What is the ViewHolder-Pattern?
 
 The ViewHolder design pattern can be used to increase the speed at which a ListView renders data.
@@ -563,12 +564,6 @@ Never use StrictMode in production code.
 
 ## What happens with your app if the device goes into "Doze Mode"?
 Scheduled alarms (via AlarmManager), jobs (via JobScheduler), and syncs (via SyncManager) will be ignored by default, except during occasional "idle maintenance windows".
-
-## Android Networking
-
-## Android Database
-
-### What are contract classes? https://developer.android.com/training/basics/data-storage/databases.html
 
 ## Android Testing
 
