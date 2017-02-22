@@ -44,7 +44,8 @@ Android Debug Bridge (adb) is a command-line tool that lets you communicate with
 ### What is an Intent?
 An Intent is basically a message that is passed between components like Activities or Services. It acts like a trigger to do something.
 
-Background:
+<u>Background:</u>
+
 Intents are asynchronous and allow you to interact with components from the same application as well as with components from other applications.
 The primary pieces of information in an Intent are:
 - Action: The generic action to perform (ACTION_VIEW -> view, ACTION_EDIT -> edit, ...)
@@ -57,12 +58,14 @@ The primary pieces of information in an Intent are:
 An implicit Intent does not name a specific component. It declares a general action to perform.
 The action specifies the thing that the app wants to do.
 
-Background:
+<u>Background:</u>
+
 The system is looking for an appropriate component to start:
 - If multiple components are compatible with the action, the system shows a dialog so the user can pick which app to use.
 - If there is no appropriate component available on the device that can handle the action, your app will crash immediately!
 
-Example: 
+<u>Example:</u>
+
 If an app wants to trigger a phone call, it has only to specify the corresponding action (ACTION_DIAL):
 
 {% highlight java %}
@@ -77,7 +80,7 @@ if (callIntent.resolveActivity(getPackageManager()) != null) {
 
 An explicit Intent specifies the component to start by the fully-qualified class name. This is the common case to start a component in the own app.
 
-Example:
+<u>Example:</u>
 
 {% highlight java %}
 Intent startIntent = new Intent(myContext, AnotherActivity.class);
@@ -87,12 +90,13 @@ Intent startIntent = new Intent(myContext, AnotherActivity.class);
 
 A sticky Intent is a Intent that has been sent as a sticky Broadcast, meaning the Intent stays around after the broadcast is complete.
 
-Example:
+<u>Example:</u>
+
 The Android system uses sticky broadcasts to notify receivers that the battery level has been changed. (ACTION_BATTERY_CHANGED)
 
 When you call registerReceiver() for that action you will always get the latest Intent for that action. You do not have to wait for the next broadcast!
 
-Note: Sticky broadcasts are deprecated in Android 5+.
+<u>Note:</u>Sticky broadcasts are deprecated in Android 5+.
 
 ### What is a PendingIntent?
 
@@ -109,9 +113,12 @@ At the same time it acts as a token for foreign app components (e.g. AlarmManage
 ### What is a Service?
 A service is an application component without user interface that can perform long running operations in the background (= the corresponding app does not have to be in the foreground).
 
-Important: A Service runs in the main thread and does not create its own thread. It is important to create a new thread for CPU-intensive or blocking operations inside the Service instance.
+<b>Important:</b>
 
-Background:
+A Service runs in the main thread and does not create its own thread. It is important to create a new thread for CPU-intensive or blocking operations inside the Service instance.
+
+<u>Background:</u>
+
 There exist two important types of services:
 1. Started Service: A started service (usually started via startService()) runs in the background indefinitely. After the service finished its work (e.g. downloading a file), it is necessary to stop the service by calling stopSelf() or stopService(). Lifecycle calls: onCreate(), onStartCommand() - RUNNING - onDestroy()
 
@@ -123,7 +130,8 @@ A mixture of both types does also work!
 
 The IntentService is a subclass of Service that uses a worker thread to handle all of the start requests. All tasks are executed sequentially on a separate worker thread. The IntentService cannot run tasks in parallel. 
 
-Background:
+<u>Background:</u>
+
 There is no need to spawn an extra thread. The IntentService stops itself automatically as soon as all tasks/start requests have been handled. There is no need to call stopSelf().
 
 ## When to use IntentService?
@@ -144,7 +152,8 @@ JobScheduler is an abstract class that allows developers to create jobs that exe
  -device is plugged into a power source
  -device is connected to Wifi
 
-Important:
+<b>Important:</b>
+
 The job runs on the main thread. It is necessary to use another thread for longer tasks.
 
 ## What is a Handler typically used for?
@@ -152,7 +161,8 @@ Typically it is used to perform an action on a different thread than your own.
 
 It is also used to schedule messages and runnables to be executed at some point in the future.
 
-Background:
+<u>Background:</u>
+
 In the most cases, you'll use a Handler in a background thread to perform some kind of action in the main thread. The Handler objects registers itself in the thread in which it is created and provides a communication channel to this thread.
 
 Example:
@@ -203,7 +213,9 @@ Anr is the acronym for "Application Not Responding." This is a dialog that the s
 ### How to avoid ANR messages?
 By using a worker thread for blocking I/O operations or other long running operations.
 
-Background: Android apps normally run entirely on a single thread (UI thread).
+<u>Background:</u>
+
+Android apps normally run entirely on a single thread (UI thread).
 If an app executes a long running operation on that thread and cannot response to an user input event (e.g. screen touch event) within 5 seconds, the system will show an ANR dialog.
 
 ## Android UI
@@ -211,7 +223,9 @@ If an app executes a long running operation on that thread and cannot response t
 ### What is an Activity?
 An Activity represents the presentation layer in Android. It provides a screen with which a user can interact in order to do something.
 
-Background: An Android application usually consists of multiple Activities that are loosely bound to each other and can be switched in between during runtime of the application.
+<u>Background:</u>
+
+An Android application usually consists of multiple Activities that are loosely bound to each other and can be switched in between during runtime of the application.
 
 ### What are the most important lifecycle methods of an Activity?
 onCreate(Bundle), onStart(), onResume(), onPause(), onStop(), onDestroy()
@@ -219,12 +233,16 @@ onCreate(Bundle), onStart(), onResume(), onPause(), onStop(), onDestroy()
 ### What livecycle methods are part of the visible lifecycle?
 onStart(), onResume(), onPause(), onStop()
 
-Background: During this time the user can see the Activity. However, the Activity may not be in the foreground and interacting with the user.
+<u>Background:</u>
+
+During this time the user can see the Activity. However, the Activity may not be in the foreground and interacting with the user.
 
 ### What lifecycle methods are part of the foreground lifecycle?
 onResume(), onPause()
 
-Background: The Activity is in front of all others Activities during this time. The user can interacting with the Activity. 
+<u>Background:</u>
+
+The Activity is in front of all others Activities during this time. The user can interacting with the Activity. 
 
 ### What are the four essential states of an Activity?
 
@@ -241,30 +259,41 @@ By calling finish() within the onCreate(Bundle) method, the system does not call
 2. Activity B's onCreate(), onStart(), and onResume() methods are called in sequence. Activity B is in foreground now.
 3. Activity A's onStop() method is called. Activity A is no longer visible on screen.
 
-Important: Please notice the overlap in the Activity transition. Activity A is <b>not</b> completely stopped before Activity B is created.
+<b>Important:</b>
+
+Please notice the overlap in the Activity transition. Activity A is <b>not</b> completely stopped before Activity B is created.
 
 ### Can you describe two scenarios in which your Activity gets destroyed due to normal app behaviour?
 1. When the user presses the Back button
 2. Calling the Activity.finish() method
 
-Background: In both cases the Activity instance is gone forever. The Activity is no longer needed.
+<u>Background:</u>
+
+In both cases the Activity instance is gone forever. The Activity is no longer needed.
 
 Also a configuration change during runtime (such as screen orientation, keyboard availability, language,...) triggers an Activity re-creation: The current instance is destroyed (onDestroy() is called) and a new instance is created (onCreate() is called). It is important to store the Activity state during this re-creation process.
 
 ### Can you describe a scenario in which your Activity gets destroyed due to a system behaviour?
 The Android system may destroy the process(!) containing your Activity to recover memory.
 
-Background: This happens if the Activity is in the Stopped state and hasn't been used in a long time, or if the current foreground Activity requires more memory.
+<u>Background:</u>
+
+This happens if the Activity is in the Stopped state and hasn't been used in a long time, or if the current foreground Activity requires more memory.
 The system is storing the <i>instance state</i> in a Bundle object. The saved state is used to restore the previous state.
 
-Important: Android is killing the whole process and not only the Activity instance. 
+<b>Important:</b>
+
+Android is killing the whole process and not only the Activity instance. 
 
 ### How does the system store the Activity state?
 The system calls the onSaveInstance() method and stores the instance state in a collection of key-value pairs.
 
-Important: You always have to call the superclass implementation of onSaveInstanceState(). The default implementation saves the state of the view hierarchy. This requires that each view has an unique ID (android:id).
+<b>Important:</b>
 
-Example:
+You always have to call the superclass implementation of onSaveInstanceState(). The default implementation saves the state of the view hierarchy. This requires that each view has an unique ID (android:id).
+
+<u>Example:</u>
+
 {% highlight java %}
 @Override
 public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -278,7 +307,8 @@ public void onSaveInstanceState(Bundle savedInstanceState) {
 ### How can an Activity recover its previous state?
 Either by using the <i>Bundle</i> instance that the system passes to onCreate(Bundle) or by implementing the onRestoreInstanceState(Bundle) method.
 
-Example:
+<u>Example:</u>
+
 {% highlight java %}
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -309,13 +339,20 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 ### What is a Fragment?
 A fragment is a modular section of an Activity, which has its own lifecycle. It can be added or removed while an Activity is running and can also be reused in different activities.
 
-Background: To create a Fragment you have to subclass the Fragment class. You have to provide a public no-argument constructor, because Android will often re-instantiate a Fragment class when needed (-> state restore).
+<u>Background:</u>
+
+To create a Fragment you have to subclass the Fragment class. You have to provide a public no-argument constructor, because Android will often re-instantiate a Fragment class when needed (-> state restore).
 
 ### What is the main purpose of a Fragment?
 The main purpose of a Fragment is to support a more dynamic UI (tablets, smartphones) and also to make the reuse of UI components a lot easier.
 
-Background: A Fragment is closely tied to the Activity it is in.
-Example: When the Activity is paused, so are all fragments in it; When the Activity is destroyed, so are all fragments in it.
+<u>Background:</u>
+
+A Fragment is closely tied to the Activity it is in.
+
+<u>Example:</u>
+
+When the Activity is paused, so are all fragments in it; When the Activity is destroyed, so are all fragments in it.
 
 A Fragment can also exist without its own UI as an invisible worker for the Activity.
 
@@ -335,7 +372,9 @@ A Fragment can also exist without its own UI as an invisible worker for the Acti
 </FrameLayout>
 {% endhighlight %}
 
-Background: The Android system inserts the View object returned by the Fragment's onCreateView method directly in place of the &lt;fragment&gt; element.
+<u>Background:</u>
+
+The Android system inserts the View object returned by the Fragment's onCreateView method directly in place of the &lt;fragment&gt; element.
 
 2. A fragment can programmatically added at runtime.
 You can add, remove or replace a Fragment during runtime by using the APIs from FragmentTransaction.
@@ -379,7 +418,9 @@ public void onBackPressed() {
 }
 {% endhighlight %}
 
-Important: If you do not call addToBackStack() inside the FragmentTransaction that removes a Fragment, then that Fragment is destroyed when the transaction is committed and the user cannot navigate back to it.
+<b>Important:</b>
+
+If you do not call addToBackStack() inside the FragmentTransaction that removes a Fragment, then that Fragment is destroyed when the transaction is committed and the user cannot navigate back to it.
 
 However, if you call addToBackStack() when removing a Fragment, then the Fragment is stopped and will be resumed if the user goes back.
 The "removed" Fragment remains in <i>created state</i> and its view is destroyed.
@@ -391,7 +432,9 @@ A Fragment is always <b>a part</b> of an Activity and can't exist independently.
 ### How does the system store the Fragment state?
 The system calls the onSaveInstanceState() method and stores the instance state in a collection of key-value pairs.
 
-Important: You always have to call the superclass implementation of onSaveInstanceState(). The default implementation saves the state of the view hierarchy. This requires that each view has an unique ID (android:id).
+<b>Important:</b>
+
+You always have to call the superclass implementation of onSaveInstanceState(). The default implementation saves the state of the view hierarchy. This requires that each view has an unique ID (android:id).
 
 ### How can a Fragment recover its previous state?
 By restoring the instance state either in onCreate(), onCreateView() or onActivityCreated().
@@ -409,7 +452,9 @@ onPause() -> onStop() -> onDestroyView() -> onDetach() ---> onAttach(), onCreate
 Lifecycle Calls:
 onPause() -> onStop() -> onDestroyView() -> <b>onDestroy()</b> -> onDetach() ---> onAttach(), <b>onCreate()</b>, onCreateView(), onStart(), onResume
 
-Important: The method call does not work with fragments on the back stack. setRetainInstance(true) is especially useful for long running operations inside Fragments which do not care about configuration changes.
+<b>Important:</b>
+
+The method call does not work with fragments on the back stack. setRetainInstance(true) is especially useful for long running operations inside Fragments which do not care about configuration changes.
 
 
 ### What does a ViewPager?
@@ -428,8 +473,8 @@ Background: FragmentPagerAdapter and FragmentStatePagerAdapter are two subclasse
 
 A task is a stack (LiFo: “Last in, First out”) which contains a collection of activity instances (also known as back stack). The system can hold multiple tasks at the same time but only one task is in the foreground.  
 
+<u>Example:</u>
 
-Example:
 If the user starts an application which has not been used recently, then a new task is created and the main activity (e.g. Activity A) for that application opens. When Activity A starts Activity B, Activity A is stopped (Android retains the state of Activity A). If the user presses the Back button, Activity A resumes and the current Activity B gets destroyed (Android does not retain the state of Android B).
 
 ### What are “launch modes”?
@@ -459,8 +504,9 @@ Solution: A good way is to use a JobService instead of a thread. By doing so, th
 
 - Parcelable is an Android specific interface where you have to implement the serialization by yourself. The parcelable process is much faster than Serializable (= no need for reflection). Parcelable is always the default choice in Android.
 
-Background: Serialization is the process of converting an object instance into a series of bytes, so that the object can be easily saved to persistent storage or transmited across a communication channel (e.g. network).
+<b>Background:</b>
 
+Serialization is the process of converting an object instance into a series of bytes, so that the object can be easily saved to persistent storage or transmited across a communication channel (e.g. network).
 
 ## Android Design and XML
 
@@ -493,9 +539,9 @@ Android handles every image file as nine-patch image that has the "file extensio
 
 ### What is the difference between View.GONE and View.INVISBLE?
 
-View.INVISIBLE: The view is invisible, but it still takes up space for layout purposes (the view is hidden).
+- View.INVISIBLE: The view is invisible, but it still takes up space for layout purposes (the view is hidden).
 
-View.GONE: The view is invisible, and it doesn't take any space for layout purposes (the view is removed).
+- View.GONE: The view is invisible, and it doesn't take any space for layout purposes (the view is removed).
 
 ### What are typical subdirectories that the "res" directory does contain?
 
@@ -524,7 +570,9 @@ Background: "fill_parent" is an older synonym for "match_parent". It is recommen
 ### What is an Adapter
 An Adapter is a bridge between the model data and that data’s visual representation in the AdapterView.
 
-Background: Use the BaseAdapter class as the foundation to build your own Adapter implementation. 
+<u>Background:</u>
+
+Use the BaseAdapter class as the foundation to build your own Adapter implementation. 
 
 ### What is the ViewHolder-Pattern?
 
@@ -536,7 +584,9 @@ The pattern avoids the repeated lookup of view resources. The number of times wh
 An Android library project allows the distribution of resources (e.g. layouts, themes) and manifest entries as well as Java Code (e.g. activites).
 It makes the process of creating multiple apps from the same code base easier.
 
-Background: the typical library project is distributed as AAR (Android archive file) file.
+<u>Background:</u>
+
+The typical library project is distributed as AAR (Android archive file) file.
 
 ### What is the Android Support Library?
 
@@ -550,7 +600,8 @@ Originally a single library, the Android Support Library evoled into a suite of 
 - appcompat-v7: Backport of the action bar working back to API Level 7
 - recyclerview-v7: Provides the RecyclerView widget.
 
-Important:
+<b>Important:</b>
+
 Starting with Support Library version 24.2.0, the minimum supported API level has changed to API level 9 for all support library packages. The v# package notation does not longer indiciate the real minimum API support level. Example: support-v7 library requires a minimum API level of 9 and not 7.
 
 The SDK Manager provides access to the support libraries (extras/Android Support).
@@ -559,8 +610,10 @@ The compileSdkVersion should be the same as the major version of the used Androi
 
 ## What is the intention of StrictMode in Android?
 StrictMode helps to determine if certain unpleasant things happen inside your app in development phase. For example, it can warn (via logcat, dialog or crash) if you are doing to much things on the main application thread that might cause a janky user experience.
-Never use StrictMode in production code.
 
+<b>Important:</b>
+
+Never use StrictMode in production code!
 
 ## What happens with your app if the device goes into "Doze Mode"?
 Scheduled alarms (via AlarmManager), jobs (via JobScheduler), and syncs (via SyncManager) will be ignored by default, except during occasional "idle maintenance windows".
