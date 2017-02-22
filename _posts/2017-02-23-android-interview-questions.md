@@ -116,6 +116,7 @@ A service is an application component without user interface that can perform lo
 <b>Important:</b> A Service runs in the main thread and does not create its own thread. It is important to create a new thread inside the Service instance for CPU-intensive or blocking operations.
 
 <u>Background:</u> There exist two important types of services:
+
 1. <b>Started Service:</b> A started service (usually started via startService()) runs in the background indefinitely. After the service finished its work (e.g. downloading a file), it is necessary to stop the service by calling stopSelf() or stopService().
 
 Lifecycle calls: onCreate() -> onStartCommand() -> RUNNING -> onDestroy()
