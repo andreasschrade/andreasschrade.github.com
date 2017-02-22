@@ -380,7 +380,7 @@ fragmentTransaction.replace(R.id.my_fragment_container, fragment);
 fragmentTransaction.commit();
 {% endhighlight %}
 
-2. You have to override onPackPressed() in the main Activity class:
+2. You have to override onBackPressed() in the main Activity class:
 
 {% highlight java %}
 @Override
@@ -396,7 +396,7 @@ public void onBackPressed() {
 <b>Important:</b> If you do not call addToBackStack() inside the FragmentTransaction that removes a Fragment, then that Fragment is destroyed when the transaction is committed and the user cannot navigate back to it.
 
 However, if you call addToBackStack() when removing a Fragment, then the Fragment is stopped and will be resumed if the user goes back.
-The "removed" Fragment remains in <i>created state</i> and its view is destroyed.
+The "removed" Fragment remains in <i>created state</i> and only its view is destroyed.
 
 ### What is the difference between a Fragment and an Activity?
 An Activity represents a full UI screen that acts standalone. An Activity can exist without any Fragment in it.
@@ -412,16 +412,18 @@ By restoring the instance state either in onCreate(), onCreateView() or onActivi
 
 ### What does the Fragment's method setRetainInstance(boolean)?
 
-1. setRetainInstance(true): The Fragment's state will be retained (and not destroyed!) across configuration changes (e.g. screen rotate). The state will be retained even if the configuration causes the "parent" Activity to be destroyed. However, the view of the Fragment gets destroyed!
+1. setRetainInstance(true): The Fragment's state will be retained (and not destroyed!) across configuration changes (e.g. screen rotate). The state will be retained even if the configuration change causes the "parent" Activity to be destroyed. However, the view of the Fragment gets destroyed!
 
 Lifecycle Calls:
 onPause() -> onStop() -> onDestroyView() -> onDetach()
+
 onAttach() -> onCreateView() -> onStart() -> onResume()
 
 2. setRetainInstance(false): The Fragment's state will not be retained across configuration changes (default).
 
 Lifecycle Calls:
 onPause() -> onStop() -> onDestroyView() -> <b>onDestroy()</b> -> onDetach()
+
 onAttach() -> <b>onCreate()</b> -> onCreateView() -> onStart() -> onResume()
 
 <b>Important:</b> setRetainInstance(true) does not work with fragments on the back stack. setRetainInstance(true) is especially useful for long running operations inside Fragments which do not care about configuration changes.
