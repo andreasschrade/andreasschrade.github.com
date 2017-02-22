@@ -414,17 +414,15 @@ By restoring the instance state either in onCreate(), onCreateView() or onActivi
 
 1. setRetainInstance(true): The Fragment's state will be retained (and not destroyed!) across configuration changes (e.g. screen rotate). The state will be retained even if the configuration change causes the "parent" Activity to be destroyed. However, the view of the Fragment gets destroyed!
 
-Lifecycle Calls:
-onPause() -> onStop() -> onDestroyView() -> onDetach()
-
-onAttach() -> onCreateView() -> onStart() -> onResume()
+	Lifecycle Calls:<br>
+	onPause() -> onStop() -> onDestroyView() -> onDetach()<br>
+	onAttach() -> onCreateView() -> onStart() -> onResume()
 
 2. setRetainInstance(false): The Fragment's state will not be retained across configuration changes (default).
 
-Lifecycle Calls:
-onPause() -> onStop() -> onDestroyView() -> <b>onDestroy()</b> -> onDetach()
-
-onAttach() -> <b>onCreate()</b> -> onCreateView() -> onStart() -> onResume()
+	Lifecycle Calls:<br>
+	onPause() -> onStop() -> onDestroyView() -> <b>onDestroy()</b> -> onDetach()<br>
+	onAttach() -> <b>onCreate()</b> -> onCreateView() -> onStart() -> onResume()
 
 <b>Important:</b> setRetainInstance(true) does not work with fragments on the back stack. setRetainInstance(true) is especially useful for long running operations inside Fragments which do not care about configuration changes.
 
