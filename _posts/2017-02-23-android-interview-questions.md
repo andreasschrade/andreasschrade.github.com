@@ -35,14 +35,20 @@ Instant Run has the intention to increase the development speed of Android apps.
 
 ### What is an Android manifest file?
 
-Every Android app must have an AndroidManifest.xml file in its root directory. The manifest file presents essential information about the application to the Android system, information the system must have before it can run any of the application's code.
+Every Android app must have an AndroidManifest.xml file in its root directory. The AndroidManifest.xml file provides essential information about the application to the Android system, which the system must have before it can run any of the application's code.
+
+<u>Background:</u> It contains information about:
+
+- the Java package of the application
+- app components like activities, services, broadcast receivers and content providers
+- necessary permissions
 
 ### What is ADB?
 
 Android Debug Bridge (adb) is a command-line tool that lets you communicate with an Android device. It provides a variety of device actions, such as installing and debugging apps.
 
 ### What is an Intent?
-An Intent is basically a message that is passed between components like Activities or Services. It acts like a trigger to do something.
+An Intent is basically a message that is passed between components like Activities or Services. It acts as a trigger to do something.
 
 <u>Background:</u> Intents are asynchronous and allow you to interact with components from the same application as well as with components from other applications.
 The primary pieces of information in an Intent are:
@@ -59,10 +65,10 @@ The action specifies the thing that the app wants to do.
 
 <u>Background:</u> The system is looking for an appropriate component to start:
 
-- If multiple components are compatible with the action, the system shows a dialog so the user can pick which app to use.
+- If multiple components are compatible with the action, the system shows a dialog so the user can pick which app to use
 - If there is no appropriate component available on the device that can handle the action, your app will crash immediately!
 
-<u>Example:</u> If an app wants to trigger a phone call, it has only to specify the corresponding action (ACTION\_DIAL):
+<u>Example:</u> If an app wants to trigger a phone call, it only has to specify the corresponding action (ACTION\_DIAL):
 
 {% highlight java %}
 Uri number = Uri.parse("tel:4213371337");
@@ -74,7 +80,7 @@ if (callIntent.resolveActivity(getPackageManager()) != null) {
 
 ### What is an Explicit Intent?
 
-An explicit Intent specifies the component to start by the fully-qualified class name. This is the common case to start a component in the own app.
+An explicit Intent specifies the component by the fully-qualified class name to start. This is the common case to start a component in the own app.
 
 <u>Example:</u>
 {% highlight java %}
@@ -85,7 +91,7 @@ Intent startIntent = new Intent(myContext, AnotherActivity.class);
 
 A sticky Intent is a Intent that has been sent as a sticky Broadcast, meaning the Intent stays around after the broadcast is complete.
 
-<u>Example:</u> The Android system uses sticky broadcasts to notify receivers that the battery level has been changed (e.g. ACTION\_BATTERY\_CHANGED).
+<u>Example:</u> The Android system uses sticky broadcasts to notify receivers that the battery level has been changed (ACTION\_BATTERY\_CHANGED).
 
 When you call registerReceiver() for that action you will always get the latest Intent for that action. You do not have to wait for the next broadcast!
 
@@ -107,16 +113,16 @@ At the same time it acts as a token for foreign app components (e.g. AlarmManage
 
 A service is an application component without user interface that can perform long running operations in the background (= the corresponding app does not have to be in the foreground).
 
-<b>Important:</b>
+<b>Important:</b> A Service runs in the main thread and does not create its own thread. It is important to create a new thread inside the Service instance for CPU-intensive or blocking operations.
 
-A Service runs in the main thread and does not create its own thread. It is important to create a new thread for CPU-intensive or blocking operations inside the Service instance.
+<u>Background:</u> There exist two important types of services:
+1. <b>Started Service:</b> A started service (usually started via startService()) runs in the background indefinitely. After the service finished its work (e.g. downloading a file), it is necessary to stop the service by calling stopSelf() or stopService().
 
-<u>Background:</u>
+Lifecycle calls: onCreate() -> onStartCommand() -> RUNNING -> onDestroy()
 
-There exist two important types of services:
-1. Started Service: A started service (usually started via startService()) runs in the background indefinitely. After the service finished its work (e.g. downloading a file), it is necessary to stop the service by calling stopSelf() or stopService(). Lifecycle calls: onCreate(), onStartCommand() - RUNNING - onDestroy()
+2. <b>Bound Service:</b> A bound service offers a client-server interface to an application component (e.g. Activity). This type of service runs only as long as another app component is bound to it.
 
-2. Bound Service: A bound service offers a client-server interface to an application component (e.g. Activity). This type of service runs only as long as another app component is bound to it. Lifecycle calls: onCreate(), onBind() - RUNNING - onUnbind(), onDestroy()
+Lifecycle calls: onCreate() -> onBind() -> RUNNING -> onUnbind() -> onDestroy()
 
 A mixture of both types does also work!
 
@@ -124,9 +130,7 @@ A mixture of both types does also work!
 
 The IntentService is a subclass of Service that uses a worker thread to handle all of the start requests. All tasks are executed sequentially on a separate worker thread. The IntentService cannot run tasks in parallel. 
 
-<u>Background:</u>
-
-There is no need to spawn an extra thread. The IntentService stops itself automatically as soon as all tasks/start requests have been handled. There is no need to call stopSelf().
+<u>Background:</u> There is no need to spawn an extra thread and there is also no need to call stopSelf(). The IntentService stops itself automatically as soon as all tasks/start requests have been handled.
 
 ## When to use IntentService?
 An IntentService is typically used for long running "fire and forget tasks".
@@ -204,9 +208,7 @@ Anr is the acronym for "Application Not Responding." This is a dialog that the s
 ### How to avoid ANR messages?
 By using a worker thread for blocking I/O operations or other long running operations.
 
-<u>Background:</u>
-
-Android apps normally run entirely on a single thread (UI thread).
+<u>Background:</u> Android apps normally run entirely on a single thread (UI thread).
 If an app executes a long running operation on that thread and cannot response to an user input event (e.g. screen touch event) within 5 seconds, the system will show an ANR dialog.
 
 ## Android UI
@@ -231,10 +233,10 @@ onResume(), onPause()
 
 ### What are the four essential states of an Activity?
 
-– Active: if the Activity is active (it can receive user input) and visible.
+– Active: if the Activity is active (it can receive user input) and visible
 – Paused: if the Activity is visible but not active
-– Stopped: if the Activity is not visible.
-– Destroyed: when the activity process is killed or completed terminated
+– Stopped: if the Activity is not visible
+– Destroyed: when the activity process is killed
 
 ### When does the system directly call "onDestroy()" after it called "onCreate(Bundle)"? (without calling onStart(), onResume(), onStop(), onPause())
 By calling finish() within the onCreate(Bundle) method, the system does not call any further lifecycle methods except onDestroy().
@@ -254,29 +256,22 @@ By calling finish() within the onCreate(Bundle) method, the system does not call
 
 <u>Background:</u> In both cases the Activity instance is gone forever. The Activity is no longer needed.
 
-Also a configuration change during runtime (such as screen orientation, keyboard availability, language,...) triggers an Activity re-creation: The current instance is destroyed (onDestroy() is called) and a new instance is created (onCreate() is called). It is important to store the Activity state during this re-creation process.
+Also a configuration change during runtime (such as screen orientation, keyboard availability, language,...) triggers an Activity re-creation: The current instance is destroyed (onDestroy() is called) and a new instance is created (onCreate() is called). It is important to store the Activity state during this re-creation process (via Bundle).
 
 ### Can you describe a scenario in which your Activity gets destroyed due to a system behaviour?
 The Android system may destroy the process(!) containing your Activity to recover memory.
 
-<u>Background:</u>
-
-This happens if the Activity is in the Stopped state and hasn't been used in a long time, or if the current foreground Activity requires more memory.
+<u>Background:</u> This happens if the Activity is in the Stopped state and hasn't been used in a long time, or if the current foreground Activity requires more memory.
 The system is storing the <i>instance state</i> in a Bundle object. The saved state is used to restore the previous state.
 
-<b>Important:</b>
-
-Android is killing the whole process and not only the Activity instance. 
+<b>Important:</b> Android is killing the whole process and not only the Activity instance. 
 
 ### How does the system store the Activity state?
 The system calls the onSaveInstance() method and stores the instance state in a collection of key-value pairs.
 
-<b>Important:</b>
-
-You always have to call the superclass implementation of onSaveInstanceState(). The default implementation saves the state of the view hierarchy. This requires that each view has an unique ID (android:id).
+<b>Important:</b> You always have to call the superclass implementation of onSaveInstanceState(). The default implementation saves the state of the view hierarchy. This requires that each view has an unique ID (android:id).
 
 <u>Example:</u>
-
 {% highlight java %}
 @Override
 public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -323,24 +318,17 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 ### What is a Fragment?
 A fragment is a modular section of an Activity, which has its own lifecycle. It can be added or removed while an Activity is running and can also be reused in different activities.
 
-<u>Background:</u>
-
-To create a Fragment you have to subclass the Fragment class. You have to provide a public no-argument constructor, because Android will often re-instantiate a Fragment class when needed (-> state restore).
+<u>Background:</u> To create a Fragment you have to subclass the Fragment class. You have to provide a public no-argument constructor, because Android will often re-instantiate a Fragment class when needed (-> state restore).
 
 ### What is the main purpose of a Fragment?
 The main purpose of a Fragment is to support a more dynamic UI (tablets, smartphones) and also to make the reuse of UI components a lot easier.
 
-<u>Background:</u>
-
-A Fragment is closely tied to the Activity it is in.
-
-<u>Example:</u>
-
-When the Activity is paused, so are all fragments in it; When the Activity is destroyed, so are all fragments in it.
-
 A Fragment can also exist without its own UI as an invisible worker for the Activity.
 
+A Fragment is closely tied to the Activity it is in. When the Activity is paused, so are all fragments in it; When the Activity is destroyed, so are all fragments in it.
+
 ### What are two ways to add a Fragment to an Activity?
+
 1. A Fragment can be declared inside the Activity's layout file.
 
 {% highlight xml %}
@@ -403,9 +391,7 @@ public void onBackPressed() {
 }
 {% endhighlight %}
 
-<b>Important:</b>
-
-If you do not call addToBackStack() inside the FragmentTransaction that removes a Fragment, then that Fragment is destroyed when the transaction is committed and the user cannot navigate back to it.
+<b>Important:</b> If you do not call addToBackStack() inside the FragmentTransaction that removes a Fragment, then that Fragment is destroyed when the transaction is committed and the user cannot navigate back to it.
 
 However, if you call addToBackStack() when removing a Fragment, then the Fragment is stopped and will be resumed if the user goes back.
 The "removed" Fragment remains in <i>created state</i> and its view is destroyed.
@@ -424,23 +410,24 @@ By restoring the instance state either in onCreate(), onCreateView() or onActivi
 
 ### What does the Fragment's method setRetainInstance(boolean)?
 
-1. setRetainInstance(true): The Fragment's state will be retained (and not destroyed!) across configuration changes (e.g. screen rotate). The state will be retained even if the configuration causes the "parent" Activity to be destroyed. However, the view gets destroyed!
+1. setRetainInstance(true): The Fragment's state will be retained (and not destroyed!) across configuration changes (e.g. screen rotate). The state will be retained even if the configuration causes the "parent" Activity to be destroyed. However, the view of the Fragment gets destroyed!
 
 Lifecycle Calls:
-onPause() -> onStop() -> onDestroyView() -> onDetach() ---> onAttach(), onCreateView(), onStart(), onResume
-
+onPause() -> onStop() -> onDestroyView() -> onDetach()
+onAttach() -> onCreateView() -> onStart() -> onResume()
 
 2. setRetainInstance(false): The Fragment's state will not be retained across configuration changes (default).
 
 Lifecycle Calls:
-onPause() -> onStop() -> onDestroyView() -> <b>onDestroy()</b> -> onDetach() ---> onAttach(), <b>onCreate()</b>, onCreateView(), onStart(), onResume
+onPause() -> onStop() -> onDestroyView() -> <b>onDestroy()</b> -> onDetach()
+onAttach() -> <b>onCreate()</b> -> onCreateView() -> onStart() -> onResume()
 
-<b>Important:</b> The method call does not work with fragments on the back stack. setRetainInstance(true) is especially useful for long running operations inside Fragments which do not care about configuration changes.
+<b>Important:</b> setRetainInstance(true) does not work with fragments on the back stack. setRetainInstance(true) is especially useful for long running operations inside Fragments which do not care about configuration changes.
 
 ### What does a ViewPager?
 A ViewPager is a layout manager that allows users to flip left and right through pages (typically Fragments) of data.
 
-Background: FragmentPagerAdapter and FragmentStatePagerAdapter are two subclasses of ViewPager:
+<u>Background:</u> FragmentPagerAdapter and FragmentStatePagerAdapter are two subclasses of ViewPager:
 
 - FragmentPagerAdapter:
 	- good for a fixed or small number of pages (Fragments)
@@ -494,11 +481,10 @@ RelativeLayout: Arranges view elements relative to parent or to other view eleme
 
 ### What is the difference and similarities of ListViews and GridViews?
 
-Both layout components displays a list of scrollable items. The items are inserted using a Adapter.
+Both layout components displays a list of scrollable items. The items are inserted by using an Adapter.
 
-The GridView is a ViewGroup that displays items in a two-dimensional, scrollable grid.
-
-The ListView is a ViewGroup that displays a vertical list of scrollable items. 
+- GridView is a ViewGroup that displays items in a two-dimensional, scrollable grid.
+- ListView is a ViewGroup that displays a vertical list of scrollable items. 
 
 ### What is the GridLayout?
 GridLayout is a ViewGroup that sets things up in a grid with rows and columns.
@@ -529,12 +515,12 @@ The "res" folder contains various resource files:
 - res/raw/ -> raw files like a CSV file, movie clip or audio clip (mp3)
 - res/xml/ -> general XML files
 
-## What is the difference between wrap_content and match_parent?
+## What is the difference between wrap\_content and match\_parent?
 
-- wrap_content: the widget should take up as much room as its contents require
-- match_parent: the widget should fill up all remaining available space in its enclosing container
+- wrap\_content: the widget should take up as much room as its contents require
+- match\_parent: the widget should fill up all remaining available space in its enclosing container
 
-Background: "fill_parent" is an older synonym for "match_parent". It is recommended to use match_parent instead of fill_parent.
+Background: "fill\_parent" is an older synonym for "match\_parent". It is recommended to use match\_parent instead of fill\_parent.
 
 ### What is the difference between px, dp and sp?
 
@@ -579,7 +565,7 @@ The SDK Manager provides access to the support libraries (extras/Android Support
 The compileSdkVersion should be the same as the major version of the used Android Support library.
 
 ## What is the intention of StrictMode in Android?
-StrictMode helps to determine if certain unpleasant things happen inside your app in development phase. For example, it can warn (via logcat, dialog or crash) if you are doing to much things on the main application thread that might cause a janky user experience.
+StrictMode helps to determine if certain unpleasant things happen inside your app during development phase. For example, it can warn (via logcat, dialog or crash) if you are doing too much things on the main application thread that might cause a janky user experience.
 
 <b>Important:</b> Never use StrictMode in production code!
 
@@ -591,11 +577,11 @@ Scheduled alarms (via AlarmManager), jobs (via JobScheduler), and syncs (via Syn
 ### What is the difference between unit testing and instrumentation testing?
 
 1. Unit testing:
-- All unit tests bypass the Android system and run straight on the developer machine.
-- Unit tests cannot use much of the Android SDK
-- Unit tests run quickly
-- Unit tests are placed inside the "test" folder
+	- All unit tests bypass the Android system and run straight on the developer machine.
+	- Unit tests cannot use much of the Android SDK
+	- Unit tests run quickly
+	- Unit tests are placed inside the "test" folder
 
 2. Instrumentation testing:
-- Test code and production code combined is running in a single process in a single copy of the VM (Davlik or ART)
-- Instrumentation tests are placed inside the "androidTest" folder
+	- Test code and production code combined is running in a single process in a single copy of the VM (Dalvik or ART)
+	- Instrumentation tests are placed inside the "androidTest" folder
