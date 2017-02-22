@@ -234,10 +234,10 @@ onResume(), onPause()
 
 ### What are the four essential states of an Activity?
 
-– Active: if the Activity is active (it can receive user input) and visible
-– Paused: if the Activity is visible but not active
-– Stopped: if the Activity is not visible
-– Destroyed: when the activity process is killed
+- Active: if the Activity is active (it can receive user input) and visible
+- Paused: if the Activity is visible but not active
+- Stopped: if the Activity is not visible
+- Destroyed: when the activity process is killed
 
 ### When does the system directly call "onDestroy()" after it called "onCreate(Bundle)"? (without calling onStart(), onResume(), onStop(), onPause())
 By calling finish() within the onCreate(Bundle) method, the system does not call any further lifecycle methods except onDestroy().
