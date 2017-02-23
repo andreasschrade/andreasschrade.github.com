@@ -67,10 +67,11 @@ html {
 #mc_embed_signup {
     font-size: 16px !important;
     font-family: "Georgia", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    margin-bottom: 4em;
 }
 
 #mc_embed_signup label {
-  padding-bottom: 0px !important;
+  padding-bottom: 4px !important;
 }
 
 /* End Mailchimp stuff */
