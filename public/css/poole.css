@@ -56,7 +56,24 @@ html {
   html {
     font-size: 130%;
   }
+  #mc_embed_signup {
+     font-size: 130% !important;
+  }
 }
+
+/* Mailchimp stuff */
+
+
+#mc_embed_signup {
+    font-size: 16px !important;
+    font-family: "Georgia", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+#mc_embed_signup label {
+  padding-bottom: 0px !important;
+}
+
+/* End Mailchimp stuff */
 
 body {
   color: #515151;
