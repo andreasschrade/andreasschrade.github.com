@@ -1,20 +1,24 @@
 ---
 layout: post
-title: "Android Interview Questions"
+title: "Android Interview Questions And Answers"
 comments: true
 language: "EN"
 
 ---
 
+These Android Interview Questions have been designed carefully in such a way to achieve a good preparation for any Android interview. It is also a knowledge base for the most important concepts in Android development. Good luck in your Android job interview. Let's start! ☺
+
 ## Android Core
 
 ### What is Android?
 
-Android is an open-sourced mobile operating system developed by Google and based on the Linux kernel. Android is designed primarily for touchscreen devices (smartphones, tablets).
+Android is an open source mobile operating system developed by Google and based on the Linux kernel. Android is designed primarily for touchscreen devices (smartphones, tablets).
 
 ### What is the APK format?
 
 Android application package (APK) is the package file format used to distribute and install application software onto Android.
+
+<img style="display:block; margin: 0 auto" alt="Android interview apk file structure" src="{{ site.url }}/assets/android-interview-apk-structure.jpg">
 
 ### What is Dalvik?
 
@@ -54,7 +58,7 @@ An Intent is basically a message that is passed between components like Activiti
 The primary pieces of information in an Intent are:
 
 - Action: The generic action to perform (ACTION\_VIEW -> view, ACTION\_EDIT -> edit, ...)
-- Extras: The data to operate on stored in a key-value mapping (Bundle)
+- Extras: The data to operate on, stored in a key-value mapping (Bundle)
 - Component name: The name of the component to start. This value makes an Intent explicit (e.g. com.example.AnotherActivity.class)
 - Flags: Optional metadata for the Intent
 
@@ -89,7 +93,7 @@ Intent startIntent = new Intent(myContext, AnotherActivity.class);
 
 ### What is a Sticky Intent?
 
-A sticky Intent is a Intent that has been sent as a sticky Broadcast, meaning the Intent stays around after the broadcast is complete.
+A sticky Intent is an Intent that has been sent as a sticky Broadcast, meaning the Intent stays around after the broadcast is complete.
 
 <u>Example:</u> The Android system uses sticky broadcasts to notify receivers that the battery level has been changed (ACTION\_BATTERY\_CHANGED).
 
@@ -190,6 +194,10 @@ public class MyActivity extends Activity {
 }
 {% endhighlight %}
 
+<b>More about threading?</b><br>
+I <u>highly</u> recommend the book <a target="_blank" href="http://amzn.to/2lNYbsS">Efficient Android Threading" by Anders Goransson</a>.
+
+
 ### What is a ContentProvider?
 A Content Provider is part of an Android application that manages access to a repository of data.
 
@@ -201,7 +209,7 @@ You should consider the usage of a ContentProvider if you plan to share data wit
 
 ### What is SharedPreference?
 
-SharedPreference is a simples mechanism to store data in Android. Data is stored in a collection of key-values in a file.
+SharedPreference is a simple mechanism to store data in Android. Data is stored in a collection of key-values in a file.
 
 ### What is an ANR message?
 Anr is the acronym for "Application Not Responding." This is a dialog that the system displays if an app cannot respond to user input.
@@ -230,7 +238,7 @@ onStart(), onResume(), onPause(), onStop()
 ### What lifecycle methods are part of the foreground lifecycle?
 onResume(), onPause()
 
-<u>Background:</u> The Activity is in front of all others Activities during this time. The user can interacting with the Activity. 
+<u>Background:</u> The Activity is in front of all others Activities during this time. The user can interact with the Activity. 
 
 ### What are the four essential states of an Activity?
 
@@ -242,7 +250,7 @@ onResume(), onPause()
 ### When does the system directly call "onDestroy()" after it called "onCreate(Bundle)"? (without calling onStart(), onResume(), onStop(), onPause())
 By calling finish() within the onCreate(Bundle) method, the system does not call any further lifecycle methods except onDestroy().
 
-### Activity A start Activity B. Which lifecycle methods are called and in what order?
+### Activity A starts Activity B. Which lifecycle methods are called and in what order?
 
 1. Activity A's onPause() method is called.
 2. Activity B's onCreate(), onStart(), and onResume() methods are called in sequence. Activity B is in foreground now.
@@ -440,7 +448,7 @@ A ViewPager is a layout manager that allows users to flip left and right through
 
 ### What is a task?
 
-A task is a stack (LiFo: “Last in, First out”) which contains a collection of activity instances (also known as back stack). The system can hold multiple tasks at the same time but only one task is in the foreground.  
+A task is a stack (LiFo: "Last in, First out") which contains a collection of activity instances (also known as back stack). The system can hold multiple tasks at the same time but only one task is in the foreground.  
 
 <u>Example:</u> If the user starts an application which has not been used recently, then a new task is created and the main activity (e.g. Activity A) for that application opens. When Activity A starts Activity B, Activity A is stopped (Android retains the state of Activity A). If the user presses the Back button, Activity A resumes and the current Activity B gets destroyed (Android does not retain the state of Android B).
 
@@ -587,3 +595,11 @@ Scheduled alarms (via AlarmManager), jobs (via JobScheduler), and syncs (via Syn
 2. Instrumentation testing:
 	- Test code and production code combined is running in a single process in a single copy of the VM (Dalvik or ART)
 	- Instrumentation tests are placed inside the "androidTest" folder
+
+More about testing? A good book about JUnit testing is <a target="_blank" href="http://amzn.to/2lbDkfF">Practical Unit Testing with JUnit and Mockito</a>.
+
+<b>Want to learn more about Android?</b>
+<ul>
+<li><a target="_blank" href="https://www.amazon.com/gp/product/0134171454/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0134171454&linkCode=as2&tag=schrade05-20&linkId=4b0022dc5442684208dc4bf2d21d44cd">Android Programming: The Big Nerd Ranch Guide (2nd Edition)</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0134171454" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
+<li><a target="_blank" href="https://www.amazon.com/gp/product/0133892387/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0133892387&linkCode=as2&tag=schrade05-20&linkId=4fb8f72bfc31021c010759fac35457d5">Advanced Android Application Development (4th Edition)</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0133892387" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
+</ul>
