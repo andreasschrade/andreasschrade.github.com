@@ -388,7 +388,70 @@ If you do not have very specific requirements, it is a good choice to use an alr
 <a href="https://github.com/andreasschrade/android-kiosk-mode" target="_blank">Download example project</a>                    <br>
 <br>
 
-<b>Do you want an Android Kiosk App?<br>Just contact me: blog //at// andreas-schrade.de - I am happy to hear from you.</b>
+<strong>Update February 2017:</strong>
+
+### Prevent status bar expansion / disable status bar pull down
+
+There is no option that disables the status bar expansion. However, it is possible to add an invisible layer on top of the status bar that catches every click/touch. That is just another workaround to make a real Android Kiosk happen:
+
+{% highlight java %}
+public static void preventStatusBarExpansion(Context context) {
+    WindowManager manager = ((WindowManager) context.getApplicationContext().getSystemService(Context.WINDOW_SERVICE));
+
+    WindowManager.LayoutParams localLayoutParams = new WindowManager.LayoutParams();
+    localLayoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
+    localLayoutParams.gravity = Gravity.TOP;
+    localLayoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE|WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL|WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
+
+    localLayoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
+
+    int resId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+    int result = 0;
+    if (resId > 0) {
+      result = context.getResources().getDimensionPixelSize(resId);
+    } else {
+      // Use Fallback size:
+      result = 60; // 60px Fallback
+    }
+
+    localLayoutParams.height = result;
+    localLayoutParams.format = PixelFormat.TRANSPARENT;
+
+    customViewGroup view = new CustomViewGroup(context);
+    manager.addView(view, localLayoutParams);
+}
+
+public static class CustomViewGroup extends ViewGroup {
+    public CustomViewGroup(Context context) {
+        super(context);
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        // Intercepted touch!
+        return true;
+    }
+}
+{% endhighlight %}
+
+Necessary permission:
+
+{% highlight xml %}
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/> 
+{% endhighlight %}
+
+
+<b>Want to learn more about Android?</b>
+<ul>
+<li><a target="_blank" href="https://www.amazon.com/gp/product/0134171454/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0134171454&linkCode=as2&tag=schrade05-20&linkId=4b0022dc5442684208dc4bf2d21d44cd">Android Programming: The Big Nerd Ranch Guide (2nd Edition)</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0134171454" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
+<li><a target="_blank" href="https://www.amazon.com/gp/product/0133892387/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0133892387&linkCode=as2&tag=schrade05-20&linkId=4fb8f72bfc31021c010759fac35457d5">Advanced Android Application Development (4th Edition)</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0133892387" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
+</ul>
+
+
 
 <script>
 var trackOutboundLink = function(url) {
