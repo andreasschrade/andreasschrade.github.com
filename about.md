@@ -37,11 +37,12 @@ I develop fast and robust state of the art Android apps using the latest technol
 
 <script type="text/javascript">
 var emailE=("hi"+ "@" + "andreas-schrade.de");
-document.write("<strong><A href='mailto:" + emailE + "'>" + emailE + "</a></strong>");
+document.write("<strong>Email: <A href='mailto:" + emailE + "'>" + emailE + "</a></strong>");
 </script>
 <NOSCRIPT>
-hi //at// andreas-schrade.de
+Email: hi //at// andreas-schrade.de
 </NOSCRIPT>
 <strong>
-+49 151 177 11 583
+Mobile: +49 151 177 11 583<br>
+Skype: andreas-schrade
 </strong>
