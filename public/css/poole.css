@@ -482,6 +482,8 @@ a.pagination-item:hover {
 
 .footer {
   clear:both;
+  padding-top:8px;
+  font-size: 80%;
 }
 
 #bordertop {
