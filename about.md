@@ -36,7 +36,7 @@ I develop fast and robust state of the art Android apps using the latest technol
 <h3>Contact</h3>
 
 <script type="text/javascript">
-var emailE=("hi"+ "@"" + "andreas-schrade.de");
+var emailE=("hi"+ "@" + "andreas-schrade.de");
 document.write("<strong><A href='mailto:" + emailE + "'>" + emailE + "</a></strong>");
 </script>
 
