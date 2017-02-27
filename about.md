@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-<img src="/assets/me_regular.png" style="margin-left:2rem; float:right;">
+<img src="/assets/me_regular.png" style="margin-left:2rem; float:right; margin-top:-6px">
 I’m Andreas a freelance Android Developer based in Germany. I serve agencies, corporations and start-ups worldwide. My passion is the development of customer- and user-focused state of the art Android apps. I excel at integrating seamlessly into my clients’ teams and workflows.
 
 <h3>What I do:</h3>
@@ -34,15 +34,16 @@ I develop fast and robust state of the art Android apps using the latest technol
 - MySQL, Oracle RDBMS
 
 <h3>Contact</h3>
-<strong>
-<SCRIPT TYPE="text/javascript">
-emailE=("hi"+ "@"" + "andreas-schrade.de");
-document.write("<A href='mailto:" + emailE + "'>" + emailE + "</a>");
+
+<script type="text/javascript">
+var emailE=("hi"+ "@"" + "andreas-schrade.de");
+document.write("<strong><A href='mailto:" + emailE + "'>" + emailE + "</a></strong>");
 </script>
 
 <NOSCRIPT>
 hi //@// andreas-schrade.de
 </NOSCRIPT>
 <br>
+<strong>
 +49 151 177 11 583
 </strong>
