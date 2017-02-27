@@ -36,8 +36,8 @@ I develop fast and robust state of the art Android apps using the latest technol
 <h3>Contact</h3>
 <strong>
 <SCRIPT TYPE="text/javascript">
-emailE=('hi'+ '@' + 'andreas-schrade.de');
-document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+emailE=("hi"+ "@"" + "andreas-schrade.de");
+document.write("<A href='mailto:" + emailE + "'>" + emailE + "</a>");
 </script>
 
 <NOSCRIPT>
