@@ -3,17 +3,46 @@ layout: page
 title: About
 ---
 
+<img src="/assets/me_regular.png" style="margin-left:2rem">
+I’m Andreas a freelance Android Developer based in Germany. I serve agencies, corporations and start-ups worldwide. My passion is the development of customer- and user-focused state of the art Android apps. I excel at integrating seamlessly into my clients’ teams and workflows.
 
-I am a <strong>freelance Android Developer</strong> with over ten years of software development experience and an interest and strong background in Android and Java backend development. Former backend developer at one of Europe's largest electronic retailers and developer of an award-winning App. I like to share my knowledge by writing blog posts and articles for journals. 
+<h3>What I do:</h3>
 
-I am looking for the next challenge. Any idea to discuss?
+- Android Freelancer since 2009
+- Author of several Android articles for journals
+- Author of many Android blog articles
+- Publisher of a weekly Android development newsletter
 
-<strong>blog //at// andreas-schrade.de</strong> 
+<strong>Android is not just my job - It is my passion</strong>
 
-Technologies: 
+<h3>Availability</h3>
+Please get in contact to check my current availability, this can change daily and usually book a few weeks in advance. Please still contact me if your project requires urgent attention.
 
-- Android: Dagger DI, Butterknife, Retrofit, OkHttp, RxAndroid, Greenrobot Eventbus, Picasso
-- Backend: Java, Spring, Spring MVC, Apache CXF JAX-RS, Hibernate (JPA), Hibersap, ActiveMQ
-- DB: Oracle RDBMS, MySQL
-- Build-Tools: Gradle, Maven, Ant
+<h3>Tools, Skills, Technologies, Techniques</h3>
 
+I develop fast and robust state of the art Android apps using the latest technologies and techniques. I use my knowledge about time management, project management and tools to save time in development.
+
+- Android (SDK), RxAndroid, Dagger Dependency Injection, Butterknife, Greenrobot EventBus, Picasso, OkHttp, Retrofit JUnit, Mockito, Robotium
+- Git, SVN
+- Gradle, Maven, Ant
+- XML, CSV, JSON, FlatBuffers 
+- Android Studio, IntelliJ Ultimate, Eclipse
+- Scrum, Kanban
+- Test-driven Development (TDD)
+- MVP, MVVM, MVC, Clean-Code principles, Enterprise Integration Patterns, GoF Design Pattern
+- REST, SOAP
+- MySQL, Oracle RDBMS
+
+<h3>Contact</h3>
+<strong>
+<SCRIPT TYPE="text/javascript">
+emailE=('hi'+ '@' + 'andreas-schrade.de')
+document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+
+<NOSCRIPT>
+hi //@// andreas-schrade.de
+</NOSCRIPT>
+<br>
++49 151 177 11 583
+</strong>
