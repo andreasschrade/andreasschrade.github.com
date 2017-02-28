@@ -615,7 +615,7 @@ The behavioral interview part is more about you and your history in software dev
 - What is your salary requirement?
 - Do you have any questions?
 
-<a target="_blank" href="https://www.amazon.com/gp/product/0984782850/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0984782850&linkCode=as2&tag=schrade05-20&linkId=098fcd5a9f2cab33e2f7ba1024a9675f">Cracking the Coding Interview</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0984782850" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> is an excellent boock that helps you through this process, teaching you what you need to know and enabling you to perform at your very best.
+<a target="_blank" href="https://www.amazon.com/gp/product/0984782850/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0984782850&linkCode=as2&tag=schrade05-20&linkId=098fcd5a9f2cab33e2f7ba1024a9675f">Cracking the Coding Interview</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0984782850" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> is an excellent book that helps you through this process, teaching you what you need to know and enabling you to perform at your very best.
 
 
 ### Last Interview Tips
