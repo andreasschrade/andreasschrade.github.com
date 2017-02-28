@@ -598,6 +598,34 @@ Scheduled alarms (via AlarmManager), jobs (via JobScheduler), and syncs (via Syn
 
 More about testing? A good book about JUnit testing is <a target="_blank" href="http://amzn.to/2lbDkfF">Practical Unit Testing with JUnit and Mockito</a>.
 
+## Behavioral Interview Questions
+
+The behavioral interview part is more about you and your history in software development.
+
+### Typical behavioral Android interview questions are:
+
+- Why do you want to work for this company?
+- Tell me about yourself
+- What is your greatest strength?
+- What is your typical way of dealing with conflicts? 
+- What were some of the best things you have built?
+- What kinds of technologies are you most excited about?
+- Why are you interested in this position?
+- Why should we hire you?
+- What is your salary requirement?
+- Do you have any questions?
+
+<a target="_blank" href="https://www.amazon.com/gp/product/0984782850/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0984782850&linkCode=as2&tag=schrade05-20&linkId=098fcd5a9f2cab33e2f7ba1024a9675f">Cracking the Coding Interview</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0984782850" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> is an excellent boock that helps you through this process, teaching you what you need to know and enabling you to perform at your very best.
+
+
+### Last Interview Tips
+- Be humble and be yourself
+- Familiarize yourself with the core values of the company
+- Dress for success
+- Arrive on time and be relaxed and prepared for the job interview
+- Make a good first impression
+
+
 <b>Want to learn more about Android?</b>
 <ul>
 <li><a target="_blank" href="https://www.amazon.com/gp/product/0134171454/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0134171454&linkCode=as2&tag=schrade05-20&linkId=4b0022dc5442684208dc4bf2d21d44cd">Android Programming: The Big Nerd Ranch Guide (2nd Edition)</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0134171454" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
