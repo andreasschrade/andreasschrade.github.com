@@ -8,6 +8,9 @@ language: "EN"
 
 These Android Interview Questions have been designed carefully in such a way to achieve a good preparation for any Android interview. It is also a knowledge base for the most important concepts in Android development. Good luck in your Android job interview. Let's start! ☺
 
+<img style="display:block; margin: 0 auto" alt="Android interview apk file structure" src="{{ site.url }}/assets/android_cloud.png">
+
+
 ## Android Core
 
 ### What is Android?
