@@ -340,7 +340,7 @@ tbody tr:nth-child(odd) th {
  */
 
 .masthead {
-  padding-top:    4.5rem;
+  padding-top:    4rem;
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -562,7 +562,6 @@ float:left;
     width: 100% !important;
   }
 }
-
 
 
 /* **/
