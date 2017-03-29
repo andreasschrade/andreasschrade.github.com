@@ -32,9 +32,8 @@ I develop fast and robust state of the art Android apps using the latest technol
 - MVP, MVVM, MVC, Clean-Code principles, Enterprise Integration Patterns, GoF Design Pattern
 - REST, SOAP
 - SQlite, MySQL, Oracle RDBMS
-
 - Jira, Redmine, Trac
-- SCRUM, Kanban
+
 
 <h3>Contact</h3>
 
