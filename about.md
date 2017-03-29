@@ -16,13 +16,13 @@ I’m Andreas a freelance Android Developer based in Germany. I serve agencies, 
 <strong>Android is not just my job - It is my passion</strong>
 
 <h3>Availability</h3>
-Please get in contact to check my current availability, this can change daily and usually book a few weeks in advance. Please still contact me if your project requires urgent attention.
+Please get in contact to check my current availability, this can change weekly and usually book a few weeks in advance.
 
 <h3>Tools, Skills, Technologies, Techniques</h3>
 
 I develop fast and robust state of the art Android apps using the latest technologies and techniques. I use my knowledge about time management, project management and tools to save time in development.
 
-- Android (SDK), RxAndroid, Dagger Dependency Injection, Butterknife, Greenrobot EventBus, Picasso, OkHttp, Retrofit JUnit, Mockito, Robotium
+- Android (SDK), RxAndroid, Dagger Dependency Injection, Butterknife, Greenrobot EventBus, Picasso, OkHttp, Retrofit JUnit, Mockito, Robotium, Crashlytics, 
 - Git, SVN
 - Gradle, Maven, Ant
 - XML, CSV, JSON, FlatBuffers 
@@ -31,7 +31,10 @@ I develop fast and robust state of the art Android apps using the latest technol
 - Test-driven Development (TDD)
 - MVP, MVVM, MVC, Clean-Code principles, Enterprise Integration Patterns, GoF Design Pattern
 - REST, SOAP
-- MySQL, Oracle RDBMS
+- SQlite, MySQL, Oracle RDBMS
+
+- Jira, Redmine, Trac
+- SCRUM, Kanban
 
 <h3>Contact</h3>
 
