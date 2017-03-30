@@ -187,6 +187,7 @@ End:
 - by calling asyncTask.cancel(false). The implementation of doInBackground(Params...) has to check periodically the return value of isCancelled().
 
 ### Example
+{% highlight java %}
 public class MyActivity extends Activity {
 	private TextView textViewStatus;
     public void onCreate(Bundle savedInstanceState) {
