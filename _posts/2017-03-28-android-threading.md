@@ -210,6 +210,8 @@ public class MyActivity extends Activity {
 	        }
 	}
 }
+{% endhighlight %}
+
 ## Message Passing
 Scenario:
 "We are running on a client thread and want to have code executed in another thread context"
