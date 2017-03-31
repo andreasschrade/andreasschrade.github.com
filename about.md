@@ -8,7 +8,7 @@ I’m Andreas a freelance Android Developer based in Germany. I serve agencies, 
 
 <h3>What I do:</h3>
 
-- Android Freelancer since 2009
+- Over 8 years of experience in the field of Android; more than 10 years in Java
 - Author of several Android articles for journals
 - Author of many Android blog articles
 - Publisher of a weekly Android development newsletter
@@ -48,3 +48,5 @@ Email: hi //at// andreas-schrade.de
 Mobile: +49 151 177 11 583<br>
 Skype: andreas-schrade
 </strong>
+<br>
+<script type="text/javascript" src="https://form.jotformeu.com/jsform/70891346246360"></script>
