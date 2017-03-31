@@ -10,32 +10,28 @@ language: "EN"
 
 ## Foreword
 
-Let's start this article with three bullet-points:
-
-- Android developers are busy most of the time. They do not want to read very looooong articles.
-- Threading in Android is very, very important.
-- Bullet-Points are pretty cool
-
-This article has been written in respect to the bullet points above: <b>The article is as short as possible and contains as much as possible information about threading in Android.</b>
+Devs are busy most of the time and don't have time to read very long articles. This article is as short as possible and contains as much as possible information about threading in Android. Let's start!</b>
 
 
 ## Architecture
-- Android is based on Linux which supports
+### Mulitasking and Multithreading
+- Android is based on Linux and supports:
 	- multitasking: performing multiple tasks (aka processes) over a certain period of time by executing them concurrently
 	- multithreading: performing multiple threads within the context of one process
+
+### Processes
 - The execution of apps is based on Linux processes
 - A Linux process is started for every new app
-- Android can run multiple apps at the same time
-- Every Linux process contains:
+- Android can run multiple apps at the same time (each app runs in its own process)
+- Every process contains:
 	- a runtime: Dalvik or ART (Android Runtime)
 	- a running app within the runtime
-- Every Linux process can execute the app code via multiple threads
 - Each process has its own memory space and communicates with each other through interprocess communication (IPC) 
 - A scheduler determines what thread the CPU should process and for how long
 
 <img style="display:block; margin: 0 auto" alt="Android process architecture" src="{{ site.url }}/assets/android-threading-process-architecture.png">
 
-Note: It is also possible but very rare that...
+<strong>Note:</strong> It is also possible but very rare that...
 
 - an app runs in several processes
 - several apps run in the same process
@@ -66,6 +62,58 @@ Android kills the process when:
 Important:
 There's no guarantee that onDestroy() (Activity, Service) will be called
 
+## Memory
+
+### General
+
+- Processes are kept alive in memory for as long as possible
+- Processes are killed when memory is needed for the more important processes
+
+### Process Hierarchy
+
+- Android kills processes (not components!) to release resources
+- Processes with the lowest importance are killed first
+- Android can re-launch an app (the process) based on its last state when the process was killed
+
+Process importancy (from high to low):
+
+- Foreground Processes
+- Visible Processes
+- Service Processes
+- Background Processes
+- Empty Processes
+
+<u>Foreground Process:</u>
+
+- ... process that has components that the user is interacting with like
+	- a visible and active component (Activity)
+	- a Service is bound to an Activity in front in a remote process (same with Content Providers)
+	- a foreground Service
+	- a running BroadcastReceiver
+
+<u>Visibile Process:</u>
+
+- A process that has visible activities which are not in the foreground (= partly obscured)
+- dependent processes are not prematurely killed while the activity is visible (a bound service or content providers gets the same process status as the activity which still lives)
+
+<u>Service Process:</u>
+
+- has one or more started Services which are not interacting with an visible component or foreground component
+- common state for most background services, process is only killed if there is much memory pressure
+
+<u>Background Process:</u>
+
+- contains activities that are not visible
+- Android kills processes of this type in order of least recent usage (oldest is reclaimed first)
+
+<u>Empty Process:</u>
+
+- dont'have any active app components
+- can be easily killed at any point
+- do only exist to improve start-up time when a components needs to be (re-)activated
+
+<strong>Important:</strong> Priorities are done at the process level and not the component level. A single component can push the entire process into the foreground level.
+
 ## Main Thread aka UI Thread
 General:
 
@@ -73,7 +121,9 @@ General:
 - The main thread is also called UI thread because it is the only thread the system allows to update UI components
 
 Responsiveness:
-Always ensure that no long-running tasks are executed on the UI thread!
+
+<i>Always ensure that no long-running tasks are executed on the UI thread!</i>
+
 A long running task will block other sensitive tasks on the UI thread (e.g. animations)
 
 Example:
@@ -89,6 +139,9 @@ The calculation is a bit simplified. However, be cautious about possible long ru
 
 
 ## Service
+
+<strong>Use Service for very short tasks without UI; for longer tasks use threads within Service</strong>
+
 ### General
 
 - the Service runs in the UI thread! 
@@ -127,6 +180,9 @@ public class MyService extends Service {
 {% endhighlight %}
 
 ## IntentService
+
+<strong>Use IntentService for repetitive and/or long tasks that should run on the <i>background</i>, independent of the UI</strong>
+
 ### General:
 
 - executes tasks sequentially
@@ -164,6 +220,8 @@ public class MyIntentService extends IntentService {
 {% endhighlight %}
 
 ## AsyncTask
+
+<strong>Use AsyncTask for short(!) (repetitive) tasks that are tightly <i>bound to the UI</i></strong>
 
 ### General
 
@@ -309,9 +367,12 @@ class MainActivity extends Activity {
 
 ## HandlerThread
 
+<strong>Use HandlerThread to establish an ongoing, one-way inter-thread communication</strong>
+
 ### General
 
 - Just a "normal" Thread which sets up the internal message passing mechanism automatically => No need to init a Looper manually...
+- Use HandlerThread instead of "normal" Java Thread with manual Looper setup (see code example above)
 - Applicable to many background execution use cases, where sequential execution and control of the message queue is desired
 - Use the constructor with the name argument -> simplifies debugging
 - Started in the same way as a Thread -> start()
@@ -343,11 +404,7 @@ Handler handler = new Handler(myThread.getLooper()) {
 - accessible via Activity or Fragment
 - supports configuration change 
 
+## Development Phase & Debugging
 
-## Summary
-- use HandlerThread instead of "normal" Java Thread with manual Looper setup
-- use AsyncTask for short(!) (repetitive) tasks that are tightly <i>bound to the UI</i>
-- use IntentService for repetitive and/or long tasks that should run on the <i>background</i>, independent of the UI
-- use Service for very short tasks without UI; for longer tasks use threads within Service
-
-
+- StrictMode helps to identify long-running operations on the main thread
+- Simulate how you app responds to being killed: adb shell am force-stop com.example.packagename
