@@ -748,3 +748,16 @@ position: fixed;
     text-align:center;
     font-weight: bold;
 }
+
+
+.supernova {
+    background-color: #fff !important;
+}
+
+
+.jotform-form {
+    padding: 0px !important;
+}
+.form-all {
+    max-width: initial !important;
+}
