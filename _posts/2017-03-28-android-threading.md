@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Threading in Android - A TLDR"
+title: "Threading in Android"
 comments: true
 language: "EN"
 
@@ -41,8 +41,8 @@ Devs are busy most of the time and don't have time to read very long articles. T
 ### Application start
 General:
 
-- The Android system starts a new Linux process for an app when an app component (Activity, Service, Content Provider, Broadcast Receiver) needs to be started and the app does not have a running process yet.
-- All app components of the same app run in the same process and thread (main thread) -> It is possible to change this default behaviour!
+- Android starts a new Linux process for an app when an app component (Activity, Service, Content Provider, Broadcast Receiver) needs to be started and the app does not have a running process yet
+- All app components of the same app run in the same process and thread (main thread) → default behaviour
 - If an app component starts and there already exists a process for that app, then the new component is started within that already existing process
 
 App startup sequence:
@@ -59,10 +59,10 @@ Android kills the process when:
 - it's no longer needed
 - the system must recover memory for other (more important) apps
 
-Important:
-There's no guarantee that onDestroy() (Activity, Service) will be called
+<u>Important:</u> <br>
+There's <i>no guarantee</i> that <i>onDestroy()</i> (Activity, Service) will be called
 
-## Memory
+## Memory-Management
 
 ### General
 
@@ -85,7 +85,7 @@ Process importancy (from high to low):
 
 <u>Foreground Process:</u>
 
-- ... process that has components that the user is interacting with like
+- Process that has components that the user is interacting with like
 	- a visible and active component (Activity)
 	- a Service is bound to an Activity in front in a remote process (same with Content Providers)
 	- a foreground Service
@@ -98,7 +98,7 @@ Process importancy (from high to low):
 
 <u>Service Process:</u>
 
-- has one or more started Services which are not interacting with an visible component or foreground component
+- has one or more started Services which are not interacting with a visible component or foreground component
 - common state for most background services, process is only killed if there is much memory pressure
 
 <u>Background Process:</u>
@@ -112,7 +112,38 @@ Process importancy (from high to low):
 - can be easily killed at any point
 - do only exist to improve start-up time when a components needs to be (re-)activated
 
-<strong>Important:</strong> Priorities are done at the process level and not the component level. A single component can push the entire process into the foreground level.
+<u>Important:</u><br>
+Priorities are done at the <i>process level</i> and not the component level. A single component can push the entire process into the foreground level.
+
+## Thread Scheduling
+
+<strong>A thread scheduler decides which threads in the system should run, when, and for how long</strong>
+
+Android’s thread scheduler uses two main factors to determine the scheduling:
+
+- Niceness Values
+- Control Groups (Cgroups)
+
+### Niceness Values
+
+- a thread with a higher niceness value will run less often than those with a lower niceness value (this sounds paradoxical)
+- niceness value has the range of -20 (most prioritized) to 19 (least prioritized); default value is 0
+- a new Thread inherits its priority from the thread where it is started
+- it is possible to change the priority via:
+	- <i>thread.setPriority(int priority)</i> - values: 0 (least prioritized) to 10 (most prioritized)
+	- <i>process.setThreadPriority(int priority)</i> - values: -20 (most prioritized) to 19 (least prioritized)
+
+### Control Groups (Cgroups)
+
+- Android has multiple control groups. The most import are:
+	- the Foreground Group
+	- the Background Group
+- every thread belongs to a thread control group (e.g. Foreground Group)
+- threads in the different control groups are allocated different amounts of CPU execution time
+- threads in the Foreground Group receive a lot more execution time than threads in the Background Group
+- if an application runs at the Foreground or Visible process level (see above), the threads created by that application will belong to the Foreground Group
+- all threads belonging to applications which are not currently running in the foreground are implicitly moved to the Background Group
+
 
 ## Main Thread aka UI Thread
 General:
@@ -120,13 +151,11 @@ General:
 - By default, all app components of the same app run in the same thread, called main thread
 - The main thread is also called UI thread because it is the only thread the system allows to update UI components
 
-Responsiveness:
-
-<i>Always ensure that no long-running tasks are executed on the UI thread!</i>
-
+<u>Responsiveness:</u><br>
+<i>Always ensure that no long-running tasks are executed on the UI thread!</i><br>
 A long running task will block other sensitive tasks on the UI thread (e.g. animations)
 
-Example:
+<u>Example:</u>
 Let's consider a simple view animation:
 
 - Animations are updated in an event loop where every event updates the animation with one frame 
@@ -147,21 +176,21 @@ The calculation is a bit simplified. However, be cautious about possible long ru
 - the Service runs in the UI thread! 
 - only the first start request creates and starts the Service. Consecutive start requests just pass on the Intent to the started Service (onStartCommand)
 - the Service lifecycle does not control the lifetime of background threads!
-- a Bound Service keeps a reference counter on the number of bound components. When the reference counter is decremented to zero, the Service is destroyed
+- a bound Service keeps a reference counter on the number of bound components. When the reference counter is decremented to zero, the Service is destroyed
 - a foreground service has the same priority as an active activity. It <i>should</i> (but you never know... ) not be killed by the Android system, even if is low on memory
 
 ### Lifecycle
-Start:
+<u>Start:</u>
 A service starts...
 
-- with a call to context.startService(Intent) - Regular Service
-- with a call to context.bindService(Intent, ServiceConnection, int) - Bound Service
+- with a call to <i>context.startService(Intent)</i> - Regular Service
+- with a call to <i>context.bindService(Intent, ServiceConnection, int)</i> - Bound Service
 
-End:
+<u>End:</u>
 A service ends...
 
-- with a call to context.stopService(Intent)
-- with a call to service.stopSelf()
+- with a call to <i>context.stopService(Intent)</i>
+- with a call to <i>service.stopSelf()</i>
 - the system must recover memory for other (more important) apps
 
 ### Example
@@ -193,7 +222,7 @@ public class MyService extends Service {
 ### Lifecycle
 Start:
 
-- an IntentService starts with a call to context.startService(Intent)
+- an IntentService starts with a call to <i>context.startService(Intent)</i>
 - if the IntentService is already running, the new task is queued (FIFO)
 
 End:
@@ -230,19 +259,19 @@ public class MyIntentService extends IntentService {
 - convenient way to perform long operations (a few seconds) from within an Activity
 - computation runs on a background thread and whose result is published on the UI thread
 - a task can be executed only once
-- tasks are executed sequentially on a single thread! If you want parallel execution, you have to use asyncTask.executeOnExecutor(THREAD_POOL_EXECUTOR, args)
+- tasks are executed sequentially on a single thread! If you want parallel execution, you have to use <i>asyncTask.executeOnExecutor(THREAD_POOL_EXECUTOR, args)</i>
 - does not handle configuration changes automatically (common solution: use a retained headless fragment)
 - AsyncTask instance must be created on the UI thread.
 
 ### Lifecycle
-Start:
+<u>Start:</u>
 
-- an AsyncTask starts with a call to asyncTask.execute(Params, Progress, Result);
+- an AsyncTask starts with a call to <i>asyncTask.execute(Params, Progress, Result)</i>
 
-End:
+<u>End:</u>
 
 - when the AsyncTask finished work
-- by calling asyncTask.cancel(false). The implementation of doInBackground(Params...) has to check periodically the return value of isCancelled().
+- by calling <i>asyncTask.cancel(false)</i>. The implementation of <i>doInBackground(Params...)</i> has to check periodically the return value of <i>isCancelled()</i>.
 
 ### Example
 
@@ -297,25 +326,25 @@ Process:
 
 More Details:
 
-Thread:
+<u>Thread:</u>
 
 - A Thread can have only one Looper. A Looper can have many unique Handlers associated with it
-- A Thread gets a Looper and MessageQueue by calling Looper.prepare() after its running
+- A Thread gets a Looper and MessageQueue by calling <i>Looper.prepare()</i> after its running
 
-MessageQueue:
+<u>MessageQueue:</u>
 
 - Unbounded linked list of messages to be processed on the consumer thread
 - Holds the list of messages to be dispatched by a Looper
 - A Looper has only one MessageQueue
 - Messages are added through Handler objects associated with the Looper
 
-Message:
+<u>Message:</u>
 
 - Container object carrying either a data item or a task (Runnable)
 - Inserted by producer threads
 - Consumed by consumer thread
 
-Looper:
+<u>Looper:</u>
 
 - Message dispatcher associated with the consumer thread
 - A thread can only have one Looper at the same time
@@ -371,14 +400,14 @@ class MainActivity extends Activity {
 
 ### General
 
-- Just a "normal" Thread which sets up the internal message passing mechanism automatically => No need to init a Looper manually...
+- Just a "normal" Thread which sets up the internal message passing mechanism automatically → No need to init a Looper manually...
 - Use HandlerThread instead of "normal" Java Thread with manual Looper setup (see code example above)
 - Applicable to many background execution use cases, where sequential execution and control of the message queue is desired
-- Use the constructor with the name argument -> simplifies debugging
-- Started in the same way as a Thread -> start()
-- Terminated either with quit() or quitSafely()
-	- quit() - Terminates the Looper without processing any more messages in the MessageQueue
-	- quitSafely() - Similar to the previous version but makes sure that the pending messages that are due to be delivered are handled
+- Use the constructor with the name argument → simplifies debugging
+- Started in the same way as a Thread → <i>start()</i>
+- Terminated either with <i>quit()</i> or <i>quitSafely()</i>
+	- <i>quit()</i> - Terminates the Looper without processing any more messages in the MessageQueue
+	- <i>quitSafely()</i> - Similar to the previous version but makes sure that the pending messages that are due to be delivered are handled
 
 ### Example
 
@@ -407,4 +436,5 @@ Handler handler = new Handler(myThread.getLooper()) {
 ## Development Phase & Debugging
 
 - StrictMode helps to identify long-running operations on the main thread
-- Simulate how you app responds to being killed: adb shell am force-stop com.example.packagename
+- Simulate how you app responds to being killed: <i>adb shell am force-stop com.example.packagename</i>
+- Get process info: <i>adb shell ps | grep com.example.packagename</i>
