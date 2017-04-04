@@ -14,7 +14,7 @@ Devs are busy most of the time and don't have time to read very long articles. T
 
 
 ## Architecture
-### Mulitasking and Multithreading
+### Multitasking and Multithreading
 - Android is based on Linux and supports:
 	- multitasking: performing multiple tasks (aka processes) over a certain period of time by executing them concurrently
 	- multithreading: performing multiple threads within the context of one process
@@ -42,7 +42,7 @@ Devs are busy most of the time and don't have time to read very long articles. T
 General:
 
 - Android starts a new Linux process for an app when an app component (Activity, Service, Content Provider, Broadcast Receiver) needs to be started and the app does not have a running process yet
-- All app components of the same app run in the same process and thread (main thread) → default behaviour
+- All app components of the same app run in the same process and thread (main thread) → default behavior
 - If an app component starts and there already exists a process for that app, then the new component is started within that already existing process
 
 App startup sequence:
@@ -75,7 +75,7 @@ There's <i>no guarantee</i> that <i>onDestroy()</i> (Activity, Service) will be 
 - Processes with the lowest importance are killed first
 - Android can re-launch an app (the process) based on its last state when the process was killed
 
-Process importancy (from high to low):
+Process importance (from high to low):
 
 - Foreground Processes
 - Visible Processes
@@ -91,7 +91,7 @@ Process importancy (from high to low):
 	- a foreground Service
 	- a running BroadcastReceiver
 
-<u>Visibile Process:</u>
+<u>Visible Process:</u>
 
 - A process that has visible activities which are not in the foreground (= partly obscured)
 - dependent processes are not prematurely killed while the activity is visible (a bound service or content providers gets the same process status as the activity which still lives)
@@ -99,7 +99,7 @@ Process importancy (from high to low):
 <u>Service Process:</u>
 
 - has one or more started Services which are not interacting with a visible component or foreground component
-- common state for most background services, process is only killed if there is much memory pressure
+- common state for most background services, the process is only killed if there is much memory pressure
 
 <u>Background Process:</u>
 
@@ -108,16 +108,16 @@ Process importancy (from high to low):
 
 <u>Empty Process:</u>
 
-- dont'have any active app components
+- don't have any active app components
 - can be easily killed at any point
-- do only exist to improve start-up time when a components needs to be (re-)activated
+- do only exist to improve start-up time when a component needs to be (re-)activated
 
 <u>Important:</u><br>
 Priorities are done at the <i>process level</i> and not the component level. A single component can push the entire process into the foreground level.
 
 ## Thread Scheduling
 
-<strong>A thread scheduler decides which threads in the system should run, when, and for how long</strong>
+<strong>A thread scheduler decides which threads in the Android system should run, when, and for how long</strong>
 
 Android’s thread scheduler uses two main factors to determine the scheduling:
 
@@ -135,7 +135,7 @@ Android’s thread scheduler uses two main factors to determine the scheduling:
 
 ### Control Groups (Cgroups)
 
-- Android has multiple control groups. The most import are:
+- Android has multiple control groups. The most important are:
 	- the Foreground Group
 	- the Background Group
 - every thread belongs to a thread control group (e.g. Foreground Group)
@@ -148,7 +148,7 @@ Android’s thread scheduler uses two main factors to determine the scheduling:
 ## Main Thread aka UI Thread
 General:
 
-- By default, all app components of the same app run in the same thread, called main thread
+- By default, all app components of the same app run in the same thread called main thread
 - The main thread is also called UI thread because it is the only thread the system allows to update UI components
 
 <u>Responsiveness:</u><br>
@@ -161,10 +161,10 @@ Let's consider a simple view animation:
 - Animations are updated in an event loop where every event updates the animation with one frame 
 - An event is just a very small change (e.g. move view element by 1px)
 - The more events/drawing changes that can be executed per time frame, the better the animation is perceived
-- 60 drawing changes per seconds (60 fps) is the ultimative goal. Result: Every frame has to render within 16 ms (1000 ms / 60 frames = 16,66 ms)
+- 60 drawing changes per seconds (60 fps) is the ultimate goal. Result: Every frame has to render within 16 ms (1000 ms / 60 frames = 16,66 ms)
 - If another task is running on the UI thread simultaneously, both the drawing cycle and the "blocking" task have to finish within 16 ms to avoid a stuttering animation
 
-The calculation is a bit simplified. However, be cautious about possible long running tasks everytime.
+The calculation is a bit simplified. However, be cautious about possible long running tasks.
 
 
 ## Service
@@ -256,7 +256,7 @@ public class MyIntentService extends IntentService {
 
 - allows to run code in the background and to synchronize again with the main thread
 - excellent for short background operations which need to update the user interface
-- convenient way to perform long operations (a few seconds) from within an Activity
+- a convenient way to perform long operations (a few seconds) from within an Activity
 - computation runs on a background thread and whose result is published on the UI thread
 - a task can be executed only once
 - tasks are executed sequentially on a single thread! If you want parallel execution, you have to use <i>asyncTask.executeOnExecutor(THREAD_POOL_EXECUTOR, args)</i>
@@ -336,7 +336,7 @@ More Details:
 - Unbounded linked list of messages to be processed on the consumer thread
 - Holds the list of messages to be dispatched by a Looper
 - A Looper has only one MessageQueue
-- Messages are added through Handler objects associated with the Looper
+- Messages are added via Handler objects associated with the Looper
 
 <u>Message:</u>
 
@@ -436,5 +436,7 @@ Handler handler = new Handler(myThread.getLooper()) {
 ## Development Phase & Debugging
 
 - StrictMode helps to identify long-running operations on the main thread
-- Simulate how you app responds to being killed: <i>adb shell am force-stop com.example.packagename</i>
+- Simulate how your app responds to being killed: <i>adb shell am force-stop com.example.packagename</i>
 - Get process info: <i>adb shell ps | grep com.example.packagename</i>
+
+Feedback? Questions? Errors? Let me know what you think.
