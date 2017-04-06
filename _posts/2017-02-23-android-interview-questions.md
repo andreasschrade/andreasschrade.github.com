@@ -197,9 +197,6 @@ public class MyActivity extends Activity {
 }
 {% endhighlight %}
 
-<b>More about threading?</b><br>
-I <u>highly</u> recommend the book <a target="_blank" href="http://amzn.to/2lNYbsS">Efficient Android Threading" by Anders Goransson</a>.
-
 
 ### What is a ContentProvider?
 A Content Provider is part of an Android application that manages access to a repository of data.
@@ -599,7 +596,6 @@ Scheduled alarms (via AlarmManager), jobs (via JobScheduler), and syncs (via Syn
 	- Test code and production code combined is running in a single process in a single copy of the VM (Dalvik or ART)
 	- Instrumentation tests are placed inside the "androidTest" folder
 
-More about testing? A good book about JUnit testing is <a target="_blank" href="http://amzn.to/2lbDkfF">Practical Unit Testing with JUnit and Mockito</a>.
 
 ## Behavioral Interview Questions
 
@@ -618,7 +614,6 @@ The behavioral interview part is more about you and your history in software dev
 - What is your salary requirement?
 - Do you have any questions?
 
-<a target="_blank" href="https://www.amazon.com/gp/product/0984782850/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0984782850&linkCode=as2&tag=schrade05-20&linkId=098fcd5a9f2cab33e2f7ba1024a9675f">Cracking the Coding Interview</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0984782850" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> is an excellent book that helps you through this process, teaching you what you need to know and enabling you to perform at your very best.
 
 
 ### Last Interview Tips
@@ -628,9 +623,4 @@ The behavioral interview part is more about you and your history in software dev
 - Arrive on time and be relaxed and prepared for the job interview
 - Make a good first impression
 
-
-<b>Want to learn more about Android?</b>
-<ul>
-<li><a target="_blank" href="https://www.amazon.com/gp/product/0134171454/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0134171454&linkCode=as2&tag=schrade05-20&linkId=4b0022dc5442684208dc4bf2d21d44cd">Android Programming: The Big Nerd Ranch Guide (2nd Edition)</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0134171454" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
-<li><a target="_blank" href="https://www.amazon.com/gp/product/0133892387/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0133892387&linkCode=as2&tag=schrade05-20&linkId=4fb8f72bfc31021c010759fac35457d5">Advanced Android Application Development (4th Edition)</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0133892387" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
-</ul>
+Questions, Ideas, Problems? Let me know...

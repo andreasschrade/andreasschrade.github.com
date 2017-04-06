@@ -232,11 +232,3 @@ Every design pattern has its pitfalls. You only have to respect them.
 
 Thanks for reading. I will publish a new article about useful Android libraries every week. I'll tweet out every new article at <a href="https://twitter.com/andreasschrade">@andreasschrade</a>. Feel free to follow if you'd be interested in reading more.
 
-
-<b>Want to learn more?</b>
-<ul>
-<li><a target="_blank" href="https://github.com/greenrobot/EventBus">Official Greenrobot EventBus Github Page</a></li>
-<li><a target="_blank" href="https://www.amazon.com/gp/product/0134171454/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0134171454&linkCode=as2&tag=schrade05-20&linkId=4b0022dc5442684208dc4bf2d21d44cd">Android Programming: The Big Nerd Ranch Guide (2nd Edition)</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0134171454" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
-<li><a target="_blank" href="https://www.amazon.com/gp/product/0133892387/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0133892387&linkCode=as2&tag=schrade05-20&linkId=4fb8f72bfc31021c010759fac35457d5">Advanced Android Application Development (4th Edition)</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=schrade05-20&l=am2&o=1&a=0133892387" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
-</ul>
-
