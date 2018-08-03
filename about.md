@@ -16,13 +16,13 @@ I’m Andreas a freelance Android Developer based in Germany. I serve agencies, 
 <strong>Android is not just my job - It is my passion</strong>
 
 <h3>Availability</h3>
-Please get in contact to check my current availability, this can change weekly and usually book a few weeks in advance.
+Please get in contact to check my current availability.
 
 <h3>Tools, Skills, Technologies, Techniques</h3>
 
 I develop fast and robust state of the art Android apps using the latest technologies and techniques. I use my knowledge about time management, project management and tools to save time in development.
 
-- Android (SDK), RxAndroid, Dagger Dependency Injection, Butterknife, Greenrobot EventBus, Picasso, OkHttp, Retrofit JUnit, Mockito, Robotium, Crashlytics, 
+- Android (SDK), RxAndroid/RxJava2, Dagger Dependency Injection, Butterknife, Greenrobot EventBus, Picasso, OkHttp, Retrofit JUnit, Mockito, Robotium, Crashlytics, Kotlin
 - Git, SVN
 - Gradle, Maven, Ant
 - XML, CSV, JSON, FlatBuffers 
@@ -34,6 +34,10 @@ I develop fast and robust state of the art Android apps using the latest technol
 - SQlite, MySQL, Oracle RDBMS
 - Jira, Redmine, Trac
 
+<h4>Trivia</h4>
+- Back in 2011, I developed one of the very first Android Real Time Strategy Games
+- I live a <a href="http://www.pocketstoic.com/blog/5-stoic-principles-modern" target="_blank">stoic lifestyle</a>
+- Besides software development, I enjoy the craftsmanship of composing symphonic music
 
 <h3>Contact</h3>
 
