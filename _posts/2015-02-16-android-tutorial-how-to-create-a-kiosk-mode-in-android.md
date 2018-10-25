@@ -11,7 +11,7 @@ url: "http://www.andreas-schrade.de/2015/02/16/android-tutorial-how-to-create-a-
 
 ## Introduction
 
-This article describes a list of powerful methods to implement a Kiosk Mode in Android. A strong>Kiosk Mode</strong> is useful if you develop an Android app and want prevent any other applications to run in the foreground. 
+This article describes a list of powerful methods to implement a Kiosk Mode in Android. A <strong>Kiosk Mode</strong> is useful if you develop an Android app and want prevent any other applications to run in the foreground. 
 <p style="
     border: 3px solid #f12e2e;
     padding: 12px;
