@@ -10,7 +10,7 @@ language: "EN"
 
 ## Foreword
 
-Devs are busy most of the time and don't have time to read very long articles. This article is as short as possible and contains as much as possible information about threading in Android. Let's start!</b>
+Devs are busy most of the time and don't have time to read very long articles. This article is as short as possible and contains as much as possible information about threading in Android. Let's start!
 
 
 ## Architecture
@@ -40,13 +40,11 @@ Devs are busy most of the time and don't have time to read very long articles. T
 ## Application Lifecycle
 ### Application start
 General:
-
 - Android starts a new Linux process for an app when an app component (Activity, Service, Content Provider, Broadcast Receiver) needs to be started and the app does not have a running process yet
 - All app components of the same app run in the same process and thread (main thread) → default behavior
 - If an app component starts and there already exists a process for that app, then the new component is started within that already existing process
 
 App startup sequence:
-
 1. Start Linux process
 2. Create runtime: Dalvik or ART (Android Runtime)
 3. Create Application instance (android.app.Application.onCreate() is called)
