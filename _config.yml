@@ -19,7 +19,7 @@ author:
   image: 'authorimage.jpg'
   greetings: 'Hi, I am Andreas!'
   description: |
-    Freelance Android Expert. Musician. Minimalist. Thinker.
+    Freelance Android Expert. Musician. Minimalist. Thinker.<br>
     Intrigued by ideas, interesting projects, finance & investing, strategy, books, armchair philosophy, composing, writing, classical music, and even better conversations. Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me.
   bio: 'Intrigued by ideas, interesting projects, finance & investing, strategy, books, armchair philosophy, composing, writing, classical music, and even better conversations. Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me.'
 
@@ -50,7 +50,7 @@ plugins_dir:
   - jekyll-sitemap
 
 # Pagination
-paginate: 5
+paginate: 20
 paginate_path: /page:num/
 
 # Permalinks
