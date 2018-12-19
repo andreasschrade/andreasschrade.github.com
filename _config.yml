@@ -5,7 +5,7 @@ meta_description: 'A blog about Android, software development, clean code, the f
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
 baseurl: 
-production_url: http://andreas-schrade.de/
+production_url: http://andreasschrade.com/
 disqus: 'andreas-schrade'
 mailchimp_url: '//exynap.us14.list-manage.com/subscribe/post?u=be36936da288eb536563e6afd&amp;id=19b27ddc9b'
 cover_image: bc_1.jpg
