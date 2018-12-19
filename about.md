@@ -4,9 +4,11 @@ title: About
 ---
 {% include image-caption.html imageurl="/assets/images/pages/about.jpg#right" title="Android Freelancer"  %}
 
->I'm a dedicated Android developer
+My name is Andreas Schrade I'm a dedicated Android developer!
 
-I serve agencies, corporations and start-ups worldwide and I excel at integrating seamlessly into my clients’ teams and workflows. There's nothing I can't handle. 
+I serve agencies, corporations and start-ups worldwide and I excel at integrating seamlessly into my clients’ teams and workflows.
+
+There's nothing I can't handle. 
 
 <h3>Who I am:</h3>
 
@@ -37,6 +39,8 @@ I develop fast and robust state of the art Android apps using the latest technol
 - REST, SOAP
 - SQlite, MySQL, Oracle RDBMS
 - Jira, Redmine, Trac
+
+>I'm a dedicated Android developer
 
 <h4>Trivia</h4>
 - Back in 2011, I developed one of the very first Android Real Time Strategy Games
