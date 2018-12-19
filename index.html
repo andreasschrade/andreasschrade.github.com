@@ -2,82 +2,33 @@
 layout: default
 title: Home
 ---
-<style>
-#homepage_ a, .n_a {
-color: #555;
-}
 
-
-#homepage_ h3 {
- margin-top:22px;
-
-}
-
-#homepage_ h4 {
- margin-top:16px;
-
-}
-
-.dotted {
-  border:0;
-}
-
-
-</style>
-
-<div class="posts">
-  <div style="padding-left:2rem">
-  <img src="{{site.baseurl}}assets/me_small.png" style="float:right;margin-top:-8px; margin-left:2rem">
-<p>Hi, I'm Andreas. </p>
-
-<p>Freelance Android Expert. Musician. Minimalist. Thinker.</p>
-
-<p>Intrigued by ideas, interesting projects, finance & investing, strategy, books, armchair philosophy, composing, writing, classical music, and even better conversations.</p>
-
-<p>Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me.</p>
-
-<p>Say hi on Twitter <a target="_blank" href="http://twitter.com/andreasschrade">@andreasschrade</a> </p>
-
-<p>
-   <img src="{{ site.url }}/assets/badges.jpg" border="0" usemap="#snetwork">
-  <map name="#snetwork">
-    <area shape="rect" coords="0,0,42,48" href="https://twitter.com/andreasschrade">
-    <area shape="rect" coords="43,0,100,48" href="https://www.linkedin.com/in/andreasschrade">
-  
-</p>
-<br><br>
-<h3>Articles</h3>
-</a>
-  </div>
-  <div id="homepage_" class="post stickem-container">
-  
-     <div class="blockGroup">
-      <ul class="blockGroup-list">
-        {% for post in site.posts %}
-          <li class="block">
-            <div class="postArticle-wrapper">
-              <article class="postArticle postArticle--short">
-
-                     <a class="postArticle-title" href="{{ post.url }}">{{ post.title }}</a>
-             
-               
-              </article>
-              <div class="block-postMeta">{{ post.date | date_to_string }}  {% if post.language %} - EN{% endif %}</div>
-              
-              {% if post.category == "android" ||  post.language %}
-               <div class="block-postMeta" style="right:0px"><img src="{{site.baseurl}}assets/android.png" alt="android logo" style="margin:0"/></div>
-              {% endif %}
-                {% if post.category == "java" %}
-               <div class="block-postMeta" style="right:0px"><img src="{{site.baseurl}}assets/java.png" alt="java logo" style="margin:0"/></div>
-              {% endif %}
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    
-    
-  </div>
+{% if page.url == "/" %}
+<!-- Featured-->
+<div class="featured-posts outer">
+    {% for post in site.posts %}
+        {% if post.featured == true %}
+            {% include featuredbox.html %}
+        {% endif %}
+    {% endfor %}
 </div>
+{% endif %}
+<!-- Posts Index -->
+<div class="outer">
+    {% if page.url == "/" %}
+    <div class="post-feed-title inner">Latest Articles</div>
+    {% endif %}
+    <div class="post-feed inner-wide">
+        {% for post in paginator.posts %}
+            {% include postbox.html %}
+        {% endfor %}
+    </div>
+</div>
+<!-- Pagination-->
+{% include pagination.html %}
+{% if site.mailchimp_url %}
+    {% include newsletter-box.html %}
+{% endif %}
+
+
 
