@@ -39,8 +39,10 @@ navigation:
     url: /about/
   - text: Contact Me
     url: /contact/
-  - text: Style Guide
-    url: /style-guide/
+  - text: Privacy Policy
+    url: /privacy-policy/
+  - text: Impressum
+    url: /imprint/
 
 # Required Plugins
 plugins_dir:
