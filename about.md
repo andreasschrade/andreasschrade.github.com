@@ -4,7 +4,7 @@ title: About
 ---
 {% include image-caption.html imageurl="/assets/images/pages/about.jpg#right" title="Android Freelancer"  %}
 
-My name is Andreas Schrade I'm a dedicated Android developer!
+My name is Andreas Schrade! I'm a dedicated Android developer!
 
 I serve agencies, corporations and start-ups worldwide and I excel at integrating seamlessly into my clients’ teams and workflows.
 
@@ -44,6 +44,6 @@ I develop fast and robust state of the art Android apps using the latest technol
 
 <h4>Trivia</h4>
 - Back in 2011, I developed one of the very first Android Real Time Strategy Games
-- I live a <a href="http://www.pocketstoic.com/blog/5-stoic-principles-modern" target="_blank">stoic lifestyle</a>
+- I live a <a href="https://medium.com/pocketstoic/5-stoic-principles-for-modern-living-applying-an-ancient-philosophy-to-the-21st-century-2a8e10f31887" target="_blank">stoic lifestyle</a>
 - Besides software development, I enjoy the craftsmanship of composing symphonic music
 - My favorite number is 42 and favorite prime number is 101
