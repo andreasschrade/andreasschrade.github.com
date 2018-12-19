@@ -1,10 +1,8 @@
 ---
 layout: page
 title: About
-featured_image: /assets/images/pages/about.jpg
 ---
 {% include image-caption.html imageurl="/assets/images/pages/about.jpg#right" title="Concrete roads" caption="This is caption" %}
-
 
 His work has been recognized by Communication Arts, IBM, How, ID, IdN, AIGA, Effie, Archive, Graphis, AdFed and Rockport. **Net** magazine named him a person to watch in 2018.
 
