@@ -647,13 +647,53 @@ img {
     }
 }
 
-/* PrismJS 1.11.0
- * Syntax Highlighter
- * Modified Okaidia theme for JavaScript, CSS and HTML
+
+
+/* Contact Form */
+
+.form-label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.55556em;
+    span {
+        color: $gray;
+        font-size: 0.77778rem;
+        font-weight: normal;
+        font-style: italic;
+    }
+}
+
+.form-item {
+    margin-bottom: 30px;
+}
+
+.form-textarea {
+    min-height: 230px;
+}
+
+.contact-form {
+    background: $gray-lightest;
+    border: 1px solid $gray-lighter;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin-bottom: 3.33333em;
+    padding: 35px 30px 45px;
+}
+
+
+/* PRISM */
+
+/* PrismJS 1.15.0
+https://prismjs.com/download.html?#themes=prism-okaidia&languages=markup+css+clike+java+kotlin&plugins=line-numbers */
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
  */
+
 code[class*="language-"],
 pre[class*="language-"] {
-    color: $gray-light;
+    color: #f8f8f2;
     background: none;
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -663,9 +703,11 @@ pre[class*="language-"] {
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
+
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
+
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
@@ -674,21 +716,21 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-    padding: 1.875em;
-    margin: 0 0 1.875em;
+    padding: 1em;
+    margin: .5em 0;
     overflow: auto;
-    border-radius: 3px;
+    border-radius: 0.3em;
 }
 
-:not(pre)>code[class*="language-"],
+:not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-    background: $gray-darkest;
+    background: #272822;
 }
 
 /* Inline code */
-:not(pre)>code[class*="language-"] {
-    padding: 1px 3px;
-    border-radius: 3px;
+:not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
     white-space: normal;
 }
 
@@ -700,7 +742,7 @@ pre[class*="language-"] {
 }
 
 .token.punctuation {
-    color: $gray-light;
+    color: #f8f8f2;
 }
 
 .namespace {
@@ -735,12 +777,13 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-    color: $gray-light;
+    color: #f8f8f2;
 }
 
 .token.atrule,
 .token.attr-value,
-.token.function {
+.token.function,
+.token.class-name {
     color: #e6db74;
 }
 
@@ -757,7 +800,6 @@ pre[class*="language-"] {
 .token.bold {
     font-weight: bold;
 }
-
 .token.italic {
     font-style: italic;
 }
@@ -766,33 +808,45 @@ pre[class*="language-"] {
     cursor: help;
 }
 
-/* Contact Form */
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
 
-.form-label {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 0.55556em;
-    span {
-        color: $gray;
-        font-size: 0.77778rem;
-        font-weight: normal;
-        font-style: italic;
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+    .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
     }
-}
 
-.form-item {
-    margin-bottom: 30px;
-}
+        .line-numbers-rows > span:before {
+            content: counter(linenumber);
+            color: #999;
+            display: block;
+            padding-right: 0.8em;
+            text-align: right;
+        }
 
-.form-textarea {
-    min-height: 230px;
-}
-
-.contact-form {
-    background: $gray-lightest;
-    border: 1px solid $gray-lighter;
-    border-radius: 3px;
-    box-sizing: border-box;
-    margin-bottom: 3.33333em;
-    padding: 35px 30px 45px;
-}
