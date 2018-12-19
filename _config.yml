@@ -1,6 +1,6 @@
 # Site setings
 name: 'Andreas Schrade'
-description: 'Android Freelancer who loves to share his passion'
+description: 'Android Freelancer who loves his passion and serves companies all over the world'
 meta_description: 'A blog about Android, software development, clean code, the future, the universe... and everything in between'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
@@ -21,7 +21,7 @@ author:
   description: |
     <strong>Freelance Android Expert. Lifelong-Learner. Minimalist. Thinker.</strong><br>
     Intrigued by ideas, exciting projects, finance & investing, books, armchair philosophy, composing, writing, classical music, and even better conversations.<br>Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me... <a href="/contact/">Maybe that's you</a>?
-  bio: 'I’m a freelance Android Developer who serve agencies, corporations and start-ups worldwide.<br>Intrigued by ideas, challenging projects, lifelong learning, armchair philosophy, and even better conversations.<br><br>Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me.<br><b>Say Hi!</b> on Twitter <a href="https://twitter.com/andreasschrade">@andreasschrade</a>'
+  bio: 'I’m a freelance Android Developer who serve companies all over the world. Intrigued by ideas, challenging projects, lifelong learning, armchair philosophy, and even better conversations.<br><br>Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me.<br><b>Say Hi!</b> on Twitter <a href="https://twitter.com/andreasschrade">@andreasschrade</a>'
 
 # Contact form setings
 email: blog@andreas-schrade.de
