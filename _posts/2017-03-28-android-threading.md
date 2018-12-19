@@ -232,7 +232,7 @@ End:
 
 
 ### Example
-{% highlight java %}
+<pre><code class="language-java">
 public class MyIntentService extends IntentService {
     public static final String MY_PARAM = "param";
 
@@ -246,7 +246,7 @@ public class MyIntentService extends IntentService {
         // do something
     }
 }
-{% endhighlight %}
+</code></pre>
 
 ## AsyncTask
 
@@ -275,7 +275,7 @@ public class MyIntentService extends IntentService {
 
 ### Example
 
-{% highlight java %}
+<pre><code class="language-java">
 public class MyActivity extends Activity {
 	private TextView textViewStatus;
     public void onCreate(Bundle savedInstanceState) {
@@ -297,7 +297,7 @@ public class MyActivity extends Activity {
 	        }
 	}
 }
-{% endhighlight %}
+</code></pre>
 
 ## Message Passing
 Scenario:
@@ -362,7 +362,7 @@ Handler:
 
 ### Example
 
-{% highlight java %}
+<pre><code class="language-java">
 class MyLooperThread extends Thread {
     public Handler handler;
 
@@ -378,8 +378,9 @@ class MyLooperThread extends Thread {
         Looper.loop();
     }
 }
-{% endhighlight %}
-{% highlight java %}
+</code></pre>
+
+<pre><code class="language-java">
 class MainActivity extends Activity {
 	public void onCreate(...) {
 		// Other stuff
@@ -391,8 +392,7 @@ class MainActivity extends Activity {
         myThread.handler.sendMessage(msg);
 	}
 }
-{% endhighlight %}
-
+</code></pre>
 
 ## HandlerThread
 
@@ -411,7 +411,7 @@ class MainActivity extends Activity {
 
 ### Example
 
-{% highlight java %}
+<pre><code class="language-java">
 HandlerThread myThread = new HandlerThread("MyHandlerThread");
 myThread.start();
 Handler handler = new Handler(myThread.getLooper()) {
@@ -421,7 +421,7 @@ Handler handler = new Handler(myThread.getLooper()) {
 		// TODO: process message
 	}
 };
-{% endhighlight %}
+</code></pre>
 
 ## Loaders
 
