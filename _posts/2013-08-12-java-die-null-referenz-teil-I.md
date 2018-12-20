@@ -2,6 +2,8 @@
 layout: post
 title: "Java: Die null-Referenz (Teil I)"
 category: "java"
+permalink: /java/2013/08/12/java-die-null-referenz-teil-I/
+
 ---
 
 

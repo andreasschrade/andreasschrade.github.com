@@ -2,6 +2,8 @@
 layout: post
 title: "Java: Negation von Booleans und Ganzzahlen"
 category: "java"
+permalink: /java/2013/07/02/java-negation-von-boolean-und-ganzzahlen/
+
 ---
 
 

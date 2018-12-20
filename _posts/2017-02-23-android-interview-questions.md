@@ -3,6 +3,7 @@ layout: post
 title: "Android Interview Questions And Answers"
 comments: true
 language: "EN"
+permalink: /2017/02/23/android-interview-questions/
 
 ---
 
