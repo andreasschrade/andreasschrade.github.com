@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Privacy Policy
+permalink: /privacy-policy/
+
 ---
 <h4>Datenschutzerklärung</h4>
 
