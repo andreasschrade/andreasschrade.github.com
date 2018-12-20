@@ -3,7 +3,7 @@ layout: post
 title: "Threading in Android"
 comments: true
 language: "EN"
-
+permalink: /2017/03/28/android-threading/
 
 ---
 

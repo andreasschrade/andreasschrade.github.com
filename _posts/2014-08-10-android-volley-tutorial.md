@@ -2,6 +2,8 @@
 layout: post
 title: "Android: Volley Tutorial"
 category: "android"
+permalink: /android/2014/08/10/android-volley-tutorial/
+
 ---
 
 

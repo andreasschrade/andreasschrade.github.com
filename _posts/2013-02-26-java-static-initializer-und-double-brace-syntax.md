@@ -2,6 +2,7 @@
 layout: post
 title: "Java: Statische Initialisierung und Double-Brace Syntax"
 category: "java"
+permalink: /java/2013/02/26/java-static-initializer-und-double-brace-syntax/
 ---
 
 

@@ -2,6 +2,9 @@
 layout: post
 title: "Android: Komplexe Objekte mithilfe von Parcelable transferieren"
 category: "android"
+permalink: /android/2014/05/23/android-daten-zwischen-activities-mithilfe-von-parcelable-uebergeben/
+
+
 ---
 
 

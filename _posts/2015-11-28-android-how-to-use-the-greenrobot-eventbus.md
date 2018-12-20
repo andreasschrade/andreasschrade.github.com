@@ -3,6 +3,7 @@ layout: post
 title: "How to use the greenrobot EventBus library"
 comments: true
 language: "EN"
+permalink: /2015/11/28/android-how-to-use-the-greenrobot-eventbus/
 
 ---
 

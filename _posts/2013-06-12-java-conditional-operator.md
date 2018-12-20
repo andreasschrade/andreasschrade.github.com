@@ -2,6 +2,7 @@
 layout: post
 title: "Java: Der Conditional-Operator im Detail"
 category: "java"
+permalink: /java/2013/06/12/java-conditional-operator/
 ---
 
 

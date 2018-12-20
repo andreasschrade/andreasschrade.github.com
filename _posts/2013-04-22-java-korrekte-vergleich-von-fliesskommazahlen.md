@@ -2,6 +2,7 @@
 layout: post
 title: "Java: Vergleich von Fließkommazahlen"
 category: "java"
+permalink: /java/2013/04/22/java-korrekte-vergleich-von-fliesskommazahlen/
 ---
 
 

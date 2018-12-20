@@ -2,6 +2,7 @@
 layout: post
 title: "Java: Einfaches formatieren von Zeichenketten mittels der Klasse Formatter"
 category: "java"
+permalink: /java/2013/04/22/java-einfache-formattierungen-mit-der-klasse-formatter/
 ---
 
 

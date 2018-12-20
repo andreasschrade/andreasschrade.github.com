@@ -2,6 +2,7 @@
 layout: post
 title: "Android: Unterschied zwischen px, dp, sp"
 category: "android"
+permalink: /android/2013/12/20/android-unterschied-px-dp-sp/
 ---
 
 
