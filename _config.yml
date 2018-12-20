@@ -20,8 +20,8 @@ author:
   greetings: 'Hi, I am Andreas!'
   description: |
     <strong>Freelance Android Expert. Lifelong-Learner. Minimalist. Thinker.</strong><br>
-    Intrigued by ideas, exciting projects, finance & investing, books, armchair philosophy, composing, writing, classical music, and even better conversations.<br>Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me... <a href="/contact/">Maybe that's you</a>?
-  bio: 'I’m a freelance Android Developer who serve companies all over the world. Intrigued by ideas, challenging projects, lifelong learning, armchair philosophy, and even better conversations.<br><br>Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me.<br><b>Say Hi!</b> on Twitter <a href="https://twitter.com/andreasschrade">@andreasschrade</a>'
+    Intrigued by ideas, exciting projects, finance & investing, books, armchair philosophy, composing, writing, classical music, and even better conversations.<br>Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me... <a href="/contact/">Maybe that's you?</a>
+  bio: 'I’m a freelance Android Developer who serve companies all over the world. Intrigued by ideas, challenging projects, lifelong learning, armchair philosophy, and even better conversations.<br><br>Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me.<br><b>Say Hi!</b> on Twitter <a href="https://twitter.com/andreasschrade">@andreasschrade</a><br><a href="/contact/">Contact me!</a>'
 
 # Contact form setings
 email: blog@andreas-schrade.de
@@ -56,7 +56,7 @@ paginate: 20
 paginate_path: /page:num/
 
 # Permalinks
-permalink: /:year/:month/:day/:title/
+permalink: /:title
 
 # Other
 markdown: kramdown

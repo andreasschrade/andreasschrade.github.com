@@ -4,6 +4,7 @@ title: "How-To Create a Working Kiosk Mode in Android"
 comments: true
 language: "EN"
 url: "http://www.andreas-schrade.de/2015/02/16/android-tutorial-how-to-create-a-kiosk-mode-in-android/"
+permalink: /2015/02/16/android-tutorial-how-to-create-a-kiosk-mode-in-android/
 
 ---
 
