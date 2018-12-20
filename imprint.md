@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Imprint
+permalink: /imprint/
+
 ---
 <h1>Impressum</h1>
 

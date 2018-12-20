@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+permalink: /about/
 ---
 {% include image-caption.html imageurl="/assets/images/pages/about.jpg#right" title="Android Freelancer"  %}
 
