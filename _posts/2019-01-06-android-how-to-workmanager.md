@@ -6,7 +6,6 @@ language: "EN"
 
 ---
 
-## Introduction:
 As an Android developer, what comes first to your mind when you think about _background processing_ in Android?
 Maybe the concept of Service, Intent Service, Bound Service, Foreground Service, AsyncTask, LoaderManager, HandlerThread, RxJava, Kotlin Coroutines, Executor Framework, JobScheduler, ... much pain?! :scream_cat:
 
