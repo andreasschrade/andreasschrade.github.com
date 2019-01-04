@@ -13,7 +13,7 @@ Maybe the concept of Service, Intent Service, Bound Service, Foreground Service,
 
 Welcome to Android, a world with unlimited choices ...
 
-This article is about another way to manage background processing: WorkManager! A new API which is part of the Android Architecture Components. The good news is that this API makes your life as an Android developer actually easier! So, let's dive right in.
+This article is about another way to manage background processing: WorkManager! Tada! A new API which is part of the Android Architecture Components. The good news is that this API makes your life as an Android developer actually easier! So, let's dive right in...
 
 
 ## What is WorkManager?
