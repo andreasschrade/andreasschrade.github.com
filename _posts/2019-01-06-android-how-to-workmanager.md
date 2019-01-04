@@ -6,18 +6,18 @@ language: "EN"
 
 ---
 
-## Introduction
+## Introduction:
 As an Android developer, what comes first to your mind when you think about _background processing_ in Android?
 Maybe the concept of Service, Intent Service, Bound Service, Foreground Service, AsyncTask, LoaderManager, HandlerThread, RxJava, Kotlin Coroutines, Executor Framework, JobScheduler, ... much pain?! :scream_cat:
 
 > Welcome to Android, a world with (almost) unlimited choices
 
-This article introduces another way (oh yes!:see_no_evil:) to manage background processing: `WorkManager` - A new API which is part of the Android Architecture Components. The good news is that this API makes your life as an Android developer easier! Sounds good? Ok so, let's dive right in...
+This article introduces another way (:see_no_evil:) to manage background processing: `WorkManager` - A new API which is part of the Android Architecture Components. The good news is that this API makes your life as an Android developer easier! Sounds good? Ok so, let's dive right in...
 
 ## What is WorkManager?
 WorkManager is one of the Android Architecture Components and is part of Android Jetpack. It replaces `JobScheduler` as Google’s recommended way to enqueue background work that needs a <u>combination of opportunistic and guaranteed execution.</u>
 
-_... *Wait!* A background work that needs a combination of opportunistic and guaranteed execution...?_
+<i>... <b>Wait!</b> A background work that needs a combination of opportunistic and guaranteed execution...?</i>
 
 <table>
 <tr><td>
@@ -38,6 +38,7 @@ This means that WorkManager executes your background work as soon as it can.
 <tr><td>
 WorkManager takes care that your background work gets executed (even if the user navigates away from the app or triggers a reboot)
 </td></tr>
+</table>
 
 In general, there are different types of background work. If you want to learn more about that, please see appendix A
 
