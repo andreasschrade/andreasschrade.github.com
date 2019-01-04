@@ -12,14 +12,14 @@ Maybe the concept of Service, Intent Service, Bound Service, Foreground Service,
 
 > Welcome to Android, a world with (almost) unlimited choices
 
-This article introduces another way (:see_no_evil:) to manage background processing: `WorkManager` - A new API which is part of the Android Architecture Components. The good news is that this API makes your life as an Android developer easier! Sounds good? Ok so, let's dive right in...
+This article introduces another way to manage background processing: `WorkManager` - A new API which is part of the Android Architecture Components. The good news is that this API makes your life as an Android developer easier! Sounds good? Ok so, let's dive right in...
 
 ## What is WorkManager?
 WorkManager is one of the Android Architecture Components and is part of Android Jetpack. It replaces `JobScheduler` as Google’s recommended way to enqueue background work that needs a <u>combination of opportunistic and guaranteed execution.</u>
 
 <i>... <b>Wait!</b> A background work that needs a combination of opportunistic and guaranteed execution...?</i>
 
-<table>
+<table style="background:#ffffee">
 <tr><td>
 <u>Background Work:</u>
 </td></tr>
@@ -30,7 +30,7 @@ WorkManager is one of the Android Architecture Components and is part of Android
 <u>Opportunistic execution:</u>
 </td></tr>
 <tr><td>
-This means that WorkManager executes your background work as soon as it can.
+This means that WorkManager executes your background work as soon as it can but it can defer the execution of tasks to work more battery efficient.
 </td></tr>
 <tr><td>
 <u>Guaranteed execution:</u>
@@ -40,7 +40,7 @@ WorkManager takes care that your background work gets executed (even if the user
 </td></tr>
 </table>
 
-In general, there are different types of background work. If you want to learn more about that, please see appendix A
+In general, there are different types of background work. If you want to learn more about that, please see [appendix A](#appendix-a)
 
 
 WorkManager is the right solution when you want to make sure that an enqueued task <u>always finish regardless of the current app state.</u> 
@@ -49,10 +49,10 @@ For example, scheduled work gets executed even when the user navigates away from
 
 WorkManager tries to run the background task in a battery efficient way and by doing so, it defers the execution of tasks.
 
-WorkManager supports Android 4.0+ (API 14+). It provides a simple interface and takes care to pick the best possible API for executing the background work depending on the device configuration (API level, play services support). Internally, WorkManager delegates the work to one of the following three APIs:
-* JobScheduler (API 23+)
-* Firebase JobDispatcher (below API 23 and in case play services are available)
-* AlarmManager with BroadcastReceiver (fallback)
+WorkManager supports Android 4.0+ (API 14+). It provides a simple interface and takes care to pick the best possible API for executing the background work depending on the device configuration (API level, play services support). Internally, `WorkManager` delegates the work to one of the following three APIs: 
+* `JobScheduler` (API 23+)
+* Firebase `JobDispatcher` (below API 23 and in case play services are available)
+* `AlarmManager` with `BroadcastReceiver` (fallback)
 
 ### When to use WorkManager
 
@@ -62,14 +62,10 @@ Examples:
 * doing time-consuming operations on data  
 
 ### When not to use WorkManager
-
-In any case which does not require a guaranteed execution or a task, which is not deferrable. 
-
-In case that time-criticality is essential, you should not use WorkManager.
-
-In case that you need to need to run a task at an exact time (such as an alarm clock or reminder), use AlarmManager instead.
-
-In case that you have a long-running background task that needs to be executed immediately and is related to an ongoing user focussed activity (like music playback, location tracking), use ForegroundService.
+* In any case which does not require a guaranteed execution or a task, which is not deferrable. 
+* In case that time-criticality is essential, you should not use `WorkManager`
+* In case that you need to need to run a task at an exact time (such as an alarm clock or reminder), use `AlarmManager` instead
+* In case that you have a long-running background task that needs to be executed immediately and is related to an ongoing user focussed activity (like music playback, location tracking), use `ForegroundService`
 
 
 ### What makes WorkManager beneficial?
@@ -84,15 +80,15 @@ It makes it easy to
 
 ## How to use WorkManager
 The WorkManager API has the following building blocks:
-* Worker: superclass that needs to be subclassed and contains the code for the actual work you want to perform in the background
-* WorkManager: API class that allows enqueueing and accessing work
-* WorkRequest: represents the configuration of the work request (arguments, constraints, ...)
-* WorkResponse: represents information about the execution status (success, failure, ...)
-* Data: Key/Value Pairs of data which gets passed to the worker
+* `Worker`: superclass that needs to be subclassed and contains the code for the actual work you want to perform in the background
+* `WorkManager`: API class that allows enqueueing and accessing work
+* `WorkRequest`: represents the configuration of the work request (arguments, constraints, ...)
+* `WorkResponse`: represents information about the execution status (success, failure, ...)
+* `Data`: Key/Value Pairs of data which gets passed to the worker
 
 ### Example
 
-#### 1. Add WorkManager to your app
+*1. Add WorkManager to your app*
 
 <pre><code class="language-kotlin">
 dependencies {
@@ -104,7 +100,7 @@ dependencies {
 </code></pre>
 
 
-### 2. Implement your own Worker by subclassing Worker and override doWork():
+*2. Implement your own Worker by subclassing Worker and override doWork():*
 
 <pre><code class="language-kotlin">
 import android.content.Context
@@ -135,7 +131,7 @@ The result of the doWork() can either be:
 
 It is a good practice to wrap the entire method in a try-catch expression when the work can end with an exception.
 
-#### 3. Access the API via WorkManager, define the configuration and enqueue the job
+*3. Access the API via WorkManager, define the configuration and enqueue the job*
 
 <pre><code class="language-kotlin">
 val constraints = Constraints.Builder()
@@ -181,12 +177,12 @@ WorkManager.getInstance()
 
 A scheduled work has one of the following statuses:
 
-* `ENQUEUED` WorkRequest is enqueued and eligible to run when its Constraints are met and resources are available
-* `RUNNING` WorkRequest is currently being executed
-* `SUCCEEDED` WorkRequest has successfully completed (a PeriodicWorkRequest can't enter this state and will simply go back to ENQUEUED)
-* `FAILED` WorkRequest has failed
-* `BLOCKED` WorkRequest is currently blocked because its prerequisites haven't finished successfully.
-* `CANCELLED` WorkRequest has been canceled
+* `ENQUEUED` - WorkRequest is enqueued and eligible to run when its Constraints are met and resources are available
+* `RUNNING` - WorkRequest is currently being executed
+* `SUCCEEDED` - WorkRequest has successfully completed (a PeriodicWorkRequest can't enter this state and will simply go back to ENQUEUED)
+* `FAILED` - WorkRequest has failed
+* `BLOCKED` - WorkRequest is currently blocked because its prerequisites haven't finished successfully.
+* `CANCELLED` - WorkRequest has been canceled
 
 
 ### Schedule periodic background work
@@ -236,9 +232,9 @@ For example, it doesn't make sense for a mail client to have multiple synchroniz
 
 `beginUniqueWork()` allows you to have a unique chain of work with a given name to be active at a time! You can decide what should happen when there is already one job of the same type pending:
 
-* `ExistingWorkPolicy.KEEP` let it run
-* `ExistingWorkPolicy.REPLACE` replace the existing one with the new background task
-* `ExistingWorkPolicy.APPEND` append the new sequence to the existing one as a child of all leaf nodes
+* `ExistingWorkPolicy.KEEP` - let it run
+* `ExistingWorkPolicy.REPLACE` - replace the existing one with the new background task
+* `ExistingWorkPolicy.APPEND` - append the new sequence to the existing one as a child of all leaf nodes
 
 `beginWith()` always enqueues and executes the chain of work regardless if there is any other background task of the same type already running or enqueued.
 
@@ -269,7 +265,7 @@ If you want to stay up to date with news from Android and software development i
 
 
 
-## Appendix A
+<h2 id="appendix-a"> Appendix A</h2>
 
 Background work can be categorized into two dimensions:
 
