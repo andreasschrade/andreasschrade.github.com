@@ -268,7 +268,7 @@ If you want to stay up to date with news from Android and software development i
 
 Background work can be categorized into two dimensions:
 
-{% include image-caption.html imageurl="/assets/images/posts/2018/workmanager.jpg#wide" title="different types of background processing"  %}
+{% include image-caption.html imageurl="/assets/images/posts/2018/workmanager.jpg" title="different types of background processing"  %}
 
 The _horizontal axis_ represents the importance of the background work. Is it necessary that the work will be definitely executed or are there certain circumstances which make the execution of a pending background work useless (like when leaving a screen or app)?
 
