@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to WorkManager in Android"
+title: "Android WorkManager: A short Tutorial"
 comments: true
 language: "EN"
 
@@ -9,14 +9,14 @@ language: "EN"
 As an Android developer, what comes first to your mind when you think about _background processing_ in Android?
 Maybe the concept of Service, Intent Service, Bound Service, Foreground Service, AsyncTask, LoaderManager, HandlerThread, RxJava, Kotlin Coroutines, Executor Framework, JobScheduler, ... much pain?! :scream_cat:
 
-> Welcome to Android, a world with (almost) unlimited choices
+> "So many roads. So many detours. So many choices. So many mistakes." ― Sarah Jessica Parker ―
 
 This article introduces another way to manage background processing: `WorkManager` - A new API which is part of the Android Architecture Components. The good news is that this API makes your life as an Android developer easier! Sounds good? Ok so, let's dive right in...
 
 ## What is WorkManager?
 WorkManager is one of the Android Architecture Components and is part of Android Jetpack. It replaces `JobScheduler` as Google’s recommended way to enqueue background work that needs a <u>combination of opportunistic and guaranteed execution.</u>
 
-<i>... <b>Wait!</b> A background work that needs a combination of opportunistic and guaranteed execution...?</i>
+<i>... <b>Wait!</b> A background work that needs a combination of <u>opportunistic</u> and <u>guaranteed execution</u>?</i>
 
 <table style="background:#ffffee">
 <tr><td>
@@ -260,7 +260,7 @@ WorkManager makes background processing in Android easier! It has a consistent, 
 
 Thank you for reading this article about WorkManager in Android. If you have any question, spotted an error or want to know more about WorkManager, please leave a comment. I'm happy to hear from you :blush:
 
-If you want to stay up to date with news from Android and software development in general, please follow me on Twitter or sign up for my newsletter!
+If you want to stay up to date with news from Android and software development in general, please follow me on <a href="https://twitter.com/andreasschrade" target="_blank">Twitter</a>a or sign up for my newsletter!
 
 
 
