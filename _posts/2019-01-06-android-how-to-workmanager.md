@@ -18,12 +18,14 @@ WorkManager is one of the Android Architecture Components and is part of Android
 
 <i>... <b>Wait!</b> A background work that needs a combination of <u>opportunistic</u> and <u>guaranteed execution</u>?</i>
 
+What does this mean?
+
 <table style="background:#ffffee">
 <tr><td>
 <u>Background Work:</u>
 </td></tr>
 <tr><td>
- By default, all app components of an app run in the same thread called main thread. The main thread is also called UI thread because it is the only thread the system allows to update UI components. Background work is any app-related work that doesn't get executed on the main thread (aka UI thread). Every time-consuming task (network request, expensive processing) needs to get executed in the background because you don't want to block the UI thread.
+ Background work is any app-related work that doesn't get executed on the main thread (aka UI thread). Every time-consuming task (network request, expensive processing) needs to get executed in the background because you don't want to block the UI thread.
 </td></tr>
 <tr><td>
 <u>Opportunistic execution:</u>
@@ -46,7 +48,7 @@ WorkManager is the right solution when you want to make sure that an enqueued ta
 
 For example, scheduled work gets executed even when the user navigates away from the app, and scheduled work even survives process death and device reboot!
 
-WorkManager tries to run the background task in a battery efficient way and by doing so, it defers the execution of tasks.
+WorkManager tries to run the background task in a battery efficient way and by doing so, it defers the execution of tasks. If your background work is not deferrable... well, don't use WorkManager.
 
 WorkManager supports Android 4.0+ (API 14+). It provides a simple interface and takes care to pick the best possible API for executing the background work depending on the device configuration (API level, play services support). Internally, `WorkManager` delegates the work to one of the following three APIs: 
 * `JobScheduler` (API 23+)
