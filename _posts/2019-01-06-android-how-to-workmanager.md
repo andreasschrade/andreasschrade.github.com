@@ -46,6 +46,7 @@ In general, there are different types of background work. If you want to learn m
 So...
 
 *`WorkManager` is the right solution when...*
+
 **1.** ... you want to run a time or CPU intensive task in the background and,
 **2.** ... you want to make sure that the task <u>always finish</u> (regardless of the current app state, process state or user behaviour) => Scheduled work even survives process death and device reboot!
 **3.** .. the task is <u>not time-critical</u> because the execution might get deferred to achieve battery efficiency 
