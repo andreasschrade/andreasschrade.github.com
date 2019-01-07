@@ -43,41 +43,40 @@ WorkManager takes care that your background work gets executed (even if the user
 
 In general, there are different types of background work. If you want to learn more about that, please see [appendix A](#appendix-a)
 
+So...
 
-WorkManager is the right solution when you want to make sure that an enqueued task <u>always finish regardless of the current app state.</u> 
-
-For example, scheduled work gets executed even when the user navigates away from the app, and scheduled work even survives process death and device reboot!
-
-WorkManager tries to run the background task in a battery efficient way and by doing so, it defers the execution of tasks. If your background work is not deferrable... well, don't use WorkManager.
-
-WorkManager supports Android 4.0+ (API 14+). It provides a simple interface and takes care to pick the best possible API for executing the background work depending on the device configuration (API level, play services support). Internally, `WorkManager` delegates the work to one of the following three APIs: 
-* `JobScheduler` (API 23+)
-* Firebase `JobDispatcher` (below API 23 and in case play services are available)
-* `AlarmManager` with `BroadcastReceiver` (fallback)
-
-### When to use WorkManager
+*`WorkManager` is the right solution when...*
+**1.** ... you want to run a time or CPU intensive task in the background and,
+**2.** ... you want to make sure that the task <u>always finish</u> (regardless of the current app state, process state or user behaviour) => Scheduled work even survives process death and device reboot!
+**3.** .. the task is <u>not time-critical</u> because the execution might get deferred to achieve battery efficiency 
 
 Examples:
 * Syncing data (a mail client could sync emails by using WorkManager)
 * uploading collected user files like photos or videos
 * doing time-consuming operations on data  
 
-### When not to use WorkManager
-* In any case which does not require a guaranteed execution or a task, which is not deferrable. 
-* In case that time-criticality is essential, you should not use `WorkManager`
-* In case that you need to need to run a task at an exact time (such as an alarm clock or reminder), use `AlarmManager` instead
-* In case that you have a long-running background task that needs to be executed immediately and is related to an ongoing user focussed activity (like music playback, location tracking), use `ForegroundService`
+
+*`WorkManager` is **NOT** the right solution when...*
+* ... you don't need a guaranteed execution -> when it simply doesn't make sense to finish an enqueued task in certain circumstances (for example a background task that is bound to a certain screen doesn't need to get executed once the user left the app)
+* ... you want to execute a non-deferrable task (time-criticality) 
+* ... you want to execute the task at an exact time (such as an alarm clock or reminder) -> use `AlarmManager` instead
+* ... you have a long-running background task that needs to be executed immediately and is related to an ongoing user focussed activity (like music playback, location tracking) -> use `ForegroundService` instead
 
 
 ### What makes WorkManager beneficial?
-WorkManager takes care of compatibility issues and follows best practices to execute background work in a battery efficient way. 
+WorkManager takes care of compatibility issues and follows best practices to execute background work in a battery efficient way. It supports Android 4.0+ (API 14+) and provides a simple and flexible API. 
 
-It makes it easy to
+The WorkManager API makes it easy to
 * schedule periodic tasks
+* schedule unique (singleton) tasks
 * set up dependent chains of tasks
 * parallelize work
 * set execution constraints (e.g., only execute the task when the network is present, when storage is not low, when the battery is not low)
 
+WorkManager takes care to pick the best possible API for executing the background work depending on the device configuration (API level, play services support). Internally, `WorkManager` delegates the work to one of the following three APIs: 
+* `JobScheduler` (API 23+)
+* Firebase `JobDispatcher` (below API 23 and in case play services are available)
+* `AlarmManager` with `BroadcastReceiver` (fallback)
 
 ## How to use WorkManager
 The WorkManager API has the following building blocks:
@@ -148,7 +147,7 @@ val myWork = OneTimeWorkRequest.Builder(ExampleWorker::class.java)
 WorkManager.getInstance().enqueue(myWork)
 </code></pre>
 
-The first line initializes an object of type `Constraints`. As soon as all declared constraints are met, a scheduled work gets executed.
+The first line initializes an object of type `Constraints`. As soon as all declared constraints are met, a scheduled work gets ready for execution.
 It makes sense to add a `NetworkType.CONNECTED` constraint to an upload task, because you can't upload data unless there is a connection.
 
 The `inputData` object holds necessary information that is required for the execution of the background work (like the file name that needs to be uploaded). Please be careful that you don't exceed 10KB...Otherwise, you encounter an `IllegalStateException` at runtime.
