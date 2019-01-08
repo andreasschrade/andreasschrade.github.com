@@ -259,12 +259,9 @@ WorkManager allows you to cancel work in several ways:
 
 WorkManager makes background processing in Android easier! It has a consistent, powerful but still simple API. Once WorkManager is released as stable, it will be the preferred way to run background tasks.
 
-
 Thank you for reading this article about WorkManager in Android. If you have any question, spotted an error or want to know more about WorkManager, please leave a comment. I'm happy to hear from you :blush:
 
 If you want to stay up to date with news from Android and software development in general, please follow me on <a href="https://twitter.com/andreasschrade" target="_blank">Twitter</a>a or sign up for my newsletter!
-
-
 
 <h2 id="appendix-a"> Appendix A</h2>
 
