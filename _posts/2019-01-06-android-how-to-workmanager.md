@@ -151,7 +151,7 @@ WorkManager.getInstance().enqueue(myWork)
 The first line initializes an object of type `Constraints`. As soon as all declared constraints are met, a scheduled work gets ready for execution.
 It makes sense to add a `NetworkType.CONNECTED` constraint to an upload task, because you can't upload data unless there is a connection.
 
-The `inputData` object holds necessary information that is required for the execution of the background work (like the file name that needs to be uploaded). Please be careful that you don't exceed 10KB...Otherwise, you encounter an `IllegalStateException` at runtime.
+The `inputData` object holds necessary information that is required for the execution of the background work (like a file name that needs to be uploaded). Please be careful that you don't exceed 10KB... Otherwise, you encounter an `IllegalStateException` at runtime.
 
 There are two main types of work requests:
 1. OneTimeWorkRequest executes the task just one time
@@ -168,7 +168,7 @@ WorkManager makes it easy to observe the current state of the execution:
 
 <pre><code class="language-kotlin">
 WorkManager.getInstance()
-	.getWorkInfoByIdLiveData(id!!)
+	.getWorkInfoByIdLiveData(id)
 	.observe(this, Observer { status ->
 	    if (status?.state?.isFinished == true) {
 	        // job finished
@@ -274,6 +274,6 @@ The _horizontal axis_ represents the importance of the background work. Is it ne
 The _vertical axis_ represents the timing: Is it necessary that the work will be executed at an exact time or can it be deferred?
 
 WorkManager is on the lower right: guaranteed execution and deferrable.
-`Job Scheduler`, `Firebase JobDispatcher` and the combination of `AlarmManager` with `Broadcast receivers` fall into the same category.
+`Job Scheduler` and `Firebase JobDispatcher` fall into the same category.
 
 RxJava, Kotlin Coroutines and normal ThreadPools fall into the opposite category on the left side
