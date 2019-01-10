@@ -263,6 +263,10 @@ Thank you for reading this article about WorkManager in Android. If you have any
 
 If you want to stay up to date with news from Android and software development in general, please follow me on <a href="https://twitter.com/andreasschrade" target="_blank">Twitter</a>a or sign up for my newsletter!
 
+**Source** 
+
+I published a very <a href="https://github.com/andreasschrade/blog-articles/tree/master/workmanager">basic example on Github</a> that makes use of enqueueing and observing a job.
+
 <h2 id="appendix-a"> Appendix A</h2>
 
 Background work can be categorized into two dimensions:
