@@ -12,15 +12,17 @@ published: false
 Doze Mode is a power-saving feature that has been introduced in Android 6.0 (API level 23).
 The idea behind Doze Mode is that is saves power when the user doesn't use or need the phone. For example, imagine the case that the user has put down the device and walked away. One hour later, the user comes back and picks his phone up. The battery should not have dropped significantly. Right?
 
-To sum it up: Doze Mode saves energy and it gets activated when the phone is not in use:
+To sum it up:
+
+>Doze Mode saves energy and it gets activated when the phone is not in use
 
 The phone is not in use when:
 - it's not plugged in to a power source, and
 - the screen is locked, and
 - no motion has been detected for some time
 
-When in Doze Mode the system defers battery intense actions like network calls, wake-locks, alarms (set via AlarmManager). Periodically, the system leaves the Doze Mode for a short time to execute all the pending actions. This is called a maintenance window.
-Over time, the systems schedules maintenance windows less and less frequently.
+When in Doze Mode the system defers battery intense actions like network calls, wake-locks, alarms (set via AlarmManager). The system periodically leaves the Doze Mode for a short time to execute all pending actions. This is called a maintenance window. Over time, the systems schedules maintenance windows less and less frequently.
+
 The system leaves Doze Mode as soon as the user makes use of the smartphone by moving it, turning on the screen or connecting it to a power source.
 
 Restrictions that apply when the app is in Doze Mode:
