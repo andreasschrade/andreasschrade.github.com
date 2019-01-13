@@ -21,7 +21,7 @@ The phone is not in use when:
 - the screen is locked, and
 - no motion has been detected for some time
 
-When in Doze Mode the system defers battery intense actions like network calls, wake-locks, alarms (set via AlarmManager). The system periodically leaves the Doze Mode for a short time to execute all pending actions. This is called a maintenance window. Over time, the systems schedules maintenance windows less and less frequently.
+When in Doze Mode the system defers battery intense actions like network calls, wake-locks, alarms (set via AlarmManager). The system periodically leaves the Doze Mode for a short time (called maintenance window) to execute all deferred actions. Over time, the systems schedules maintenance windows less and less frequently.
 
 The system leaves Doze Mode as soon as the user makes use of the smartphone by moving it, turning on the screen or connecting it to a power source.
 
@@ -31,8 +31,16 @@ Restrictions that apply when the app is in Doze Mode:
 - Scheduled alarms via AlarmManager are deferred to the next maintenance window
 (exceptions: the following methods will wake up the device even if it is in Doze Mode:
 setAndAllowWhileInIdle() or setExactAndAllowWhileIdle() or setAlarmClock())
-- System does not scan for WiFi
-- System does not allow JobScheduler
+- System doesn't scan for WiFi
+- System doesn't allow execution of JobScheduler
+
+At this point, you might ask, how can I trigger time-critical actions?
+In case that you want to trigger a specific action at a specific time, you can still make use of AlarmManager.
+setAndAllowWhileInIdle() and setExactAndAllowHileIdle get executed in time even when the device is in Doze Mode.
+
+In case that the action needs to get triggered from the backend, you should make use of Firebase Cloud Messaging (FCM).
+By using high-priority messages through FCM, you can deliver and process them immediately, even in Doze Mode.
+
 
 ## Conclusion
 
