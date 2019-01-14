@@ -15,7 +15,7 @@ This article is all about power-saving features in Android. It might be worth a 
 Doze Mode is a power-saving feature that has been introduced in Android 6.0 (API level 23).
 The idea behind Doze Mode is that it saves power when the user doesn't use or need the phone. For example, imagine the case that the user has put down the device and walked away. One hour later, the user comes back and picks his phone up. The battery should not have dropped significantly. Right?
 
->Doze Mode saves energy and it gets activated when the phone is not in use
+>Doze Mode saves energy and gets activated when the phone isn't in use
 
 ## How does Doze Mode work?
 
@@ -54,7 +54,7 @@ or ...
 
 In case that you want to trigger a specific action at a specific time, you can still make use of `AlarmManager`.
 `setAndAllowWhileInIdle()` and `setExactAndAllowHileIdle()` get executed in time <i>even when the device is in Doze Mode.</i>
-However, it is not possible to trigger a network call via a while-idle alarm when the device is in Doze Mode! A network request would lead to an `UnknownHostException`. If you want to make a network call from the background, you should use `JobScheduler` or `WorkManager`.
+However, it is not possible to trigger a network call via a while-idle alarm when the device is in Doze Mode! A network request would lead to an `UnknownHostException`. If you want to make a network call from the background, you should use `JobScheduler` or <a href="https://www.andreasschrade.com/android-how-to-workmanager">WorkManager</a>.
 
 In case that your time-critical action needs to get triggered from the backend, you should make use of <a href="https://firebase.google.com/docs/cloud-messaging/" target="_blank">Firebase Cloud Messaging (FCM)</a>.
 By using <a href="https://firebase.google.com/docs/cloud-messaging/admin/send-messages" target="_blank">high-priority messages</a> through FCM, you can deliver and process messages immediately, even in Doze Mode. Please make only use of high-priority messages if the message is really time-critical and requires the user's immediate interaction (like a messaging app). In this case, the affected app gets temporary access to network services and partial wakelocks.
@@ -104,12 +104,12 @@ An app is in the working set bucket if the user uses it often (daily) but it's c
 
 An app in this category has mild restrictions regarding its ability to run jobs (deferred up to 2 hours) and alarms (deferred up to 6 minutes)
 
-** Frequent **
+**Frequent**
 
 An app is in the frequent bucket if the user uses it regularly but not on a daily basis. 
 Such an app has stronger restrictions regardings its ability to run jobs (deferred up to 8 hours), alarms (deferred up to 30 minutes) and to process high-priority FCM messages (only 10 high priority messages a day).
   
-** Rare **
+**Rare**
 
 An app is in the rare bucket if the user almost never makes use of it. Such an app has strict restrictions to run jobs (deferred up to 24 hours), alarms (deferred up to 2 hours), to process high-priority FCM messages (only 5 high priority messages a day) to access network (deferred up to 24 hours)
 
@@ -125,4 +125,4 @@ If you want to figure out in which category a certain app falls into, you can ma
 
 ... for reading this article about power-saving features in Android. If you have any question, spotted an error or want to know more about that topic, please leave a comment. I'm happy to hear from you :blush:
 
-If you want to stay up to date with news from Android and software development in general, please follow me on <a href="https://twitter.com/andreasschrade" target="_blank">Twitter</a>a or sign up for my newsletter!
+If you want to stay up to date with news from Android and software development in general, please follow me on <a href="https://twitter.com/andreasschrade" target="_blank">Twitter</a> a or sign up for my newsletter!
