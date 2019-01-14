@@ -34,6 +34,9 @@ Android Nougat *added* a more lightweight version of Doze Mode, called *Light-Do
 *Light-Doze* gets activated shortly after both the screen is off and the device is not plugged into a power source.
 Light-Doze is pretty much the same as Deep Doze, except that it has fewer preconditions to get activated and maintenance windows are more frequently. The Doze Mode state changes from Light-Doze to Deep Doze once the conditions for Deep Doze are met.
 
+{% include image-caption.html imageurl="/assets/images/posts/2018/doze.png" title="doze mode in android"  %}
+<small>Digital image. <i>developer.android.com</i> 6 August 2018, <a href="https://developer.android.com/images/training/doze.png">https://developer.android.com/images/training/doze.png</a></small>
+
 ## Restrictions of Doze Mode
 
 Restrictions that apply when the device is in Doze Mode:
