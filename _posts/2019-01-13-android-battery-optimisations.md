@@ -67,7 +67,7 @@ A `ForegroundService` is exempt from Doze Mode.
 
 In rare cases that a while-idle alarm and high-priority message are not enough, it is possible to ask the user to whitelist an app. A whitelisted app can access network services and partial wakelocks even in Doze Mode.
 
-You can request the permission `"REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"` to prompt the user with a dialog to turn of Doze Mode optimizations for your app.
+You can request the permission `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS` to prompt the user with a dialog to turn of Doze Mode optimizations for your app.
 
 
 ## What is App Standby?
