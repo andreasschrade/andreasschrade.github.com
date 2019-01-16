@@ -49,27 +49,30 @@ So...
 
 1. ... you want to run a time or CPU intensive task in the background and,
 2. ... you want to make sure that the task <u>always finish</u> (regardless of the current app state, process state or user behaviour) => Scheduled work even survives process death and device reboot!
-3. .. the task is <u>not time-critical</u> because the execution might get deferred to achieve battery efficiency 
+3. .. the task is <u>not time-critical</u> because the execution might get deferred
 
 Examples:
 * Syncing data (a mail client could sync emails by using WorkManager)
 * uploading collected user files like photos or videos
-* doing time-consuming operations on data  
+* doing time-consuming operations on local data  
 
+
+but...
 
 *`WorkManager` is **NOT** the right solution when...*
-* ... you don't need a guaranteed execution -> when it simply doesn't make sense to finish an enqueued task in certain circumstances (for example a background task that is bound to a certain screen doesn't need to get executed once the user left the app)
+* ... you don't need a guaranteed execution -> when it simply doesn't make sense to finish an enqueued task in certain circumstances (for example a background task that is bound to a certain screen and doesn't need to get executed once the user left the app)
 * ... you want to execute a non-deferrable task (time-criticality) 
 * ... you want to execute the task at an exact time (such as an alarm clock or reminder) -> use `AlarmManager` instead
-* ... you have a long-running background task that needs to be executed immediately and is related to an ongoing user focussed activity (like music playback, location tracking) -> use `ForegroundService` instead
+* ... you have a long-running background task that needs to get executed immediately and is related to an ongoing user focussed activity (like music playback, location tracking) -> use `ForegroundService` instead
 
 
 ### What makes WorkManager beneficial?
 WorkManager takes care of compatibility issues and follows best practices to execute background work in a battery efficient way. It supports Android 4.0+ (API 14+) and provides a simple and flexible API. 
 
 The WorkManager API makes it easy to
-* schedule periodic tasks
-* schedule unique (singleton) tasks
+* schedule background tasks with guaranteed execution
+* schedule periodic background tasks
+* schedule unique (singleton) background tasks
 * set up dependent chains of tasks
 * parallelize work
 * set execution constraints (e.g., only execute the task when the network is present, when storage is not low, when the battery is not low)
@@ -228,7 +231,7 @@ Both tasks get enqueued at the same time and can (depends on the internal schedu
 
 ### Unique work
 
-In many cases, it makes sense to have only one job of a particular type running at the same time (like a singleton job).
+In many cases, it makes sense to have only one job of a particular type running at the same time (let's call it a singleton job).
 For example, it doesn't make sense for a mail client to have multiple synchronization jobs running at the same time.
 
 `beginUniqueWork()` allows you to have a unique chain of work with a given name to be active at a time! You can decide what should happen when there is already one job of the same type pending:
@@ -280,4 +283,4 @@ The _vertical axis_ represents the timing: Is it necessary that the work will be
 WorkManager is on the lower right: guaranteed execution and deferrable.
 `Job Scheduler` and `Firebase JobDispatcher` fall into the same category.
 
-RxJava, Kotlin Coroutines and normal ThreadPools fall into the opposite category on the left side
+RxJava, Kotlin Coroutines and normal ThreadPools fall into the opposite category on the left side.
