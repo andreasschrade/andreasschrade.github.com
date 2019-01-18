@@ -11,7 +11,9 @@ Maybe the concept of Service, Intent Service, Bound Service, Foreground Service,
 
 > "So many roads. So many detours. So many choices. So many mistakes." ― Sarah Jessica Parker ―
 
-This article introduces another way to manage background processing: `WorkManager` - A new API which is part of the Android Architecture Components. The good news is that this API makes your life as an Android developer easier! Sounds good? Ok so, let's dive right in...
+This article introduces another way to manage background processing: `WorkManager`
+
+A new API which is part of the Android Architecture Components. The good news is that this API makes your life as an Android developer easier! Sounds good? Ok so, let's dive right in...
 
 ## What is WorkManager?
 WorkManager is one of the Android Architecture Components and is part of Android Jetpack. It replaces `JobScheduler` as Google’s recommended way to enqueue background work that needs a <u>combination of opportunistic and guaranteed execution.</u>
