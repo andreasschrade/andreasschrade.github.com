@@ -239,7 +239,7 @@ For example, it doesn't make sense for a mail client to have multiple synchroniz
 `beginUniqueWork()` allows you to have a unique chain of work with a given name to be active at a time! You can decide what should happen when there is already one job of the same type pending:
 
 * `ExistingWorkPolicy.KEEP` - let it run
-* `ExistingWorkPolicy.REPLACE` - replace the existing one with the new background task
+* `ExistingWorkPolicy.REPLACE` - replace the existing work with the new background work
 * `ExistingWorkPolicy.APPEND` - append the new sequence to the existing one as a child of all leaf nodes
 
 `beginWith()` always enqueues and executes the chain of work regardless if there is any other background task of the same type already running or enqueued.
