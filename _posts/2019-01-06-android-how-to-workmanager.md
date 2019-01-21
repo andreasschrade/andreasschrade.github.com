@@ -153,8 +153,8 @@ val myWork = OneTimeWorkRequest.Builder(ExampleWorker::class.java)
 WorkManager.getInstance().enqueue(myWork)
 </code></pre>
 
-The first line initializes an object of type `Constraints`. As soon as all declared constraints are met, a scheduled work gets ready for execution.
-It makes sense to add a `NetworkType.CONNECTED` constraint to an upload task, because you can't upload data unless there is a connection.
+The first line initializes an object of type `Constraints`. As soon as all declared constraints are met, the scheduled work gets ready for execution.
+It makes sense to add a `NetworkType.CONNECTED` constraint to any upload task, because you can't upload data unless there is a connection.
 
 The `inputData` object holds necessary information that is required for the execution of the background work (like a file name that needs to be uploaded). Please be careful that you don't exceed 10KB... Otherwise, you encounter an `IllegalStateException` at runtime.
 
