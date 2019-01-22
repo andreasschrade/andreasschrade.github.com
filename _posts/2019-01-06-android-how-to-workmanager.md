@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Android WorkManager: A short Tutorial"
+title: "How to use WorkManager in Android"
 comments: true
 language: "EN"
 
