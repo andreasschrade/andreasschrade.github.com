@@ -2,7 +2,6 @@
 layout: post
 title: "How to use WorkManager in Android"
 comments: true
-language: "EN"
 
 ---
 

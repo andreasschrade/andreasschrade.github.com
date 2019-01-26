@@ -130,4 +130,4 @@ If you want to figure out in which category a certain app falls into, you can ma
 
 ... for reading this article about power-saving features in Android. If you have any question, spotted an error or want to know more about that topic, please leave a comment. I'm happy to hear from you :blush:
 
-If you want to stay up to date with news from Android and software development in general, please follow me on <a href="https://twitter.com/andreasschrade" target="_blank">Twitter</a> a or sign up for my newsletter!
+If you want to stay up to date with news from Android and software development in general, please follow me on <a href="https://twitter.com/andreasschrade" target="_blank">Twitter</a> a or sign up for my weekly newsletter!
