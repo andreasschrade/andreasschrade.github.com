@@ -15,7 +15,7 @@ Someone who is new in the field of Android development might wonder...
 
 <i>What is the difference between all these different Fragment implementations???</i>
 
-First of all, what kind of Fragment implementations do exist?
+First of all, what kind of `Fragment` implementations do exist?
 
 <table>
 <tr>
@@ -33,35 +33,35 @@ First of all, what kind of Fragment implementations do exist?
 
 ### Support Library Fragment
 
-A little history... Google introduced the concept of Fragments in Android 3 (Honeycomb - API Level 11) to improve the ability to write proper apps by making it possible to make parts of an UI reusable.
+A little history... Google introduced the concept of Fragments in Android 3 (Honeycomb - API Level 11) to improve the ability to write proper apps by making it possible to make parts of a UI reusable.
 
-Back then, most of the devices were still running on pre Android 3 devices...
+Back then, most of the devices were still running on pre-Android 3 devices...
 
 Let's say you want to write an app that makes use of Fragments which is targeted for Android 3, but should also run on older devices. How do you handle that?
 
-To solve this issue, Google kinda forked the implementation of Fragment and has provided the fork in a dedicated library called "Support Library". The library allows you to use newer features of Android on older versions of Android.
+To solve this issue, Google kinda forked the implementation of `Fragment` and has provided the fork in a dedicated library called "Support Library". The library allows you to use newer features of Android on older versions of Android.
 
 ### Native Fragment
 
-Every Android 3+ system provides a *native* implementation of Fragment. Theoretically, if you don't need to support pre Android 3 devices, then you would not need the Support Library to use Fragment ... <u><b>but...</b></u>
+Every Android 3+ system provides a *native* implementation of `Fragment`. Theoretically, if you don't need to support pre-Android 3 devices, then you would not need the Support Library to use `Fragment` ... <u><b>but...</b></u>
 
 ### Native Fragment vs. Support Library Fragment
 
-The problem with the native Fragment is, that it has been very buggy since the beginning and it doesn't get the "latest update" of Fragment because it is part of the Android OS. Therefore an Android 4 Fragment is more buggy than an Android 5 Fragment... and an Android 5 is more buggy than an Android 7 Fragment.
+The problem with the native `Fragment` is, that it has been very buggy since the beginning and it doesn't get the "latest update" of `Fragment` because it is part of the Android OS. Therefore an Android 4 Fragment is more buggy than an Android 5 Fragment... and an Android 5 is more buggy than an Android 7 Fragment.
 
-So, *the native Fragment behaviour/implementation has subtle differences between versions!*
+So, *the native Fragment behavior/implementation has subtle differences between versions!*
 
-However the support library works to make sure that support fragments always work the same! It doesn't matter if your app is running on an Android 6 or Android 8 device. The support library Fragment get shipped with the app and contains recent bug fixes.
+However, the support library works to make sure that support fragments always work the same! It doesn't matter if your app is running on an Android 6 or Android 8 device. The support library Fragment gets shipped with the app and contains recent bug fixes.
 
 To make it clear: *There is no reason to use the native Fragment implementation!*
 
-Few months ago, Google depreceated the native Fragment class in API level 28
+A few months ago, Google deprecated the native Fragment class in API level 28
 
 Ok, but what about the Androix Fragment class?
 
 ## Androidx Fragment
 
-AndroidX is a major improvement to the original Android Support Library.  It *contains the existing support library(!)* and also includes Jetpack components.  In case you are already using AndroidX in your project, just use androidx.fragment.app.Fragment. Otherwise you can either use the Support Lib (android.support.v4.app.Fragment) or you can migrate the entire project to AndroidX.
+AndroidX is a significant improvement to the original Android Support Library.  It *contains the existing support library(!)* and also includes Jetpack components.  In case you are already using AndroidX in your project, use androidx.fragment.app.Fragment. Otherwise, you can either use the Support Lib (android.support.v4.app.Fragment) or you can migrate the entire project to AndroidX.
 
 
 ## Summary... in three bullets
