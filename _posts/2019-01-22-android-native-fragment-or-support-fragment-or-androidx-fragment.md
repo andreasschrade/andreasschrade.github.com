@@ -30,6 +30,7 @@ First of all, what kind of `Fragment` implementations do exist?
 <tr>
 	<td>Native</td><td>android.app.Fragment</td>
 </tr>
+</table>
 
 ### Support Library Fragment
 
