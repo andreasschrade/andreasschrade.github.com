@@ -271,7 +271,7 @@ If you want to stay up to date with news from Android and software development i
 
 I published a very <a href="https://github.com/andreasschrade/blog-articles/tree/master/workmanager">basic example on Github</a> that makes use of enqueueing and observing a job.
 
-<h2 id="appendix-a"> Appendix A</h2>
+<h2 id="appendix-a">Appendix A</h2>
 
 Background work can be categorized into two dimensions:
 
