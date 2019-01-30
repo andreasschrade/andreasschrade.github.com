@@ -168,7 +168,7 @@ By calling the `enqueue` method, the declared work gets enqueued and `WorkManage
 
 ### Observing the job state by using Live Data
 
-WorkManager makes it easy to observe the current state of the execution:
+WorkManager makes it easy to observe the current state of the job execution:
 
 <pre><code class="language-kotlin">
 WorkManager.getInstance()
