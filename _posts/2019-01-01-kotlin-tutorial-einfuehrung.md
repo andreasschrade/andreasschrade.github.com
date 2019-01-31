@@ -40,7 +40,7 @@ Kotlin lässt sich via Plugin sowohl in Eclipse, als auch in IntelliJ bzw. dem I
 ### 2.1 Deklaration von Funktionen
 
 <pre><code class="language-kotlin">
-fun main (args: Array<String>) {
+fun main (args: Array&lt;String&gt;) {
     println("Hello world!")
 }
 </code></pre>
