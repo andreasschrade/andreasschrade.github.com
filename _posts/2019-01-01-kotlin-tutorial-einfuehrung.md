@@ -98,7 +98,41 @@ fun max (a: Int, b: Int) = if (a > b) a else b
 </code></pre>
 
 
-to be continued...
+
+
+### 2.2. Deklaration von Variablen
+
+<strong>Grundlegende Syntax</strong>
+
+Während bei der Deklaration von Variablen in der Java-Welt stets der Datentyp vor dem Variablennamen steht, verhält sich dies unter Kotlin genau umgekehrt.
+Dies hat den Hintergrund, da unter Kotlin eine explizite Typendeklaration optional ist, solange der Datentyp (implizit) abgeleitet werden kann.
+
+Beispiel:
+
+<pre><code class="language-kotlin">
+// Implicit variable type declaration
+val exampleString = "Das ist ein Beispielsatz!"
+val exampleInt = 42
+val exampleDouble = 13.37
+val exampleChar = 'a'
+
+// Explicit variable type declaration
+val exampleString: String = "Das ist ein Beispielsatz!"
+val exampleInt: Int = 42
+val exampleDouble: Double = 13.37
+val exampleChar: Char = 'a'
+</code></pre>
+
+Die implizite Typenableitung funktioniert nur solange, wie der Compiler anhand der Initializer Expression den tatsächlichen Datentypen ableiten kann.
+Ganzzahlen werden zu einem Int, Fließkommazahlen zu einem Double, Char und String werden wie in Java gehandhabt.
+
+Die automatische Typenableitung funktioniert aber nicht nur bei der direkten Verwendungen von Literalen (z.B. String-Literal):
+
+<pre><code class="language-kotlin">
+val exampleString = getString()
+fun getString() = "Das ist ein Beispielsatz!"
+</code></pre>
+
 
 
 
