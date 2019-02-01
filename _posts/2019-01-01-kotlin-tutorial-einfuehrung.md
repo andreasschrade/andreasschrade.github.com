@@ -40,7 +40,7 @@ Kotlin lässt sich via Plugin sowohl in Eclipse, als auch in IntelliJ bzw. dem I
 ### 2.1 Deklaration von Funktionen
 
 <pre><code class="language-kotlin">
-fun main (args: Array<String>) {
+fun main (args: Array&lt;String&gt;) {
     println("Hello world!")
 }
 </code></pre>
@@ -74,7 +74,6 @@ Expression Body:<br>
 fun getString(): String = "mein String"
 </code></pre>
 
-<blockquote>
 <b>Expression vs. Statements</b><br>
 Expression:<br>
 Eine Expression repräsentiert immer einen "evaluierbaren" Wert und kann Bestandteil einer anderen Expression oder Statements sein. Das String-Literal <i>"mein String"</i> ist bsps. eine Expression, da es nach deren Evaluierung einen konkreten Rückgabewert "mein String" besitzt.
