@@ -90,7 +90,7 @@ Während unter Java die If-Abfrage als Statement abgebildet ist, fungiert diese 
 fun max (a: Int, b: Int): Int = if (a > b) a else b
 </code></pre>
 
-Da zur Kompiliziert der Rückgabetyp von Funktionen mit Expression Body bekannt ist, lässt sich obige Funktion dank Typinferenz (type inference) weiter vereinfachen, indem der Rückgabetyp einfach weggelassen wird:
+Da zur Kompiliziert der Rückgabetyp von Funktionen via Expression Body bekannt ist, lässt sich obige Funktion dank Typinferenz (type inference) weiter vereinfachen, indem der Rückgabetyp einfach weggelassen wird:
 
 <pre><code class="language-kotlin">
 fun max (a: Int, b: Int) = if (a > b) a else b
