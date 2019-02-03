@@ -84,6 +84,7 @@ Sie werden außerdem innerhalb eines Code-Blocks deklariert.
 Beispielsweise handelt es sich bei allen Loop-Varianten (for, do, while) um Statements.
 
 Unter Kotlin werde u.A. auch Kontrollflusselemente als Expression gehandhabt.
+
 Während unter Java die If-Abfrage als Statement abgebildet ist, fungiert diese unter Kotlin als Expression und ermöglicht somit weitaus mehr Flexibilität. Bsps. kann eine If-Expression als Expression-Body in einer Funktion eingesetzt werden.
 
 <pre><code class="language-kotlin">
