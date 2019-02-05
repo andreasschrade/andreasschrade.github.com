@@ -70,7 +70,7 @@ but...
 ### What makes WorkManager beneficial?
 WorkManager takes care of compatibility issues and follows best practices to execute background work in a battery efficient way. It supports Android 4.0+ (API 14+) and provides a simple and flexible API. 
 
-The WorkManager API makes it easy to
+The WorkManager API makes it easy to:
 * schedule background tasks with guaranteed execution
 * schedule periodic background tasks
 * schedule unique (singleton) background tasks
