@@ -229,7 +229,6 @@ WorkManager.getInstance()
 
 Both tasks get enqueued at the same time and can (depends on the internal scheduling) run at the same time without any dependency.
 
-
 ### Unique work
 
 In many cases, it makes sense to have only one job of a particular type running at the same time (let's call it a singleton job).
