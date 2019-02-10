@@ -15,7 +15,6 @@ wrong condition in branching or loop expression/statements
 possible null pointer references
 memory leaks
 missing or insufficient tests
-...
 
 
 
