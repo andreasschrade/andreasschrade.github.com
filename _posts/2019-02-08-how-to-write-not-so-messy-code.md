@@ -2,6 +2,7 @@
 layout: post
 title: "How to write not so messy code"
 comments: true
+published: false
 
 ---
 
@@ -15,7 +16,6 @@ wrong condition in branching or loop expression/statements
 possible null pointer references
 memory leaks
 missing or insufficient tests
-
-
+...
 
 
