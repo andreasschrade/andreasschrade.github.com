@@ -5,44 +5,42 @@ permalink: /about/
 ---
 {% include image-caption.html imageurl="/assets/images/pages/about.jpg#right" title="Android Freelancer"  %}
 
-I'm Andreas Schrade, a dedicated Android developer!
+I'm Andreas Schrade, an IT company owner and enthusiastic Android Developer expert who serve companies in all over the world. 
 
-My aspiration is the fast and seamlessly integration into my clients' teams and workflows to create high quality software in an efficient, harmonic and long-lasting way that serves the needs of users.
+Over 12 years of programming experience, more than 6 years of experience in the professional field of entrepreneurship and online marketing.
 
 There's nothing I can't handle. 
 
 <h3>Who I am:</h3>
 
+<h4>My Dev Life</h4>
 - 8+ years of experience in the field of Android
-- 10+ years experience in Java; 1,5+ years of experience in Kotlin
+- 10+ years experience in Java; 2+ years of experience in Kotlin
 - Author of Android articles for print and web
 - Awardee of “jugend innovativ 2013” in the category Mobile 
 - Worked on 10+ app projects (for mobile, tablet, Android TV, FireTV)
 - Founder of <a target="_blank" href="http://exynap.com">Exynap</a>, a smart tool that assists Android developers
 - Publisher of a weekly Android development newsletter
 
->Android is not just my job - It is my passion
+>Android is not just my job - It is a passion
 
-<h3>Availability</h3>
-Please get in <a href="/contact/">contact</a> to check my current availability. 
+<h4>My Entrepreneurial Lifestyle</h4>
+- founder of several online products
+- seeking for smart people who are willing to do the necessary effort to provide a superb solution for a <i>real</i> problem
 
-<h3>Tools, Skills, Technologies, Techniques</h3>
+>A ship is always safe at the shore, but that is not what it is built for - Albert Einstein
 
-I develop fast and robust state of the art Android apps using the latest technologies and techniques. I use my knowledge about time management, project management and tools to save time in development.
+<h4>What I am looking for:</h4>
+- Interesting people in the field of entrepreneurship, software development, finance, investment, real estate
+- Project, business and investment opportunities
 
-- Android (SDK), RxAndroid/RxJava2, Dagger Dependency Injection, Butterknife, Greenrobot EventBus, Picasso, OkHttp, Retrofit JUnit, Mockito, Robotium, Crashlytics, Kotlin
-- Git, SVN
-- Gradle, Maven, Ant
-- XML, CSV, JSON, FlatBuffers 
-- Android Studio, IntelliJ Ultimate, Eclipse
-- Scrum, Kanban
-- Test-driven Development (TDD)
-- MVP, MVVM, MVC, Clean-Code principles, Enterprise Integration Patterns, GoF Design Pattern
-- REST, SOAP
-- SQlite, MySQL, Oracle RDBMS
-- Jira, Redmine, Trac
+>Just, one more thing...
 
->I'm a dedicated Android developer
+Fact: you made the effort to read the entire page.
+
+It is up to you to get in <a href="/contact/">touch</a> with me.
+
+Nobody knows where that could lead to, but for sure, nothing will happen if you don't get in touch with me. 
 
 <h4>Trivia</h4>
 - Back in 2011, I developed one of the very first Android Real Time Strategy Games
