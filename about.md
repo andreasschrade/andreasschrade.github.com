@@ -5,15 +5,14 @@ permalink: /about/
 ---
 {% include image-caption.html imageurl="/assets/images/pages/about.jpg#right" title="Android Freelancer"  %}
 
-I'm Andreas Schrade, an IT company owner and enthusiastic Android Developer expert who serve companies in all over the world. 
+I'm Andreas Schrade, an IT company owner and enthusiastic, creative and curious human being. 
 
 Over 12 years of programming experience, more than 6 years of experience in the professional field of entrepreneurship and online marketing.
 
-There's nothing I can't handle. 
 
 <h3>Who I am:</h3>
 
-<h4>My Dev Life</h4>
+<h4>My IT Life</h4>
 - 8+ years of experience in the field of Android
 - 10+ years experience in Java; 2+ years of experience in Kotlin
 - Author of Android articles for print and web
@@ -22,8 +21,6 @@ There's nothing I can't handle.
 - Founder of <a target="_blank" href="http://exynap.com">Exynap</a>, a smart tool that assists Android developers
 - Publisher of a weekly Android development newsletter
 
->Android is not just my job - It is a passion
-
 <h4>My Entrepreneurial Lifestyle</h4>
 - founder of several online products
 - seeking for smart people who are willing to do the necessary effort to provide a superb solution for a <i>real</i> problem
@@ -31,7 +28,7 @@ There's nothing I can't handle.
 >A ship is always safe at the shore, but that is not what it is built for - Albert Einstein
 
 <h4>What I am looking for:</h4>
-- Interesting people in the field of entrepreneurship, software development, finance, investment, real estate
+- Interesting people in the field of entrepreneurship, software development, finance, investment, real estate, classical music
 - Project, business and investment opportunities
 
 >Just, one more thing...
