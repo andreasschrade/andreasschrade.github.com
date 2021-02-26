@@ -42,5 +42,5 @@ Nobody knows where that could lead to, but for sure, nothing will happen if you 
 <h4>Trivia</h4>
 - Back in 2011, I developed one of the very first Android Real Time Strategy Games
 - I live a <a href="https://medium.com/pocketstoic/5-stoic-principles-for-modern-living-applying-an-ancient-philosophy-to-the-21st-century-2a8e10f31887" target="_blank">stoic lifestyle</a>
-- Besides software development, I enjoy the craftsmanship of composing symphonic music
+- Besides software development, I enjoy the craftsmanship of "composing" music
 - My favorite number is 42 and favorite prime number is 101
